@@ -1,0 +1,1017 @@
+/**
+ * COMPONENT TOKENS
+ * 
+ * Couche 3 : Tokens spécifiques aux composants UI
+ * 
+ * ✅ RÈGLES D'UTILISATION :
+ * - ✅ TOUJOURS utilisées dans les composants UI
+ * - ✅ Permettent de changer le style d'un composant sans toucher au code
+ * - ✅ Facilitent les variantes de composants
+ * 
+ * Ces tokens sont spécifiques à chaque composant et permettent une personnalisation
+ * fine sans modifier le code des composants.
+ */
+
+:root {
+  /* ========================================
+     MODAL TOKENS
+     ======================================== */
+
+  --modal-padding: 1rem;
+  --modal-gap: 0px;
+
+  /* ========================================
+     BUTTON TOKENS
+     ======================================== */
+
+  /* Button Primary */
+  --button-primary-bg: var(--color-action-primary);
+  --button-primary-bg-hover: var(--color-action-primary-hover);
+  --button-primary-bg-active: var(--color-action-primary-active);
+  --button-primary-bg-disabled: var(--color-action-primary-disabled);
+  --button-primary-text: var(--color-text-on-primary);
+  --button-primary-text-disabled: var(--color-text-disabled);
+  --button-primary-border: transparent;
+  --button-primary-shadow: 0 1px 2px 0 var(--color-shadow-sm);
+  --button-primary-shadow-hover: 0 4px 6px -1px var(--color-shadow-md);
+  --button-primary-border-radius: 0.25rem;
+  /* 4px */
+
+  /* Button Secondary */
+  --button-secondary-bg: var(--color-action-secondary);
+  --button-secondary-bg-hover: var(--color-action-secondary-hover);
+  --button-secondary-bg-active: var(--color-action-secondary-active);
+  --button-secondary-text: var(--color-text-on-secondary);
+  --button-secondary-border: transparent;
+  --button-secondary-border-radius: 0.25rem;
+  /* 4px */
+
+  /* Button Outline */
+  --button-outline-bg: transparent;
+  --button-outline-bg-hover: var(--color-hover);
+  --button-outline-bg-active: var(--color-active);
+  --button-outline-border: var(--color-border-strong);
+  --button-outline-border-hover: var(--color-border-hover);
+  --button-outline-text: var(--color-text-primary);
+  --button-outline-border-radius: 0.25rem;
+  /* 4px */
+
+  /* Button Ghost */
+  --button-ghost-bg: transparent;
+  --button-ghost-bg-hover: var(--color-hover);
+  --button-ghost-bg-active: var(--color-active);
+  --button-ghost-text: var(--color-text-primary);
+  --button-ghost-border-radius: 0.25rem;
+  /* 4px */
+
+  /* Button Destructive */
+  --button-destructive-bg: var(--color-action-destructive);
+  --button-destructive-bg-hover: var(--color-action-destructive-hover);
+  --button-destructive-text: var(--color-text-on-primary);
+  --button-destructive-border: transparent;
+  --button-destructive-border-radius: 0.25rem;
+  /* 4px */
+
+  /* Button Link */
+  --button-link-text: var(--color-text-link);
+  --button-link-text-hover: var(--color-text-link-hover);
+  --button-link-underline: transparent;
+  --button-link-underline-hover: currentColor;
+
+  /* Button Tertiary */
+  --button-tertiary-bg: var(--color-subtle);
+  --button-tertiary-bg-hover: var(--color-active);
+  --button-tertiary-bg-active: var(--color-active);
+  --button-tertiary-text: var(--color-text-secondary);
+  --button-tertiary-border: var(--color-border-default);
+  --button-tertiary-border-radius: 0.25rem;
+
+  /* Button Success */
+  --button-success-bg: var(--color-semantic-success);
+  --button-success-bg-hover: var(--color-semantic-success-dark);
+  --button-success-bg-active: var(--color-semantic-success-dark);
+  --button-success-text: var(--color-text-on-primary);
+  --button-success-border: transparent;
+  --button-success-border-radius: 0.25rem;
+
+  /* Button Alert/Warning */
+  --button-alert-bg: var(--color-semantic-warning);
+  --button-alert-bg-hover: var(--color-semantic-warning-dark);
+  --button-alert-bg-active: var(--color-semantic-warning-dark);
+  --button-alert-text: var(--color-text-on-primary);
+  --button-alert-border: transparent;
+  --button-alert-border-radius: 0.25rem;
+
+  /* Button Neutral */
+  --button-neutral-bg: var(--color-text-secondary);
+  --button-neutral-bg-hover: var(--color-text-primary);
+  --button-neutral-bg-active: var(--color-text-primary);
+  --button-neutral-text: var(--color-text-on-dark);
+  --button-neutral-border: transparent;
+  --button-neutral-border-radius: 0.25rem;
+
+  /* ========================================
+     INPUT TOKENS
+     ======================================== */
+
+  --input-bg: var(--color-surface);
+  --input-bg-disabled: var(--color-disabled);
+  --input-bg-focus: var(--color-surface);
+  --input-border: var(--color-border-default);
+  --input-border-hover: var(--color-border-hover);
+  --input-border-focus: var(--color-border-focus);
+  --input-border-error: var(--color-border-error);
+  --input-border-success: var(--color-border-success);
+  --input-text: var(--color-text-primary);
+  --input-text-disabled: var(--color-text-disabled);
+  --input-placeholder: var(--color-text-placeholder);
+  --input-shadow-focus: 0 0 0 3px
+    color-mix(in srgb, var(--color-border-focus) 10%, transparent);
+  --input-padding-x: 0.75rem;
+  --input-padding-y: 0.5rem;
+  --input-border-radius: 0.25rem;
+  /* 4px */
+
+  /* ========================================
+     CARD TOKENS
+     ======================================== */
+
+  --card-bg: var(--color-surface);
+  --card-bg-hover: var(--color-surface);
+  --card-border: var(--color-border-default);
+  --card-border-hover: var(--color-border-hover);
+  --card-shadow:
+    0 1px 3px 0 var(--color-shadow-sm), 0 1px 2px -1px var(--color-shadow-sm);
+  --card-shadow-hover:
+    0 4px 6px -1px var(--color-shadow-md), 0 2px 4px -2px var(--color-shadow-md);
+  --card-shadow-lg:
+    0 10px 15px -3px var(--color-shadow-lg),
+    0 4px 6px -4px var(--color-shadow-lg);
+  --card-padding: 1.5rem;
+  --card-border-radius: 0.75rem;
+
+  /* ========================================
+     MODAL TOKENS
+     ======================================== */
+
+  --modal-bg: var(--color-surface);
+  --modal-overlay: var(--color-overlay);
+  --modal-border: var(--color-border-subtle);
+  --modal-shadow:
+    0 20px 25px -5px var(--color-shadow-xl),
+    0 8px 10px -6px var(--color-shadow-xl);
+  --modal-border-radius: 1rem;
+  --modal-padding: 2rem;
+  --modal-header-border: var(--color-border-default);
+  --modal-footer-border: var(--color-border-default);
+
+  /* ========================================
+     POPOVER TOKENS
+     ======================================== */
+
+  --popover-bg: var(--color-elevated);
+  --popover-border: var(--color-border-default);
+  --popover-shadow:
+    0 10px 15px -3px var(--color-shadow-lg),
+    0 4px 6px -4px var(--color-shadow-lg);
+  --popover-border-radius: 0.5rem;
+  --popover-padding: 1rem;
+
+  /* ========================================
+     DROPDOWN TOKENS
+     ======================================== */
+
+  --dropdown-bg: var(--color-elevated);
+  --dropdown-border: var(--color-border-default);
+  --dropdown-shadow: var(--popover-shadow);
+  --dropdown-item-bg-hover: var(--color-hover);
+  --dropdown-item-bg-active: var(--color-active);
+  --dropdown-item-text: var(--color-text-primary);
+  --dropdown-item-text-active: var(--color-action-primary);
+  --dropdown-divider: var(--color-border-default);
+
+  /* ========================================
+     LAYOUT TOKENS
+     ======================================== */
+
+  --layout-header-height: 4.25rem;
+
+  /* ========================================
+     SIDEBAR TOKENS
+     ======================================== */
+
+  --sidebar-bg: var(--color-surface);
+  --sidebar-border: var(--color-border-default);
+  --sidebar-width: 16rem;
+  --sidebar-width-collapsed: 4rem;
+  --submenu-width: 14rem;
+
+  --sidebar-item-bg: transparent;
+  --sidebar-item-bg-hover: var(--color-hover);
+  --sidebar-item-bg-active: var(--color-brand-primary-lighter);
+  --sidebar-item-text: var(--color-text-secondary);
+  --sidebar-item-text-hover: var(--color-text-primary);
+  --sidebar-item-text-active: var(--color-brand-primary-darker);
+  --sidebar-item-icon: var(--color-text-tertiary);
+  --sidebar-item-icon-active: var(--color-brand-primary-darker);
+  --sidebar-item-border: transparent;
+  --sidebar-item-border-active: var(--color-brand-primary);
+  --sidebar-item-border-radius: 0.5rem;
+  --sidebar-item-padding: 0.75rem 1rem;
+
+  /* Sidebar Super Admin variant */
+  --sidebar-superadmin-bg: var(--color-primitive-neutral-900);
+  --sidebar-superadmin-border: var(--color-primitive-neutral-700);
+  --sidebar-superadmin-text: var(--color-primitive-neutral-300);
+  --sidebar-superadmin-text-hover: var(--color-primitive-neutral-0);
+  --sidebar-superadmin-bg-hover: color-mix(
+    in srgb,
+    var(--color-primitive-neutral-0) 5%,
+    transparent
+  );
+  --sidebar-superadmin-bg-active: color-mix(
+    in srgb,
+    var(--color-primitive-neutral-0) 10%,
+    transparent
+  );
+  --sidebar-superadmin-muted: var(--color-primitive-neutral-500);
+  --sidebar-superadmin-submenu-bg: var(--color-primitive-neutral-800);
+
+  /* ========================================
+     TABLE TOKENS
+     ======================================== */
+
+  --table-bg: var(--color-surface);
+  --table-border: var(--color-border-default);
+  --table-header-bg: var(--color-subtle);
+  --table-header-text: var(--color-text-secondary);
+  --table-row-bg: transparent;
+  --table-row-bg-hover: var(--color-hover);
+  --table-row-bg-striped: var(--color-subtle);
+  --table-cell-padding: 0.75rem 1rem;
+  --table-border-radius: 0.5rem;
+
+  /* ========================================
+     BADGE TOKENS
+     ======================================== */
+
+  /* Badge Default */
+  --badge-default-bg: var(--color-subtle);
+  --badge-default-text: var(--color-text-secondary);
+  --badge-default-border: var(--color-border-default);
+
+  /* Badge Primary */
+  --badge-primary-bg: var(--color-brand-primary-lighter);
+  --badge-primary-text: var(--color-brand-primary-dark);
+  --badge-primary-border: var(--color-brand-primary-light);
+
+  /* Badge Success */
+  --badge-success-bg: var(--color-semantic-success-bg);
+  --badge-success-text: var(--color-semantic-success-dark);
+  --badge-success-border: var(--color-semantic-success-light);
+
+  /* Badge Error */
+  --badge-error-bg: var(--color-semantic-error-bg);
+  --badge-error-text: var(--color-semantic-error-dark);
+  --badge-error-border: var(--color-semantic-error-light);
+
+  /* Badge Warning */
+  --badge-warning-bg: var(--color-semantic-warning-bg);
+  --badge-warning-text: var(--color-semantic-warning-dark);
+  --badge-warning-border: var(--color-semantic-warning-light);
+
+  /* Badge Info */
+  --badge-info-bg: var(--color-semantic-info-bg);
+  --badge-info-text: var(--color-semantic-info-dark);
+  --badge-info-border: var(--color-semantic-info-light);
+
+  /* Badge Orange (high severity / disputed states) */
+  --badge-orange-bg: var(--color-primitive-orange-50);
+  --badge-orange-text: var(--color-primitive-orange-800);
+  --badge-orange-border: var(--color-primitive-orange-200);
+
+  /* ========================================
+     ALERT TOKENS
+     ======================================== */
+
+  /* Alert Error */
+  --alert-error-bg: var(--color-semantic-error-bg);
+  --alert-error-border: var(--color-semantic-error-light);
+  --alert-error-text: var(--color-semantic-error-dark);
+  --alert-error-icon: var(--color-semantic-error);
+
+  /* Alert Warning */
+  --alert-warning-bg: var(--color-semantic-warning-bg);
+  --alert-warning-border: var(--color-semantic-warning-light);
+  --alert-warning-text: var(--color-semantic-warning-dark);
+  --alert-warning-icon: var(--color-semantic-warning);
+
+  /* Alert Success */
+  --alert-success-bg: var(--color-semantic-success-bg);
+  --alert-success-border: var(--color-semantic-success-light);
+  --alert-success-text: var(--color-semantic-success-dark);
+  --alert-success-icon: var(--color-semantic-success);
+
+  /* Alert Info */
+  --alert-info-bg: var(--color-semantic-info-bg);
+  --alert-info-border: var(--color-semantic-info-light);
+  --alert-info-text: var(--color-semantic-info-dark);
+  --alert-info-icon: var(--color-semantic-info);
+
+  /* ========================================
+     TOOLTIP TOKENS
+     ======================================== */
+
+  --tooltip-bg: var(--color-primitive-neutral-900);
+  --tooltip-text: var(--color-primitive-neutral-0);
+  --tooltip-shadow: 0 4px 6px -1px var(--color-shadow-lg);
+  --tooltip-border-radius: 0.375rem;
+  --tooltip-padding: 0.5rem 0.75rem;
+  --tooltip-max-width: 20rem;
+
+  /* ========================================
+     LOADER/SPINNER TOKENS
+     ======================================== */
+
+  --loader-primary: var(--color-brand-primary);
+  --loader-secondary: var(--color-brand-secondary);
+  --loader-track: var(--color-border-default);
+
+  /* ========================================
+     PROGRESS BAR TOKENS
+     ======================================== */
+
+  --progress-bg: var(--color-subtle);
+  --progress-fill: var(--color-brand-primary);
+  --progress-fill-success: var(--color-semantic-success);
+  --progress-fill-warning: var(--color-semantic-warning);
+  --progress-fill-error: var(--color-semantic-error);
+  --progress-height: 0.5rem;
+  --progress-border-radius: 9999px;
+
+  /* ========================================
+     SWITCH/TOGGLE TOKENS
+     ======================================== */
+
+  --switch-bg: var(--color-border-strong);
+  --switch-bg-checked: var(--color-action-primary);
+  --switch-bg-disabled: var(--color-disabled);
+  --switch-thumb: var(--primitive-neutral-0);
+  --switch-shadow: 0 2px 4px 0 var(--color-shadow-sm);
+
+  /* ========================================
+     CHECKBOX/RADIO TOKENS
+     ======================================== */
+
+  --checkbox-bg: var(--color-surface);
+  --checkbox-bg-checked: var(--color-action-primary);
+  --checkbox-bg-disabled: var(--color-disabled);
+  --checkbox-border: var(--color-border-default);
+  --checkbox-border-checked: var(--color-action-primary);
+  --checkbox-checkmark: var(--color-text-on-primary);
+
+  /* ========================================
+     DIVIDER TOKENS
+     ======================================== */
+
+  --divider-color: var(--color-border-default);
+  --divider-color-strong: var(--color-border-strong);
+  --divider-color-subtle: var(--color-border-subtle);
+}
+
+/* ========================================
+   DARK MODE ADJUSTMENTS
+   ======================================== */
+
+.dark {
+  /* Tooltip - inversé en dark mode */
+  --tooltip-bg: var(--color-primitive-neutral-100);
+  --tooltip-text: var(--color-primitive-neutral-900);
+
+  /* Badge Orange - dark mode */
+  --badge-orange-bg: rgba(194, 65, 12, 0.15);
+  --badge-orange-text: var(--color-primitive-orange-300);
+  --badge-orange-border: rgba(194, 65, 12, 0.3);
+
+  /* Sidebar - ajustements pour dark mode */
+  --sidebar-item-bg-active: var(--color-brand-primary-darker);
+  --sidebar-item-text-active: var(--color-primitive-neutral-0);
+  --sidebar-item-icon-active: var(--color-primitive-neutral-0);
+
+  /* Badge - ajustements pour dark mode */
+  --badge-default-bg: var(--primitive-neutral-800);
+  --badge-default-text: var(--primitive-neutral-300);
+}
+
+/* ========================================
+   UTILITY CLASSES FOR BORDER RADIUS
+   ======================================== */
+
+/* Classe utilitaire pour le border-radius standard de 4px */
+.radius-input {
+  border-radius: var(--input-border-radius) !important;
+}
+
+.radius-button {
+  border-radius: var(--button-primary-border-radius);
+}
+
+/* ========================================
+   COMPONENT CLASSES
+   Classes dédiées utilisant les tokens composants
+   ======================================== */
+
+/* --- BUTTONS --- */
+html :where(.btn-base) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-weight: 500;
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-radius: var(--button-primary-border-radius);
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  /* Default */
+  cursor: pointer;
+}
+
+html :where(.btn-base:disabled) {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+html :where(.btn-base:focus-visible) {
+  outline: 2px solid var(--button-primary-border-focus, currentColor);
+  outline-offset: 2px;
+}
+
+html :where(.btn-primary) {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-border);
+  box-shadow: var(--button-primary-shadow);
+}
+
+html :where(.btn-primary:hover) {
+  background-color: var(--button-primary-bg-hover);
+  box-shadow: var(--button-primary-shadow-hover);
+}
+
+html :where(.btn-primary:active) {
+  background-color: var(--button-primary-bg-active);
+}
+
+html :where(.btn-secondary) {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-border);
+}
+
+html :where(.btn-secondary:hover) {
+  background-color: var(--button-secondary-bg-hover);
+}
+
+html :where(.btn-secondary:active) {
+  background-color: var(--button-secondary-bg-active);
+}
+
+html :where(.btn-outline) {
+  background-color: var(--button-outline-bg);
+  color: var(--button-outline-text);
+  border-color: var(--button-outline-border);
+}
+
+html :where(.btn-outline:hover) {
+  background-color: var(--button-outline-bg-hover);
+  border-color: var(--button-outline-border-hover);
+}
+
+html :where(.btn-outline:active) {
+  background-color: var(--button-outline-bg-active);
+}
+
+html :where(.btn-ghost) {
+  background-color: var(--button-ghost-bg);
+  color: var(--button-ghost-text);
+  border-color: transparent;
+}
+
+html :where(.btn-ghost:hover) {
+  background-color: var(--button-ghost-bg-hover);
+}
+
+html :where(.btn-ghost:active) {
+  background-color: var(--button-ghost-bg-active);
+}
+
+html :where(.btn-destructive) {
+  background-color: var(--button-destructive-bg);
+  color: var(--button-destructive-text);
+  border-color: var(--button-destructive-border);
+}
+
+html :where(.btn-destructive:hover) {
+  background-color: var(--button-destructive-bg-hover);
+}
+
+html :where(.btn-link) {
+  background-color: transparent;
+  color: var(--button-link-text);
+  text-decoration: var(--button-link-underline);
+  border: none;
+  box-shadow: none;
+}
+
+html :where(.btn-link:hover) {
+  color: var(--button-link-text-hover);
+  text-decoration: var(--button-link-underline-hover);
+}
+
+html :where(.btn-tertiary) {
+  background-color: var(--button-tertiary-bg);
+  color: var(--button-tertiary-text);
+  border-color: var(--button-tertiary-border);
+}
+
+html :where(.btn-tertiary:hover) {
+  background-color: var(--button-tertiary-bg-hover);
+}
+
+html :where(.btn-tertiary:active) {
+  background-color: var(--button-tertiary-bg-active);
+}
+
+html :where(.btn-success) {
+  background-color: var(--button-success-bg);
+  color: var(--button-success-text);
+  border-color: var(--button-success-border);
+}
+
+html :where(.btn-success:hover) {
+  background-color: var(--button-success-bg-hover);
+}
+
+html :where(.btn-success:active) {
+  background-color: var(--button-success-bg-active);
+}
+
+html :where(.btn-alert) {
+  background-color: var(--button-alert-bg);
+  color: var(--button-alert-text);
+  border-color: var(--button-alert-border);
+}
+
+html :where(.btn-alert:hover) {
+  background-color: var(--button-alert-bg-hover);
+}
+
+html :where(.btn-alert:active) {
+  background-color: var(--button-alert-bg-active);
+}
+
+html :where(.btn-neutral) {
+  background-color: var(--button-neutral-bg);
+  color: var(--button-neutral-text);
+  border-color: var(--button-neutral-border);
+}
+
+html :where(.btn-neutral:hover) {
+  background-color: var(--button-neutral-bg-hover);
+}
+
+html :where(.btn-neutral:active) {
+  background-color: var(--button-neutral-bg-active);
+}
+
+/* --- INPUTS --- */
+html :where(.input-base) {
+  display: flex;
+  height: 2.5rem;
+  /* h-10 */
+  width: 100%;
+  border-radius: var(--input-border-radius);
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  font-size: 0.875rem;
+  /* text-sm */
+  color: var(--input-text);
+  transition:
+    box-shadow 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+html :where(.input-base:hover) {
+  border-color: var(--input-border-hover);
+}
+
+html :where(.input-base:focus-visible) {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+html :where(.input-base)::placeholder {
+  color: var(--input-placeholder);
+}
+
+html :where(.input-base:disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: var(--input-bg-disabled);
+  color: var(--input-text-disabled);
+}
+
+html :where(.input-error) {
+  border-color: var(--input-border-error);
+}
+
+html :where(.input-success) {
+  border-color: var(--input-border-success);
+}
+
+/* --- CARDS --- */
+html :where(.card-base) {
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--card-text, inherit);
+  /* Fallback */
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s;
+}
+
+html :where(.card-base:hover) {
+  border-color: var(--card-border-hover);
+  background-color: var(--card-bg-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* --- MODALS --- */
+html :where(.modal-content) {
+  background-color: var(--modal-bg);
+  border: 1px solid var(--modal-border);
+  box-shadow: var(--modal-shadow);
+  border-radius: var(--modal-border-radius);
+  padding: var(--modal-padding);
+}
+
+html :where(.modal-overlay) {
+  background-color: var(--modal-overlay);
+}
+
+/* --- POPOVERS & DROPDOWNS --- */
+html :where(.popover-content) {
+  background-color: var(--popover-bg);
+  border: 1px solid var(--popover-border);
+  box-shadow: var(--popover-shadow);
+  border-radius: var(--popover-border-radius);
+  padding: var(--popover-padding);
+}
+
+html :where(.dropdown-content) {
+  background-color: var(--dropdown-bg);
+  border: 1px solid var(--dropdown-border);
+  box-shadow: var(--dropdown-shadow);
+}
+
+html :where(.dropdown-item) {
+  color: var(--dropdown-item-text);
+}
+
+html :where(.dropdown-item:hover) {
+  background-color: var(--dropdown-item-bg-hover);
+}
+
+html :where(.dropdown-item:active) {
+  background-color: var(--dropdown-item-bg-active);
+  color: var(--dropdown-item-text-active);
+}
+
+/* --- SIDEBAR --- */
+html :where(.sidebar-container) {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  width: var(--sidebar-width);
+  transition: width var(--transition-duration-slow) ease-in-out;
+}
+
+html :where(.sidebar-container.collapsed) {
+  width: var(--sidebar-width-collapsed);
+}
+
+html :where(.sidebar-container.collapsed .sidebar-item) {
+  padding: 0.75rem;
+  border-left-width: 0;
+}
+
+html :where(.sidebar-container[data-variant='superadmin']) {
+  background-color: var(--sidebar-superadmin-bg);
+  border-right-color: var(--sidebar-superadmin-border);
+  color: var(--sidebar-superadmin-text-hover);
+}
+
+html
+  :where(.sidebar-container[data-variant='superadmin'])
+  > div
+  > div:first-child {
+  background-color: transparent;
+  border-color: var(--sidebar-superadmin-border);
+}
+
+html :where(.sidebar-container[data-variant='superadmin']) [class*='border-t'] {
+  border-color: var(--sidebar-superadmin-border);
+}
+
+html :where(.sidebar-container[data-variant='superadmin'] .sidebar-item) {
+  background-color: transparent;
+  color: var(--sidebar-superadmin-text);
+  border-left-color: transparent;
+  cursor: pointer;
+}
+
+html :where(.sidebar-container[data-variant='superadmin'] .sidebar-item:hover) {
+  background-color: var(--sidebar-superadmin-bg-hover) !important;
+  color: var(--sidebar-superadmin-text-hover) !important;
+}
+
+html
+  :where(.sidebar-container[data-variant='superadmin'] .sidebar-item.active) {
+  background-color: var(--sidebar-superadmin-bg-active);
+  color: var(--sidebar-superadmin-text-hover);
+  border-left-color: transparent;
+}
+
+html :where(.sidebar-container[data-variant='superadmin'] .sidebar-submenu) {
+  background-color: var(--sidebar-superadmin-submenu-bg);
+  border-color: var(--sidebar-superadmin-border);
+}
+
+html
+  :where(
+    .sidebar-container[data-variant='superadmin'] .sidebar-submenu .sidebar-item
+  ) {
+  color: var(--sidebar-superadmin-text);
+}
+
+html
+  :where(
+    .sidebar-container[data-variant='superadmin']
+      .sidebar-submenu
+      .sidebar-item:hover
+  ) {
+  background-color: var(--sidebar-superadmin-bg-hover) !important;
+  color: var(--sidebar-superadmin-text-hover) !important;
+}
+
+html :where(.sidebar-container[data-variant='superadmin'] .sidebar-aux-text) {
+  color: var(--sidebar-superadmin-muted);
+}
+
+html :where(.sidebar-container[data-variant='superadmin'] .sidebar-aux-button) {
+  color: var(--sidebar-superadmin-muted);
+}
+
+html
+  :where(
+    .sidebar-container[data-variant='superadmin'] .sidebar-aux-button:hover
+  ) {
+  color: var(--sidebar-superadmin-text-hover) !important;
+  background-color: var(--sidebar-superadmin-bg-hover) !important;
+}
+
+html
+  :where(.sidebar-container[data-variant='superadmin'] .sidebar-profile-section)
+  [class*='text-text-primary'],
+html
+  :where(.sidebar-container[data-variant='superadmin'] .sidebar-profile-section)
+  [class*='text-text-secondary'],
+html
+  :where(.sidebar-container[data-variant='superadmin'] .sidebar-profile-section)
+  [class*='text-text-tertiary'] {
+  color: var(--sidebar-superadmin-text) !important;
+}
+
+html
+  :where(
+    .sidebar-container[data-variant='superadmin']
+      .sidebar-profile-section
+      .group:hover
+  ) {
+  background-color: var(--sidebar-superadmin-bg-hover) !important;
+}
+
+html
+  :where(
+    .sidebar-container[data-variant='superadmin']
+      .sidebar-profile-section
+      .group:hover
+  )
+  [class*='group-hover:text-text-primary'],
+html
+  :where(
+    .sidebar-container[data-variant='superadmin']
+      .sidebar-profile-section
+      .group:hover
+  )
+  [class*='group-hover:text-text-secondary'],
+html
+  :where(
+    .sidebar-container[data-variant='superadmin']
+      .sidebar-profile-section
+      .group:hover
+  )
+  [class*='group-hover:text-text-tertiary'] {
+  color: var(--sidebar-superadmin-text-hover) !important;
+}
+
+html :where(.sidebar-item) {
+  background-color: var(--sidebar-item-bg);
+  color: var(--sidebar-item-text);
+  border-radius: var(--sidebar-item-border-radius);
+  padding: var(--sidebar-item-padding);
+  border-left: 4px solid var(--sidebar-item-border);
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+html :where(.sidebar-item:hover) {
+  background-color: var(--sidebar-item-bg-hover);
+  color: var(--sidebar-item-text-hover);
+}
+
+html :where(.sidebar-item.active) {
+  background-color: var(--sidebar-item-bg-active);
+  color: var(--sidebar-item-text-active);
+  border-left-color: var(--sidebar-item-border-active);
+  box-shadow: 0 1px 2px 0 var(--color-shadow-sm);
+}
+
+/* --- TABLE --- */
+html :where(.table-container) {
+  background-color: var(--table-bg);
+  border: 1px solid var(--table-border);
+  border-radius: var(--table-border-radius);
+}
+
+html :where(.table-header) {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+}
+
+html :where(.table-row) {
+  background-color: var(--table-row-bg);
+}
+
+html :where(.table-row:hover) {
+  background-color: var(--table-row-bg-hover);
+}
+
+html :where(.table-row.striped) {
+  background-color: var(--table-row-bg-striped);
+}
+
+html :where(.table-cell) {
+  padding: var(--table-cell-padding);
+}
+
+/* --- BADGES --- */
+html :where(.badge-base) {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition-property: colors;
+  transition-duration: 150ms;
+}
+
+html :where(.badge-default) {
+  border-color: var(--badge-default-border);
+  background-color: var(--badge-default-bg);
+  color: var(--badge-default-text);
+}
+
+html :where(.badge-primary) {
+  border-color: var(--badge-primary-border);
+  background-color: var(--badge-primary-bg);
+  color: var(--badge-primary-text);
+}
+
+html :where(.badge-success) {
+  border-color: var(--badge-success-border);
+  background-color: var(--badge-success-bg);
+  color: var(--badge-success-text);
+}
+
+html :where(.badge-error) {
+  border-color: var(--badge-error-border);
+  background-color: var(--badge-error-bg);
+  color: var(--badge-error-text);
+}
+
+html :where(.badge-warning) {
+  border-color: var(--badge-warning-border);
+  background-color: var(--badge-warning-bg);
+  color: var(--badge-warning-text);
+}
+
+html :where(.badge-info) {
+  border-color: var(--badge-info-border);
+  background-color: var(--badge-info-bg);
+  color: var(--badge-info-text);
+}
+
+html :where(.badge-orange) {
+  border-color: var(--badge-orange-border);
+  background-color: var(--badge-orange-bg);
+  color: var(--badge-orange-text);
+}
+
+/* --- ALERTS --- */
+html :where(.alert-base) {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  padding: 1rem;
+}
+
+html :where(.alert-error) {
+  background-color: var(--alert-error-bg);
+  border-color: var(--alert-error-border);
+  color: var(--alert-error-text);
+}
+
+html :where(.alert-warning) {
+  background-color: var(--alert-warning-bg);
+  border-color: var(--alert-warning-border);
+  color: var(--alert-warning-text);
+}
+
+html :where(.alert-success) {
+  background-color: var(--alert-success-bg);
+  border-color: var(--alert-success-border);
+  color: var(--alert-success-text);
+}
+
+html :where(.alert-info) {
+  background-color: var(--alert-info-bg);
+  border-color: var(--alert-info-border);
+  color: var(--alert-info-text);
+}
+
+/* --- TOOLTIP --- */
+html :where(.tooltip-content) {
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  box-shadow: var(--tooltip-shadow);
+  border-radius: var(--tooltip-border-radius);
+  padding: var(--tooltip-padding);
+}
+
+/* --- SWITCH --- */
+html :where(.switch-root) {
+  background-color: var(--switch-bg);
+  box-shadow: var(--switch-shadow);
+}
+
+html :where(.switch-root[data-state='checked']) {
+  background-color: var(--switch-bg-checked);
+}
+
+html :where(.switch-root[data-disabled]) {
+  background-color: var(--switch-bg-disabled);
+}
+
+html :where(.switch-thumb) {
+  background-color: var(--switch-thumb);
+}
+
+/* --- CHECKBOX --- */
+html :where(.checkbox-root) {
+  background-color: var(--checkbox-bg);
+  border-color: var(--checkbox-border);
+}
+
+html :where(.checkbox-root[data-state='checked']) {
+  background-color: var(--checkbox-bg-checked);
+  border-color: var(--checkbox-border-checked);
+  color: var(--checkbox-checkmark);
+}
+
+html :where(.checkbox-root:disabled) {
+  background-color: var(--checkbox-bg-disabled);
+}

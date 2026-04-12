@@ -1,0 +1,16 @@
+/**
+ * DESIGN TOKENS - INDEX
+ *
+ * Point d'entree unique pour tous les tokens du design system.
+ * Importe les couches dans l'ordre correct.
+ *
+ * Tailwind v4 Architecture:
+ * - theme.css: Contains @theme directive with ALL tokens (primitives + semantic)
+ * - components.css: Component-specific tokens and utilities
+ */
+
+/* Couche 1: Theme (Tailwind v4 @theme - source of truth for all tokens) */
+@import './theme.css';
+
+/* Couche 2: Components (tokens de composants) */
+@import './components.css';

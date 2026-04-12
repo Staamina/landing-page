@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "hooks": {},
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(rtk git:*)",
+      "Bash(gh:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(npm view:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(xargs cat:*)",
+      "Bash(awk:*)",
+      "Bash(apt-cache show:*)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(echo \"EXIT_CODE=$?\")",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(done)",
+      "WebSearch",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs"
+    ]
+  }
+}

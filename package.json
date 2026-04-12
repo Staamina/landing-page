@@ -1,0 +1,56 @@
+{
+  "name": "staamina",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "all:dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "check": "turbo run check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx,css,scss,yaml,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,mdx,css,scss,yaml,yml}\"",
+    "test": "turbo run test",
+    "test:integration": "turbo run test:integration",
+    "test:all": "turbo run test:all",
+    "storybook:dev": "turbo run dev --filter @staamina/ui",
+    "land:dev": "turbo run dev --filter landing-page",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "catalog:linting-formatting",
+    "@typescript-eslint/parser": "catalog:linting-formatting",
+    "chokidar-cli": "^3.0.0",
+    "eslint": "catalog:linting-formatting",
+    "eslint-config-prettier": "catalog:linting-formatting",
+    "eslint-import-resolver-typescript": "catalog:linting-formatting",
+    "eslint-plugin-import": "catalog:linting-formatting",
+    "eslint-plugin-jsx-a11y": "catalog:linting-formatting",
+    "eslint-plugin-react": "catalog:linting-formatting",
+    "husky": "catalog:monorepo-tools",
+    "lint-staged": "catalog:monorepo-tools",
+    "prettier": "catalog:linting-formatting",
+    "turbo": "catalog:monorepo-tools",
+    "typescript": "catalog:build-tools"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob": ">=10.5.0",
+      "axios": ">=1.15.0",
+      "fast-xml-parser": ">=5.3.5",
+      "handlebars": ">=4.7.9",
+      "lodash": ">=4.18.0",
+      "js-yaml": ">=4.1.1",
+      "esbuild": ">=0.25.0",
+      "tmp": ">=0.2.4"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --fix",
+    "*.{ts,tsx,js,jsx,json,md,mdx,css,scss,yaml,yml}": "prettier --write"
+  }
+}

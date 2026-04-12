@@ -1,0 +1,49 @@
+/**
+ * LANDING PAGE STYLES
+ *
+ * Tailwind v4: Uses @import "tailwindcss" for CSS-first configuration.
+ * Design tokens are imported from @staamina/ui package.
+ */
+@import 'tailwindcss';
+@source "../../node_modules/@staamina/ui";
+@import '@staamina/ui/tokens';
+
+@layer base {
+  * {
+    @apply border-border-default;
+  }
+
+  body {
+    @apply bg-app text-text-primary;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}

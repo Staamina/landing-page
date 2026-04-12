@@ -1,0 +1,99 @@
+name: Deploy Vercel App
+description: Builds and deploys a monorepo app to Vercel (production or preview).
+
+inputs:
+  app-directory:
+    description: Path to the app directory relative to repo root (e.g. apps/headquarter-system)
+    required: true
+  vercel-token:
+    description: Vercel authentication token
+    required: true
+  vercel-org-id:
+    description: Vercel organization ID
+    required: true
+  vercel-project-id:
+    description: Vercel project ID
+    required: true
+  environment:
+    description: Vercel deployment environment — production or preview
+    required: false
+    default: preview
+  production:
+    description: Set to 'true' to add --prod flag (production deployment)
+    required: false
+    default: 'false'
+  generate-prisma:
+    description: >
+      Set to 'true' when the app transitively depends on Prisma-generated types
+      (e.g. via @staamina/types). Runs prisma:generate before building.
+    required: false
+    default: 'false'
+  build-types:
+    description: Set to 'true' to compile @staamina/types before building the app
+    required: false
+    default: 'false'
+
+outputs:
+  url:
+    description: Deployed Vercel URL
+    value: ${{ steps.deploy.outputs.url }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
+
+    - name: Generate Prisma Client
+      if: inputs.generate-prisma == 'true'
+      shell: bash
+      run: pnpm --filter backend prisma:generate
+
+    - name: Build shared types
+      if: inputs.build-types == 'true'
+      shell: bash
+      run: pnpm --filter @staamina/types build
+
+    - name: Install Vercel CLI
+      shell: bash
+      # Use npm (not pnpm) to install globally — pnpm global installs can break
+      # Vercel CLI v50's internal `spawn sh` resolution on GitHub Actions runners.
+      run: npm install -g vercel@50.13.2
+
+    - name: Pull Vercel environment
+      shell: bash
+      env:
+        VERCEL_ORG_ID: ${{ inputs.vercel-org-id }}
+        VERCEL_PROJECT_ID: ${{ inputs.vercel-project-id }}
+      run: vercel pull --yes --environment=${{ inputs.environment }} --token ${{ inputs.vercel-token }}
+
+    - name: Build project
+      shell: bash
+      env:
+        VERCEL_ORG_ID: ${{ inputs.vercel-org-id }}
+        VERCEL_PROJECT_ID: ${{ inputs.vercel-project-id }}
+        PROD_FLAG: ${{ inputs.production == 'true' && '--prod' || '' }}
+      run: |
+        unset PNPM_HOME
+        vercel build $PROD_FLAG --token ${{ inputs.vercel-token }}
+
+    - name: Deploy to Vercel
+      id: deploy
+      shell: bash
+      env:
+        VERCEL_ORG_ID: ${{ inputs.vercel-org-id }}
+        VERCEL_PROJECT_ID: ${{ inputs.vercel-project-id }}
+        PROD_FLAG: ${{ inputs.production == 'true' && '--prod' || '' }}
+      run: |
+        URL=$(vercel deploy --prebuilt $PROD_FLAG --token ${{ inputs.vercel-token }})
+        echo "url=$URL" >> $GITHUB_OUTPUT

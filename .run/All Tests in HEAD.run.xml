@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Tests in HEAD" type="JavaScriptTestRunnerVitest">
+    <config value="$PROJECT_DIR$/apps/headquarter-system/vitest.config.ts" />
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.12.0/bin/node" />
+    <vitest-package value="$PROJECT_DIR$/apps/headquarter-system/node_modules/vitest" />
+    <working-dir value="$PROJECT_DIR$/apps/headquarter-system/" />
+    <envs />
+    <scope-kind value="ALL" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "generate-exports": {
+      "inputs": ["src/**/index.ts", "scripts/generate-exports.mjs"],
+      "outputs": ["package.json"],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["^generate-exports", "^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "build/**"],
+      "env": ["DATABASE_URL"]
+    },
+    "build:storybook": {
+      "outputs": ["dist/**"],
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "outputs": []
+    },
+    "lint:fix": {
+      "dependsOn": ["^lint:fix"],
+      "cache": false
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "outputs": [],
+      "cache": false
+    },
+    "check": {
+      "dependsOn": ["^check"],
+      "outputs": [],
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    },
+    "format:check": {
+      "outputs": []
+    },
+    "dev": {
+      "dependsOn": ["^generate-exports"],
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
+    },
+    "test:integration": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "cache": false,
+      "env": ["DATABASE_URL", "VALKEY_URL", "MINIO_ENDPOINT", "MINIO_PORT"]
+    },
+    "test:all": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "cache": false,
+      "env": ["DATABASE_URL", "VALKEY_URL", "MINIO_ENDPOINT", "MINIO_PORT"]
+    },
+    "prisma:migrate": {
+      "cache": false,
+      "env": ["DATABASE_URL"]
+    },
+    "prisma:seed": {
+      "cache": false,
+      "env": ["DATABASE_URL"]
+    },
+    "prisma:generate": {
+      "outputs": ["node_modules/.prisma/**", "node_modules/@prisma/client/**"]
+    }
+  }
+}

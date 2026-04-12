@@ -1,0 +1,169 @@
+{
+  "workflow_version": "1.2.0",
+  "timestamps": {
+    "started": "2026-01-07T08:18:11+01:00",
+    "last_updated": "2026-01-07T08:18:11+01:00"
+  },
+  "mode": "initial_scan",
+  "scan_level": "exhaustive",
+  "project_root": "/home/marwen-cherif/Staamina/Staamina",
+  "output_folder": "/home/marwen-cherif/Staamina/Staamina/docs",
+  "repository_type": "monorepo",
+  "project_parts": [
+    {
+      "part_id": "backend",
+      "root_path": "apps/backend",
+      "project_type_id": "backend",
+      "display_name": "Backend API (NestJS)"
+    },
+    {
+      "part_id": "field-maintenance-system",
+      "root_path": "apps/field-maintenance-system",
+      "project_type_id": "web",
+      "display_name": "Field Maintenance System (React/Vite)"
+    },
+    {
+      "part_id": "headquarter-system",
+      "root_path": "apps/headquarter-system",
+      "project_type_id": "web",
+      "display_name": "Headquarter System (React/Vite)"
+    },
+    {
+      "part_id": "landing-page",
+      "root_path": "apps/landing-page",
+      "project_type_id": "web",
+      "display_name": "Landing Page (Next.js)"
+    },
+    {
+      "part_id": "ui",
+      "root_path": "packages/ui",
+      "project_type_id": "library",
+      "display_name": "UI Component Library"
+    },
+    {
+      "part_id": "types",
+      "root_path": "packages/types",
+      "project_type_id": "library",
+      "display_name": "TypeScript Types Package"
+    }
+  ],
+  "project_types": [
+    {
+      "part_id": "backend",
+      "project_type_id": "backend",
+      "display_name": "Backend API (NestJS)"
+    },
+    {
+      "part_id": "field-maintenance-system",
+      "project_type_id": "web",
+      "display_name": "Field Maintenance System (React/Vite)"
+    },
+    {
+      "part_id": "headquarter-system",
+      "project_type_id": "web",
+      "display_name": "Headquarter System (React/Vite)"
+    },
+    {
+      "part_id": "landing-page",
+      "project_type_id": "web",
+      "display_name": "Landing Page (Next.js)"
+    },
+    {
+      "part_id": "ui",
+      "project_type_id": "library",
+      "display_name": "UI Component Library"
+    },
+    {
+      "part_id": "types",
+      "project_type_id": "library",
+      "display_name": "TypeScript Types Package"
+    }
+  ],
+  "completed_steps": [
+    {
+      "step": "step_1",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Classified as monorepo with 6 parts"
+    },
+    {
+      "step": "step_2",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Found 8 existing docs"
+    },
+    {
+      "step": "step_3",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Tech stack: NestJS backend, React/Vite/Next.js frontends, shared libraries"
+    },
+    {
+      "step": "step_4",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "API contracts, data models, UI components documented"
+    },
+    {
+      "step": "step_5",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Source tree analysis with annotations completed"
+    },
+    {
+      "step": "step_6",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Development and operations information extracted"
+    },
+    {
+      "step": "step_7",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Multi-part integration architecture documented"
+    },
+    {
+      "step": "step_8",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Architecture documentation for each part generated"
+    },
+    {
+      "step": "step_9",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Supporting documentation files created"
+    },
+    {
+      "step": "step_10",
+      "status": "completed",
+      "timestamp": "2026-01-07T08:18:11+01:00",
+      "summary": "Master index (INDEX.md) generated"
+    }
+  ],
+  "current_step": "completed",
+  "findings": {
+    "project_classification": "Monorepo with 6 parts: backend (NestJS), 3 web apps (React/Vite, Next.js), 2 libraries (UI components, types)"
+  },
+  "outputs_generated": [
+    "project-scan-report.json",
+    "existing-documentation-inventory.md",
+    "user-provided-context.md",
+    "technology-stack.md",
+    "api-contracts-backend.md",
+    "data-models-backend.md",
+    "ui-components-library.md",
+    "source-tree-analysis.md",
+    "development-operations.md",
+    "integration-architecture.md",
+    "architecture-overview.md",
+    "INDEX.md"
+  ],
+  "resume_instructions": "Documentation complete. All steps finished.",
+  "summary": {
+    "total_documentation_files": 12,
+    "parts_documented": 6,
+    "coverage": "exhaustive",
+    "status": "complete"
+  }
+}

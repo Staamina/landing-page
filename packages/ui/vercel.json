@@ -1,0 +1,4 @@
+{
+  "ignoreCommand": "[ \"$VERCEL_ENV\" = \"production\" ] || exit 1",
+  "outputDirectory": "dist"
+}

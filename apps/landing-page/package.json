@@ -1,0 +1,46 @@
+{
+  "name": "landing-page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 4001",
+    "build": "next build",
+    "start": "next start -p 4001",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "check": "pnpm lint && pnpm type-check"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "catalog:forms-validation",
+    "@radix-ui/react-dialog": "catalog:ui-libraries",
+    "@staamina/types": "workspace:*",
+    "@staamina/ui": "workspace:*",
+    "@tanstack/react-query": "catalog:state-management",
+    "@tanstack/react-table": "catalog:state-management",
+    "@vercel/speed-insights": "catalog:nextjs",
+    "class-variance-authority": "catalog:ui-libraries",
+    "clsx": "catalog:ui-libraries",
+    "lucide-react": "catalog:ui-libraries",
+    "next": "catalog:nextjs",
+    "next-intl": "catalog:nextjs",
+    "next-themes": "catalog:nextjs",
+    "react": "catalog:core-runtime",
+    "react-dom": "catalog:core-runtime",
+    "react-hook-form": "catalog:forms-validation",
+    "tailwind-merge": "catalog:ui-libraries",
+    "vaul": "catalog:ui-libraries",
+    "yup": "catalog:ui-utilities"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "catalog:build-tools",
+    "@types/node": "catalog:types",
+    "@types/react": "catalog:types",
+    "@types/react-dom": "catalog:types",
+    "eslint": "catalog:linting-formatting",
+    "eslint-config-next": "catalog:nextjs",
+    "postcss": "catalog:build-tools",
+    "tailwindcss": "catalog:build-tools",
+    "typescript": "catalog:build-tools"
+  }
+}

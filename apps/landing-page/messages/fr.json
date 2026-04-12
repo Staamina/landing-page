@@ -1,0 +1,409 @@
+{
+  "welcome": {
+    "title": "Bienvenue",
+    "subtitle": "Bienvenue dans notre application",
+    "description": "Ceci est une application Next.js avec support de l'internationalisation, authentification et composants UI modernes.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus"
+  },
+  "common": {
+    "language": "Langue",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "loading": "Chargement...",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "create": "Créer",
+    "view": "Voir",
+    "back": "Retour",
+    "close": "Fermer",
+    "menu": "Menu",
+    "home": "Accueil",
+    "administration": "Administration",
+    "name": "Nom",
+    "address": "Adresse",
+    "actions": "Actions",
+    "allFieldsRequired": "Tous les champs sont requis",
+    "companyNotFound": "Entreprise non trouvée",
+    "accessDenied": "Accès refusé",
+    "accessDeniedMessage": "Vous devez être SuperAdministrator ou Administrator.",
+    "accessDeniedGeneric": "Vous n'avez pas les permissions nécessaires."
+  },
+  "auth": {
+    "checkingAuthentication": "Vérification de l'authentification...",
+    "redirectingToLogin": "Redirection vers la connexion...",
+    "redirectingToConnection": "Redirection vers la connexion..."
+  },
+  "admin": {
+    "dashboard": "Tableau de bord",
+    "companies": "Entreprises",
+    "sites": "Sites",
+    "users": "Utilisateurs",
+    "settings": "Paramètres",
+    "manageCompanies": "Gérer les entreprises",
+    "manageSites": "Gérer les sites",
+    "manageUsers": "Gérer les utilisateurs",
+    "companiesDescription": "Gérez les entreprises, leurs points de ventes et leurs fournisseurs de services.",
+    "sitesDescription": "Gérez les sites et leurs affectations.",
+    "usersDescription": "Gérez les utilisateurs, leurs rôles et leurs affectations."
+  },
+  "companies": {
+    "title": "Gestion des Entreprises",
+    "create": "Créer une entreprise",
+    "createNew": "Créer une entreprise",
+    "edit": "Modifier l'entreprise",
+    "editCompany": "Modifier l'entreprise",
+    "companyName": "Nom de l'entreprise",
+    "headquartersAddress": "Adresse du siège social",
+    "creating": "Création...",
+    "saving": "Enregistrement...",
+    "deleteTitle": "Supprimer l'entreprise",
+    "deleteMessage": "Êtes-vous sûr de vouloir supprimer \"{name}\" ? Cette action est irréversible.",
+    "deleteCompany": "Supprimer l'entreprise",
+    "failedToLoad": "Échec du chargement des entreprises",
+    "failedToCreate": "Échec de la création de l'entreprise",
+    "failedToUpdate": "Échec de la mise à jour de l'entreprise",
+    "failedToDelete": "Échec de la suppression de l'entreprise",
+    "information": "Informations",
+    "createdOn": "Créée le",
+    "sites": "Sites",
+    "serviceProviders": "Fournisseurs de services",
+    "users": "Utilisateurs"
+  },
+  "landing": {
+    "hero": {
+      "title": "STAAMINA REND LES DYSFONCTIONNEMENTS PILOTABLES.",
+      "titleStaticPrefix": "STAAMINA REND LES DYSFONCTIONNEMENTS",
+      "titleVariants": {
+        "pilotables": "PILOTABLES.",
+        "anticipables": "ANTICIPABLES.",
+        "controlables": "CONTRÔLABLES.",
+        "maitrisables": "MAÎTRISABLES.",
+        "exploitables": "EXPLOITABLES.",
+        "mesurables": "MESURABLES.",
+        "tracables": "TRAÇABLES.",
+        "detectables": "DÉTECTABLES.",
+        "identifiables": "IDENTIFIABLES."
+      },
+      "subtitle": "LA SOLUTION DE MAINTENANCE POUR PILOTER INTELLIGEMMENT LES INCIDENTS DE VOS POINTS DE VENTE.",
+      "description": "LES PANNES COÛTENT CHER. LE MANQUE DE VISIBILITÉ ENCORE PLUS.",
+      "ctaPrimary": "Nous Contacter",
+      "ctaSecondary": "En savoir plus"
+    },
+    "features": {
+      "title": "DES FONCTIONNALITÉS AU SERVICE DE LA PERFORMANCE COLLECTIVE",
+      "subtitle": "Chaque fonctionnalité aligne vos équipes et accélère l'exécution.",
+      "items": {
+        "aiDeclaration": {
+          "title": "Déclaration assistée par IA",
+          "description": "Décrivez simplement le problème, Staamina structure l'information et déclenche le bon processus.",
+          "tag1": "Déclaration rapide",
+          "tag2": "Réduction des erreurs",
+          "tag3": "Fiabilisation des informations"
+        },
+        "intelligentRouting": {
+          "title": "Routage intelligent et automatique",
+          "description": "Orientation automatique des incidents vers le bon intervenant, via le bon canal et le bon process.",
+          "tag1": "Orientation immédiate",
+          "tag2": "Aucun transfert manuel",
+          "tag3": "Qualité de traitement renforcée"
+        },
+        "realTimeData": {
+          "title": "Data et suivi en temps réel",
+          "description": "Toutes les données sont mises à jour en continu pour piloter l'activité avec précision.",
+          "tag1": "Dashboard temps réel",
+          "tag2": "Mesure des délais de traitement",
+          "tag3": "Identification des récurrences"
+        },
+        "mapping": {
+          "title": "Cartographie de votre environnement",
+          "description": "Visualisez l'ensemble de vos sites, équipements et intervenants dans une vue claire et structurée.",
+          "tag1": "Vision globale du réseau",
+          "tag2": "Localisation précise des incidents",
+          "tag3": "Référentiel unique et fiable"
+        },
+        "unifiedRepository": {
+          "title": "Un référentiel métier unifié",
+          "description": "Chaque incident est contextualisé grâce à un référentiel métier complet et structuré.",
+          "tag1": "Équipements référencés",
+          "tag2": "Prestataires identifiés",
+          "tag3": "Motifs de panne standardisés"
+        },
+        "unifiedCommunication": {
+          "title": "Communication unifiée & intégration",
+          "description": "Tous les échanges liés aux incidents, réunis et synchronisés avec vos outils existants.",
+          "tag1": "Centralisation des échanges",
+          "tag2": "Coordination prestataires externes",
+          "tag3": "Traçabilité des interactions"
+        }
+      }
+    },
+    "carousel": {
+      "introTitle": "NOS SECTEURS D'ACTIVITÉ",
+      "detailDescription": "UNE PLATEFORME UNIQUE POUR PILOTER LA MAINTENANCE DES INFRASTRUCTURES, QUEL QUE SOIT LE SECTEUR D'ACTIVITÉ.",
+      "ctaLabel": "Découvrir",
+      "backButton": "Retour",
+      "learnMore": "En savoir plus",
+      "sectors": {
+        "retail": {
+          "alt": "Retail",
+          "topic": "Retail",
+          "introDescription": "Dans les réseaux de magasins, la performance repose sur des infrastructures toujours opérationnelles. Staamina permet de centraliser, piloter et fiabiliser la maintenance de l'ensemble des équipements en point de vente.",
+          "detailTitle": "Retail",
+          "specifications": {
+            "cityCenterStore": "Magasin de centre-ville",
+            "mallBoutique": "Boutique de centre commercial",
+            "flagship": "Flagship",
+            "cornerShopInShop": "Corner / shop-in-shop",
+            "outlet": "Outlet",
+            "showroom": "Showroom",
+            "popUpStore": "Pop-up store"
+          }
+        },
+        "restaurant": {
+          "alt": "Restauration & Food Service",
+          "topic": "Restauration & Food Service",
+          "introDescription": "Dans la restauration, la moindre panne peut impacter le service et l'expérience client. Staamina aide les équipes à assurer la continuité des infrastructures critiques, de la salle à la cuisine.",
+          "detailTitle": "Restauration & Food Service",
+          "specifications": {
+            "independentOrChain": "Restaurant (indépendant ou chaîne)",
+            "fastFood": "Fast-food / restauration rapide",
+            "coffeeShop": "Coffee shop",
+            "brasserie": "Brasserie",
+            "darkKitchen": "Dark kitchen",
+            "foodCourt": "Food court",
+            "bar": "Bar"
+          }
+        },
+        "fitness": {
+          "alt": "Fitness & Loisirs",
+          "topic": "Fitness & Loisirs",
+          "introDescription": "Dans les réseaux de magasins, la performance repose sur des infrastructures toujours opérationnelles. Staamina permet de centraliser, piloter et fiabiliser la maintenance de l'ensemble des équipements en point de vente.",
+          "detailTitle": "Fitness & Loisirs",
+          "specifications": {
+            "gym": "Salle de sport / fitness",
+            "sportsClub": "Club de sport",
+            "coachingStudio": "Studio de coaching",
+            "wellnessCenter": "Centre de bien-être",
+            "yogaPilates": "Salle de yoga / pilates",
+            "leisureCenter": "Centre de loisirs"
+          }
+        },
+        "agencies": {
+          "alt": "Agences & Services",
+          "topic": "Agences & Services",
+          "introDescription": "Dans les réseaux d'agences, la fiabilité des infrastructures conditionne la qualité du service client. Staamina offre une vision centralisée de la maintenance pour piloter efficacement tous les points de vente.",
+          "detailTitle": "Agences & Services",
+          "specifications": {
+            "bank": "Agence bancaire",
+            "insurance": "Agence d'assurance",
+            "realEstate": "Agence immobilière",
+            "travel": "Agence de voyage",
+            "services": "Agence de services (intérim, emploi, formation)"
+          }
+        },
+        "health": {
+          "alt": "Santé & Proximité",
+          "topic": "Santé & Proximité",
+          "introDescription": "Dans les établissements de santé et de proximité, chaque dysfonctionnement compte. Staamina sécurise le suivi et la maintenance des équipements essentiels au bon fonctionnement des sites.",
+          "detailTitle": "Santé & Proximité",
+          "specifications": {
+            "pharmacy": "Pharmacie",
+            "parapharmacy": "Parapharmacie",
+            "medicalCenter": "Centre médical",
+            "carePractice": "Cabinet de soins",
+            "opticAudioprothesist": "Centre d'optique / audioprothésiste"
+          }
+        },
+        "hospitality": {
+          "alt": "Hospitality & Accueil",
+          "topic": "Hospitality & Accueil",
+          "introDescription": "Dans l'hôtellerie et les lieux d'accueil, la continuité des infrastructures est un enjeu clé de satisfaction client. Staamina centralise la maintenance pour garantir des sites toujours opérationnels.",
+          "detailTitle": "Hospitality & Accueil",
+          "specifications": {
+            "hotel": "Hôtel",
+            "hotelResidence": "Résidence hôtelière",
+            "receptionHall": "Hall d'accueil / réception",
+            "conventionCenter": "Centre de congrès"
+          }
+        }
+      }
+    },
+    "problemStatement": {
+      "text": "UN POINT DE VENTE EST COMPLEXE. À L'ÉCHELLE D'UN RÉSEAU, LA COMPLEXITÉ DEVIENT EXPONENTIELLE. VOS OPÉRATIONS NE DEVRAIENT PAS L'ÊTRE."
+    },
+    "beforeAfter": {
+      "title": "STAAMINA STRUCTURE ET SIMPLIFIE LES OPÉRATIONS DE LA DÉCLARATION D'UN INCIDENT JUSQU'À SA RÉSOLUTION.",
+      "before": {
+        "label": "SANS STAAMINA",
+        "tagline": "Un incident, un enchaînement de démarches.",
+        "items": [
+          "Multiples prestataires, outils et process",
+          "Tâches manuelles chronophages",
+          "Désorganisation opérationnelle",
+          "Non-pilotage de la performance"
+        ]
+      },
+      "after": {
+        "label": "AVEC STAAMINA",
+        "tagline": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
+        "highlight": "Moins de démarches. Plus de maîtrise.",
+        "items": [
+          "Interface unique et intuitive",
+          "Processus fluides et automatisés",
+          "Pilotage précis de vos opérations",
+          "Un incident, une action"
+        ]
+      }
+    },
+    "multiDevice": {
+      "title": "PENSÉE POUR CHAQUE UTILISATEUR",
+      "subtitle": "OPTIMISÉE POUR CHAQUE ENVIRONNEMENT",
+      "cta": "Conçu pour tous les usages opérationnels, Staamina s'adapte nativement aux environnements existants.",
+      "devices": {
+        "mobile": {
+          "name": "MOBILE & TABLETTE",
+          "description": "Une interface pensée pour le terrain. Pour tous les profils opérationnels : magasin, région, audit, technique. Agissez en temps réel, sur site, et à portée de main."
+        },
+        "desktop": {
+          "name": "LAPTOP & DESKTOP",
+          "description": "Une interface complète pour le pilotage central. Vision globale, suivi en temps réel, analyse de la performance. Gérez vos prestataires, validez et arbitrez en toute maîtrise."
+        },
+        "kiosk": {
+          "name": "CAISSE & BORNE",
+          "description": "Une interface accessible à toute l'équipe d'un site. Une expérience simplifiée intégrée à votre environnement. Remontez et suivez vos demandes sans friction."
+        }
+      }
+    },
+    "franchise": {
+      "title": "UNE SOLUTION POUR ACCOMPAGNER VOS SUCCURSALES COMME VOS FRANCHISES",
+      "franchisees": {
+        "title": "Assistez avec efficacité vos franchisés",
+        "description": "Suivez l'ensemble de vos franchisés simplement. Apportez le bon support, au bon moment. Garantissez un niveau de qualité uniforme."
+      },
+      "branches": {
+        "title": "Assurez le support de vos succursales",
+        "description": "Centralisez tous les incidents et remontées terrain. Optimisez les opérations de vos équipes. Maîtrisez votre visibilité et votre efficacité."
+      }
+    },
+    "whyChoose": {
+      "title": "POURQUOI CHOISIR STAAMINA ?",
+      "subtitle": "Transformez vos incidents en données, et vos données en performance opérationnelle."
+    },
+    "forSiteOperators": {
+      "title": "Pour les Opérateurs et Gestionnaires de Sites",
+      "description": "Arrêtez de lutter avec les procédures compliquées pour les problèmes d'équipement. Staamina rend le signalement et le suivi des problèmes simples et directs.",
+      "benefits": {
+        "noHassle": "Fini les complications avec les procédures complexes",
+        "simpleReporting": "Signalement simple et intuitif des problèmes",
+        "quickResolution": "Résolution plus rapide des problèmes avec un suivi clair"
+      }
+    },
+    "forGroupManagers": {
+      "title": "Pour les Gestionnaires de Groupe",
+      "description": "Surveillez tous les problèmes des sites en temps réel depuis un tableau de bord centralisé. Coordonnez efficacement avec les services tiers et assurez-vous que rien ne passe entre les mailles du filet.",
+      "benefits": {
+        "realTimeMonitoring": "Surveillance en temps réel de tous les problèmes des sites",
+        "centralizedView": "Tableau de bord centralisé pour une visibilité complète",
+        "efficientCoordination": "Coordination efficace avec les services tiers"
+      }
+    },
+    "forServiceProviders": {
+      "title": "Pour les Prestataires de Services Tiers",
+      "description": "Recevez toutes les demandes de service avec des informations complètes sur les détails des équipements et les informations de contact. Effectuez des interventions efficacement avec tout le contexte dont vous avez besoin.",
+      "benefits": {
+        "completeInformation": "Informations complètes sur les équipements et les contacts",
+        "directContact": "Communication directe avec les opérateurs de site",
+        "efficientIntervention": "Interventions efficaces avec tous les détails nécessaires"
+      }
+    },
+    "model360": {
+      "title": "Aperçu 3D Interactif",
+      "subtitle": "Faites glisser pour faire pivoter et explorer nos modèles d'équipement à 360 degrés"
+    },
+    "cta": {
+      "title": "POURQUOI CHOISIR STAAMINA ?",
+      "description": "Transformez vos incidents en données, et vos données en performance opérationnelle.",
+      "buttonText": "Nous Contacter"
+    },
+    "contact": {
+      "form": {
+        "title": "Nous Contacter",
+        "description": "Pour vous proposer une démo personnalisée, nous avons juste besoin de quelques détails pour mieux comprendre vos besoins :",
+        "sections": {
+          "aboutYou": "Parlez-nous de vous...",
+          "aboutCompany": "... et de votre entreprise !"
+        },
+        "fields": {
+          "firstName": "Prénom",
+          "lastName": "Nom",
+          "email": "Email",
+          "phone": "Numéro de téléphone",
+          "jobTitle": "Poste",
+          "companyWebsite": "Site web de l'entreprise",
+          "companyType": "Type d'entreprise",
+          "annualRevenue": "Chiffre d'affaires annuel",
+          "industry": "Secteur d'activité",
+          "message": "Message"
+        },
+        "placeholders": {
+          "firstName": "Prénom",
+          "lastName": "Nom",
+          "email": "Email",
+          "phone": "Numéro de téléphone",
+          "jobTitle": "Poste",
+          "companyWebsite": "Site web de l'entreprise",
+          "companyType": "Sélectionner le type d'entreprise",
+          "annualRevenue": "Sélectionner le chiffre d'affaires",
+          "industry": "Sélectionner le secteur",
+          "message": "Parlez-nous de vos besoins..."
+        },
+        "options": {
+          "companyType": {
+            "startup": "Startup",
+            "sme": "PME",
+            "enterprise": "Grande entreprise",
+            "other": "Autre"
+          },
+          "annualRevenue": {
+            "0-100k": "0 - 100k",
+            "100k-500k": "100k - 500k",
+            "500k-1m": "500k - 1M",
+            "1m-5m": "1M - 5M",
+            "5m+": "5M+"
+          },
+          "industry": {
+            "retail": "Commerce de détail",
+            "hospitality": "Hôtellerie",
+            "healthcare": "Santé",
+            "manufacturing": "Industrie",
+            "realEstate": "Immobilier",
+            "other": "Autre"
+          }
+        },
+        "errors": {
+          "required": "Ce champ est requis",
+          "invalidEmail": "Veuillez entrer une adresse email valide",
+          "invalidUrl": "Veuillez entrer une URL valide"
+        },
+        "submit": "Envoyer le message",
+        "submitting": "Envoi en cours...",
+        "success": "Merci ! Votre message a été envoyé avec succès. Nous vous répondrons bientôt.",
+        "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
+      }
+    },
+    "seo": {
+      "title": "Staamina - Logiciel de Gestion de la Maintenance des Équipements",
+      "description": "Simplifiez la maintenance des équipements pour les sites. Surveillance en temps réel, coordination efficace et informations complètes pour les prestataires de services. Simplifiez vos procédures de maintenance dès aujourd'hui.",
+      "keywords": {
+        "equipmentMaintenance": "maintenance d'équipement",
+        "siteManagement": "gestion de site",
+        "facilityManagement": "gestion d'installation",
+        "serviceCoordination": "coordination de services",
+        "maintenanceSoftware": "logiciel de maintenance"
+      }
+    }
+  }
+}

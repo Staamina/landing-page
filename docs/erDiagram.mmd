@@ -1,0 +1,417 @@
+---
+config:
+  layout: elk
+---
+erDiagram
+    %% ============================================
+    %% USER & AUTHENTICATION
+    %% ============================================
+    User {
+        string id PK
+        string logtoId UK
+        string email UK
+        string name "nullable"
+        string companyId FK "nullable"
+        string siteId FK "nullable"
+        string serviceProviderId FK "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    Role {
+        string id PK
+        string name UK
+        string description "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    UserRole {
+        string id PK
+        string userId FK
+        string roleId FK
+        datetime createdAt
+    }
+
+    %% ============================================
+    %% LOCATION & ADDRESS
+    %% ============================================
+    Address {
+        string id PK
+        string addressLine
+        string secondAddressLine "nullable"
+        string city
+        string postalCode
+        string country
+        float lat "nullable"
+        float lng "nullable"
+        string floor "nullable"
+        string commercialCenterName "nullable"
+        string department "nullable"
+        LocationType locationType "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    %% ============================================
+    %% ORGANIZATION
+    %% ============================================
+    Company {
+        string id PK
+        string name
+        string addressId FK
+        boolean allowManualCriticalitySelection
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    Site {
+        string id PK
+        string name
+        string email "nullable"
+        string internalCode "nullable"
+        string addressId FK
+        string companyId FK
+        SiteType siteType
+        ActivityType activityType
+        json openingHours "nullable"
+        boolean isCritical
+        boolean isHighTrafficLocation
+        SiteStatus status "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    SiteBuilding {
+        string id PK
+        string siteId FK "unique"
+        int buildingFloorsCount
+        int publicFloorsCount
+        int technicalFloors "nullable"
+        boolean isBasementPresent
+        boolean isMezzaninePresent
+        AccessType accessType
+        boolean isStreetVisibility "nullable"
+        boolean isDeliveryAreaPresent
+        boolean isWasteAreaPresent
+        boolean isParkingAvailable
+        ParkingType parkingType "nullable"
+        int parkingSpotsCount "nullable"
+        boolean hasFreeParking
+        boolean hasEvCharging
+        boolean hasDisabilityAccess
+        boolean isElevatorPresent
+        boolean isEscalatorPresent
+        boolean isLoadingDockPresent
+        float area "nullable"
+        float salesArea "nullable"
+        float buildingWidth "nullable"
+        float buildingLength "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    Floor {
+        string id PK
+        int number
+        float height
+        string siteBuildingId FK
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    ServiceProvider {
+        string id PK
+        string name
+        string addressId FK
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    CompanyServiceProvider {
+        string id PK
+        string companyId FK
+        string serviceProviderId FK
+        datetime createdAt
+    }
+
+    %% ============================================
+    %% CATALOG (Brand, Category, Model)
+    %% ============================================
+    Brand {
+        string id PK
+        string name UK
+        string companyId FK "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    Category {
+        string id PK
+        string name
+        string description "nullable"
+        string parentId FK "nullable"
+        string companyId FK "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    Model {
+        string id PK
+        string name
+        string categoryId FK "nullable"
+        string companyId FK "nullable"
+        string brandId FK "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    %% ============================================
+    %% EQUIPMENT
+    %% ============================================
+    Equipment {
+        string id PK
+        string name
+        EquipmentType type
+        string siteId FK
+        string modelId FK "nullable"
+        string parentEquipmentId FK "nullable"
+        string floorId FK "nullable"
+        float positionX "nullable"
+        float positionY "nullable"
+        float positionZ "nullable"
+        float rotationX "nullable"
+        float rotationY "nullable"
+        float rotationZ "nullable"
+        float width "nullable"
+        float height "nullable"
+        float depth "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    ElectricalPanel {
+        string id PK
+        string equipmentId FK "unique"
+        int maxAmperage
+        string phaseType
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    PanelPort {
+        string id PK
+        string name
+        int portNumber
+        string panelId FK
+        string connectedEquipmentId FK "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    %% ============================================
+    %% INCIDENT MANAGEMENT
+    %% ============================================
+    Incident {
+        string id PK
+        int number
+        string companyId FK
+        string siteId FK
+        string equipmentId FK "nullable"
+        string description "nullable"
+        string issueId FK "nullable"
+        IncidentCriticality criticality
+        IncidentStatus status
+        ResolutionType resolutionType "nullable"
+        string errorCode "nullable"
+        string createdById FK
+        string validatedById FK "nullable"
+        string validationRejectedReason "nullable"
+        int rating "nullable"
+        datetime scheduledAt "nullable"
+        datetime resolvedAt "nullable"
+        datetime closedAt "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    IncidentEvent {
+        string id PK
+        string incidentId FK
+        string userId FK "nullable"
+        string userName
+        IncidentEventType eventType
+        json metadata "nullable"
+        datetime createdAt
+    }
+
+    IncidentDraft {
+        string id PK
+        string companyId FK
+        string siteId FK
+        string userId FK "unique"
+        string equipmentId FK "nullable"
+        string description "nullable"
+        IncidentCriticality criticality "nullable"
+        string errorCode "nullable"
+        datetime scheduledAt "nullable"
+        json draftData "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    IncidentComment {
+        string id PK
+        string incidentId FK
+        string userId FK
+        text content
+        boolean isInternal
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    IncidentAttachment {
+        string id PK
+        string incidentId FK
+        string userId FK
+        string fileName
+        int fileSize "nullable"
+        string mimeType "nullable"
+        string storageUrl
+        AttachmentType attachmentType
+        datetime uploadedAt
+    }
+
+    CompanyCriticalityMatrix {
+        string id PK
+        string companyId FK
+        EquipmentType equipmentType
+        ActivityType activityType
+        IncidentCriticality criticality
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    %% ============================================
+    %% ISSUE MANAGEMENT
+    %% ============================================
+    Issue {
+        string id PK
+        string name UK
+        string description "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    IssueGroup {
+        string id PK
+        string name UK
+        string description "nullable"
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    IssueGroupEquipment {
+        string id PK
+        string issueGroupId FK
+        string equipmentId FK
+        datetime createdAt
+    }
+
+    IssueGroupCategory {
+        string id PK
+        string issueGroupId FK
+        string categoryId FK
+        datetime createdAt
+    }
+
+    IssueGroupIssue {
+        string id PK
+        string issueGroupId FK
+        string issueId FK
+        datetime createdAt
+    }
+
+    %% ============================================
+    %% RELATIONSHIPS - User & Auth
+    %% ============================================
+    User ||--o{ UserRole : has
+    Role ||--o{ UserRole : assigned_to
+    User }o--o| Company : belongs_to
+    User }o--o| Site : works_at
+    User }o--o| ServiceProvider : works_for
+
+    %% ============================================
+    %% RELATIONSHIPS - Address
+    %% ============================================
+    Address ||--o{ Company : locates
+    Address ||--o{ Site : locates
+    Address ||--o{ ServiceProvider : locates
+
+    %% ============================================
+    %% RELATIONSHIPS - Organization
+    %% ============================================
+    Company ||--o{ Site : owns
+    Company ||--o{ CompanyServiceProvider : contracts
+    ServiceProvider ||--o{ CompanyServiceProvider : serves
+    Site ||--o| SiteBuilding : has
+    SiteBuilding ||--o{ Floor : contains
+
+    %% ============================================
+    %% RELATIONSHIPS - Catalog
+    %% ============================================
+    Company ||--o{ Brand : owns
+    Company ||--o{ Category : defines
+    Company ||--o{ Model : defines
+    Category ||--o{ Category : contains
+    Category ||--o{ Model : classifies
+    Brand ||--o{ Model : manufactures
+
+    %% ============================================
+    %% RELATIONSHIPS - Equipment
+    %% ============================================
+    Site ||--o{ Equipment : houses
+    Floor ||--o{ Equipment : contains
+    Model ||--o{ Equipment : instantiates
+    Equipment ||--o{ Equipment : contains
+    Equipment ||--o| ElectricalPanel : extends
+    ElectricalPanel ||--o{ PanelPort : has
+    PanelPort }o--o| Equipment : powers
+
+    %% ============================================
+    %% RELATIONSHIPS - Incident Management
+    %% ============================================
+    Company ||--o{ Incident : tracks
+    Site ||--o{ Incident : reports
+    Equipment ||--o{ Incident : has
+    Issue ||--o{ Incident : categorizes
+    User ||--o{ Incident : creates
+    User ||--o{ Incident : validates
+
+    Incident ||--o{ IncidentEvent : logs
+    User ||--o{ IncidentEvent : triggers
+
+    Company ||--o{ IncidentDraft : stores
+    Site ||--o{ IncidentDraft : has
+    User ||--o| IncidentDraft : drafts
+    Equipment ||--o{ IncidentDraft : references
+
+    Incident ||--o{ IncidentComment : has
+    User ||--o{ IncidentComment : writes
+
+    Incident ||--o{ IncidentAttachment : has
+    User ||--o{ IncidentAttachment : uploads
+
+    Company ||--o{ CompanyCriticalityMatrix : configures
+
+    %% ============================================
+    %% RELATIONSHIPS - Issue Management
+    %% ============================================
+    IssueGroup ||--o{ IssueGroupEquipment : links
+    Equipment ||--o{ IssueGroupEquipment : grouped_in
+
+    IssueGroup ||--o{ IssueGroupCategory : links
+    Category ||--o{ IssueGroupCategory : grouped_in
+
+    IssueGroup ||--o{ IssueGroupIssue : contains
+    Issue ||--o{ IssueGroupIssue : belongs_to

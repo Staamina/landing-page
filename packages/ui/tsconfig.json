@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/site-3d-viewer": ["./src/organisms/site-3d-viewer/index.ts"],
+      "@/site-3d-viewer/*": ["./src/organisms/site-3d-viewer/*"],
+      "@staamina/types": ["../types/index.ts"],
+      "@staamina/ui/utils": ["./src/utils.ts"],
+      "@staamina/ui/badge": ["./src/atoms/badge/index.ts"],
+      "@staamina/ui/button": ["./src/atoms/button/index.ts"],
+      "@staamina/ui/input": ["./src/atoms/input/index.ts"],
+      "@staamina/ui/form-group": ["./src/molecules/form-group/index.ts"],
+      "@staamina/ui/user-avatar": ["./src/atoms/user-avatar/index.ts"],
+      "@staamina/ui/user-provider": ["./src/user-provider/index.ts"],
+      "@staamina/ui/card-button": ["./src/molecules/card-button/index.ts"],
+      "@staamina/ui/hooks": ["./src/hooks/index.ts"],
+      "@staamina/ui/modal": ["./src/molecules/modal/index.ts"],
+      "@staamina/ui/dropdown": ["./src/molecules/dropdown/index.ts"],
+      "@staamina/ui/i18n": ["./src/i18n/index.ts"],
+      "@staamina/ui/date-picker": ["./src/molecules/date-picker/index.ts"],
+      "@staamina/ui/country-dropdown": [
+        "./src/molecules/country-dropdown/index.ts"
+      ],
+      "@staamina/ui/autocomplete": ["./src/molecules/autocomplete/index.ts"],
+      "@staamina/ui/menu": ["./src/molecules/menu/index.ts"],
+      "@staamina/ui/selectable-card": [
+        "./src/molecules/selectable-card/index.ts"
+      ],
+      "@staamina/ui/search-input": ["./src/molecules/search-input/index.ts"],
+      "@staamina/ui/virtual-list": ["./src/molecules/virtual-list/index.ts"],
+      "@staamina/ui/header-portal": ["./src/organisms/header-portal/index.ts"]
+    }
+  },
+  "include": ["src", "index.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

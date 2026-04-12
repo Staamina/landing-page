@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    "dist",
+    "*.config.js",
+    "*.config.ts"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@staamina/types",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "type-check": "tsc --noEmit",
+    "check": "pnpm lint && pnpm type-check"
+  },
+  "devDependencies": {
+    "eslint": "catalog:linting-formatting",
+    "typescript": "catalog:build-tools"
+  }
+}

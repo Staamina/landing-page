@@ -1,0 +1,24 @@
+/**
+ * STORYBOOK STYLES
+ *
+ * Imports design tokens and provides Tailwind utilities for Storybook.
+ * All color definitions come from the tokens system.
+ *
+ * Tailwind v4: Uses @import "tailwindcss" for CSS-first configuration.
+ *
+ * @custom-variant dark: Override default prefers-color-scheme so dark: utilities
+ * respond to .dark class from withThemeByClassName addon, not system preference.
+ */
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+@import './tokens/index.css';
+
+@layer base {
+  * {
+    @apply border-border-default;
+  }
+
+  body {
+    @apply bg-app text-text-primary;
+  }
+}

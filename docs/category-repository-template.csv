@@ -1,0 +1,55 @@
+id,parentId,name,description,level,exampleEquipmentTypes,companyId
+CAT-ROOT-001,,Equipment Categories,Root category for all equipment classifications,0,ALL,null
+CAT-001,CAT-ROOT-001,Lighting Equipment,All lighting-related equipment,1,"LED_SPOTLIGHT,AMBIENT_LIGHTING,LED_STRIP",null
+CAT-001-001,CAT-001,LED Lighting,LED-based lighting solutions,2,"LED_SPOTLIGHT,LED_STRIP",null
+CAT-001-002,CAT-001,Ambient Lighting,General ambient lighting fixtures,2,AMBIENT_LIGHTING,null
+CAT-002,CAT-ROOT-001,Display & Presentation,Equipment for product display and presentation,1,"WALL_HANGER,MOBILE_HANGER,MANNEQUIN,PRESENTATION_TABLE,ACCESSORY_DISPLAY,VALET",null
+CAT-002-001,CAT-002,Hanging Systems,Wall and mobile hanging solutions,2,"WALL_HANGER,MOBILE_HANGER",null
+CAT-002-002,CAT-002,Mannequins & Displays,Mannequins and display accessories,2,"MANNEQUIN,VALET,ACCESSORY_DISPLAY",null
+CAT-002-003,CAT-002,Tables & Surfaces,Presentation tables and surfaces,2,PRESENTATION_TABLE,null
+CAT-003,CAT-ROOT-001,Security Equipment,Security and safety equipment,1,"ANTI_THEFT_GATE,ANTI_THEFT_TAG,TAG_DEACTIVATOR,SECURITY_CAMERA,DVR,INTRUSION_ALARM,FIRE_EXTINGUISHER,SMOKE_DETECTOR",null
+CAT-003-001,CAT-003,Anti-Theft Systems,Anti-theft detection and prevention,2,"ANTI_THEFT_GATE,ANTI_THEFT_TAG,TAG_DEACTIVATOR",null
+CAT-003-002,CAT-003,Surveillance Systems,Video surveillance and monitoring,2,"SECURITY_CAMERA,DVR",null
+CAT-003-003,CAT-003,Safety Equipment,Fire and safety protection,2,"FIRE_EXTINGUISHER,SMOKE_DETECTOR,INTRUSION_ALARM",null
+CAT-004,CAT-ROOT-001,Point of Sale,Point of sale and payment systems,1,"CASH_REGISTER,PAYMENT_TERMINAL,BARCODE_READER,RECEIPT_PRINTER,CONTACTLESS_PAYMENT_TERMINAL,LOYALTY_SYSTEM,SAFE,CASH_DRAWER",null
+CAT-004-001,CAT-004,Payment Processing,Payment terminals and processing,2,"PAYMENT_TERMINAL,CONTACTLESS_PAYMENT_TERMINAL",null
+CAT-004-002,CAT-004,Register Systems,Complete cash register systems,2,"CASH_REGISTER,CASH_DRAWER",null
+CAT-004-003,CAT-004,Peripheral Devices,Scanners and printers for POS,2,"BARCODE_READER,RECEIPT_PRINTER",null
+CAT-004-004,CAT-004,Additional Services,Loyalty and security systems,2,"LOYALTY_SYSTEM,SAFE",null
+CAT-005,CAT-ROOT-001,Storage & Organization,Storage and organization solutions,1,"METAL_SHELVING,MODULAR_SHELVING,STORAGE_BIN,UNPACKING_TABLE,SORTING_CART",null
+CAT-005-001,CAT-005,Shelving Systems,Storage shelving units,2,"METAL_SHELVING,MODULAR_SHELVING",null
+CAT-005-002,CAT-005,Storage Containers,Storage bins and containers,2,STORAGE_BIN,null
+CAT-005-003,CAT-005,Work Surfaces,Unpacking and sorting work areas,2,"UNPACKING_TABLE,SORTING_CART",null
+CAT-006,CAT-ROOT-001,Technology & IT,IT equipment and technology solutions,1,"COMPUTER,PRINTER,PHONE,TABLET,ACCOUNTING_SOFTWARE,STOCK_MANAGEMENT_SOFTWARE,INTERNAL_MESSAGING_SYSTEM",null
+CAT-006-001,CAT-006,Hardware,Computer and communication hardware,2,"COMPUTER,PRINTER,PHONE,TABLET",null
+CAT-006-002,CAT-006,Software Solutions,Business and management software,2,"ACCOUNTING_SOFTWARE,STOCK_MANAGEMENT_SOFTWARE,INTERNAL_MESSAGING_SYSTEM",null
+CAT-007,CAT-ROOT-001,Maintenance & Operations,Equipment for store maintenance and operations,1,"VACUUM_CLEANER,STEAM_CLEANER,STEAM_IRON,WASTE_BIN,RECYCLING_BIN,WASTE_COMPACTOR",null
+CAT-007-001,CAT-007,Cleaning Equipment,Cleaning and maintenance tools,2,"VACUUM_CLEANER,STEAM_CLEANER",null
+CAT-007-002,CAT-007,Garment Care,Equipment for garment preparation,2,STEAM_IRON,null
+CAT-007-003,CAT-007,Waste Management,Waste disposal and recycling,2,"WASTE_BIN,RECYCLING_BIN,WASTE_COMPACTOR",null
+CAT-008,CAT-ROOT-001,Specialized Equipment,Specialized equipment for specific functions,1,"FITTING_ROOM,FITTING_ROOM_BENCH,CALL_SYSTEM,SEWING_MACHINE,ACCESS_RAMP",null
+CAT-008-001,CAT-008,Fitting Rooms,Fitting room equipment,2,"FITTING_ROOM,FITTING_ROOM_BENCH",null
+CAT-008-002,CAT-008,Customer Service,Service and assistance systems,2,"CALL_SYSTEM,ACCESS_RAMP",null
+CAT-008-003,CAT-008,Workshop Equipment,Equipment for in-store workshops,2,SEWING_MACHINE,null
+CAT-009,CAT-ROOT-001,Digital & Media,Digital displays and media equipment,1,"DIGITAL_SCREEN,VIDEO_PROJECTOR,SOUND_SYSTEM,BANNER,PROMOTIONAL_POSTER",null
+CAT-009-001,CAT-009,Digital Displays,Digital screens and projectors,2,"DIGITAL_SCREEN,VIDEO_PROJECTOR",null
+CAT-009-002,CAT-009,Audio Systems,Audio and sound equipment,2,SOUND_SYSTEM,null
+CAT-009-003,CAT-009,Print Media,Printed promotional materials,2,"BANNER,PROMOTIONAL_POSTER",null
+CAT-010,CAT-ROOT-001,Electrical Infrastructure,Electrical panels and power distribution,1,"ELECTRICAL_PANEL",null
+CAT-010-001,CAT-010,Power Distribution,Electrical panels and power systems,2,ELECTRICAL_PANEL,null
+CAT-011,CAT-ROOT-001,Facilities & Amenities,Facility equipment and amenities,1,"COFFEE_MACHINE,REFRIGERATOR,MICROWAVE,DRINK_DISPENSER,LOCKER",null
+CAT-011-001,CAT-011,Kitchen Equipment,Kitchen and food service equipment,2,"COFFEE_MACHINE,REFRIGERATOR,MICROWAVE,DRINK_DISPENSER",null
+CAT-011-002,CAT-011,Storage Facilities,Personal storage solutions,2,LOCKER,null
+CAT-012,CAT-ROOT-001,Specialized Retail,Specialized equipment for specific retail types,1,"SHOPPING_CART,DISPLAY_CASE,PRICE_TAG,INTERACTIVE_KIOSK",null
+CAT-012-001,CAT-012,Customer Tools,Customer assistance tools,2,"SHOPPING_CART,INTERACTIVE_KIOSK",null
+CAT-012-002,CAT-012,Product Display,Product display and pricing,2,"DISPLAY_CASE,PRICE_TAG",null
+CAT-013,CAT-ROOT-001,Communication & Monitoring,Communication and monitoring equipment,1,"WALKIE_TALKIE,CAMERA",null
+CAT-013-001,CAT-013,Communication Devices,Internal communication tools,2,WALKIE_TALKIE,null
+CAT-013-002,CAT-013,Photography Equipment,Photo and video capture,2,"CAMERA,PHOTO_EDITING_SOFTWARE",null
+CAT-014,CAT-ROOT-001,Environmental Control,Environmental control systems,1,"AIR_CONDITIONING",null
+CAT-014-001,CAT-014,Climate Control,Heating and cooling systems,2,AIR_CONDITIONING,null
+CAT-015,CAT-ROOT-001,Specialized Facilities,Specialized facility equipment,1,"RUNNING_TRACK,PLAY_AREA",null
+CAT-015-001,CAT-015,Recreation Areas,Recreational and play areas,2,"RUNNING_TRACK,PLAY_AREA",null
+CAT-016,CAT-ROOT-001,Mirrors,Reflection and mirror equipment,1,"FLOOR_MIRROR,WALL_MIRROR",null
+CAT-016-001,CAT-016,Floor Mirrors,Standing and floor mirrors,2,FLOOR_MIRROR,null
+CAT-016-002,CAT-016,Wall Mirrors,Wall-mounted mirrors,2,WALL_MIRROR,null

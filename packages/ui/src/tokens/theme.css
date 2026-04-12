@@ -1,0 +1,563 @@
+/**
+ * TAILWIND V4 THEME CONFIGURATION
+ *
+ * This file uses the CSS-first @theme directive to define design tokens.
+ * In Tailwind v4, @theme exposes CSS variables as utility classes automatically.
+ *
+ * Variables defined here become available as:
+ * - CSS custom properties (e.g., var(--color-primitive-purple-600))
+ * - Tailwind utilities (e.g., bg-primitive-purple-600)
+ */
+
+@theme {
+  /* ========================================
+     PURPLE SCALE (Brand Primary)
+     ======================================== */
+  --color-primitive-purple-50: #faf5ff;
+  --color-primitive-purple-100: #f3e8ff;
+  --color-primitive-purple-200: #e9d5ff;
+  --color-primitive-purple-300: #d8b4fe;
+  --color-primitive-purple-400: #c084fc;
+  --color-primitive-purple-500: #a855f7;
+  --color-primitive-purple-600: #9333ea;
+  --color-primitive-purple-700: #7e22ce;
+  --color-primitive-purple-800: #6b21a8;
+  --color-primitive-purple-900: #581c87;
+  --color-primitive-purple-950: #3b0764;
+
+  /* ========================================
+     TEAL SCALE (Brand Secondary)
+     ======================================== */
+  --color-primitive-teal-50: #f0fdfa;
+  --color-primitive-teal-100: #ccfbf1;
+  --color-primitive-teal-200: #99f6e4;
+  --color-primitive-teal-300: #5eead4;
+  --color-primitive-teal-400: #2dd4bf;
+  --color-primitive-teal-500: #14b8a6;
+  --color-primitive-teal-600: #0d9488;
+  --color-primitive-teal-700: #0f766e;
+  --color-primitive-teal-800: #115e59;
+  --color-primitive-teal-900: #134e4a;
+  --color-primitive-teal-950: #042f2e;
+
+  /* ========================================
+     AMBER SCALE (Brand Tertiary)
+     ======================================== */
+  --color-primitive-amber-50: #fffbeb;
+  --color-primitive-amber-100: #fef3c7;
+  --color-primitive-amber-200: #fde68a;
+  --color-primitive-amber-300: #fcd34d;
+  --color-primitive-amber-400: #fbbf24;
+  --color-primitive-amber-500: #f59e0b;
+  --color-primitive-amber-600: #d97706;
+  --color-primitive-amber-700: #b45309;
+  --color-primitive-amber-800: #92400e;
+  --color-primitive-amber-900: #78350f;
+  --color-primitive-amber-950: #451a03;
+
+  /* ========================================
+     NEUTRAL SCALE (Grays & Blacks)
+     ======================================== */
+  --color-primitive-neutral-0: #ffffff;
+  --color-primitive-neutral-50: #fafafa;
+  --color-primitive-neutral-100: #f5f5f5;
+  --color-primitive-neutral-200: #e5e5e5;
+  --color-primitive-neutral-300: #d4d4d4;
+  --color-primitive-neutral-400: #a3a3a3;
+  --color-primitive-neutral-500: #737373;
+  --color-primitive-neutral-600: #525252;
+  --color-primitive-neutral-700: #404040;
+  --color-primitive-neutral-800: #262626;
+  --color-primitive-neutral-900: #171717;
+  --color-primitive-neutral-950: #0a0a0a;
+
+  /* ========================================
+     RED SCALE (Error/Danger)
+     ======================================== */
+  --color-primitive-red-50: #fef2f2;
+  --color-primitive-red-100: #fee2e2;
+  --color-primitive-red-200: #fecaca;
+  --color-primitive-red-300: #fca5a5;
+  --color-primitive-red-400: #f87171;
+  --color-primitive-red-500: #ef4444;
+  --color-primitive-red-600: #dc2626;
+  --color-primitive-red-700: #b91c1c;
+  --color-primitive-red-800: #991b1b;
+  --color-primitive-red-900: #7f1d1d;
+
+  /* ========================================
+     ORANGE SCALE (Warning)
+     ======================================== */
+  --color-primitive-orange-50: #fff7ed;
+  --color-primitive-orange-100: #ffedd5;
+  --color-primitive-orange-200: #fed7aa;
+  --color-primitive-orange-300: #fdba74;
+  --color-primitive-orange-400: #fb923c;
+  --color-primitive-orange-500: #f97316;
+  --color-primitive-orange-600: #ea580c;
+  --color-primitive-orange-700: #c2410c;
+  --color-primitive-orange-800: #9a3412;
+  --color-primitive-orange-900: #7c2d12;
+
+  /* ========================================
+     GREEN SCALE (Success)
+     ======================================== */
+  --color-primitive-green-50: #f0fdf4;
+  --color-primitive-green-100: #dcfce7;
+  --color-primitive-green-200: #bbf7d0;
+  --color-primitive-green-300: #86efac;
+  --color-primitive-green-400: #4ade80;
+  --color-primitive-green-500: #22c55e;
+  --color-primitive-green-600: #16a34a;
+  --color-primitive-green-700: #15803d;
+  --color-primitive-green-800: #166534;
+  --color-primitive-green-900: #14532d;
+
+  /* ========================================
+     BLUE SCALE (Info)
+     ======================================== */
+  --color-primitive-blue-50: #eff6ff;
+  --color-primitive-blue-100: #dbeafe;
+  --color-primitive-blue-200: #bfdbfe;
+  --color-primitive-blue-300: #93c5fd;
+  --color-primitive-blue-400: #60a5fa;
+  --color-primitive-blue-500: #3b82f6;
+  --color-primitive-blue-600: #2563eb;
+  --color-primitive-blue-700: #1d4ed8;
+  --color-primitive-blue-800: #1e40af;
+  --color-primitive-blue-900: #1e3a8a;
+
+  /* ========================================
+     OPACITY VALUES (as standalone tokens)
+     ======================================== */
+  --opacity-primitive-0: 0;
+  --opacity-primitive-5: 0.05;
+  --opacity-primitive-10: 0.1;
+  --opacity-primitive-20: 0.2;
+  --opacity-primitive-30: 0.3;
+  --opacity-primitive-40: 0.4;
+  --opacity-primitive-50: 0.5;
+  --opacity-primitive-60: 0.6;
+  --opacity-primitive-70: 0.7;
+  --opacity-primitive-80: 0.8;
+  --opacity-primitive-90: 0.9;
+  --opacity-primitive-100: 1;
+
+  /* ========================================
+     BRAND COLORS (Semantic mappings)
+     ======================================== */
+  --color-brand-primary: var(--color-primitive-purple-700);
+  --color-brand-primary-light: var(--color-primitive-purple-400);
+  --color-brand-primary-lighter: var(--color-primitive-purple-200);
+  --color-brand-primary-dark: var(--color-primitive-purple-800);
+  --color-brand-primary-darker: var(--color-primitive-purple-900);
+  --color-brand-primary-hover: var(--color-primitive-purple-600);
+
+  --color-brand-secondary: var(--color-primitive-teal-400);
+  --color-brand-secondary-light: var(--color-primitive-teal-300);
+  --color-brand-secondary-dark: var(--color-primitive-teal-600);
+  --color-brand-secondary-hover: var(--color-primitive-teal-500);
+
+  --color-brand-tertiary: var(--color-primitive-amber-400);
+  --color-brand-tertiary-light: var(--color-primitive-amber-300);
+  --color-brand-tertiary-dark: var(--color-primitive-amber-600);
+
+  /* ========================================
+     SEMANTIC COLORS (Status & Feedback)
+     ======================================== */
+  --color-semantic-error: var(--color-primitive-red-500);
+  --color-semantic-error-light: var(--color-primitive-red-400);
+  --color-semantic-error-lighter: var(--color-primitive-red-100);
+  --color-semantic-error-dark: var(--color-primitive-red-600);
+  --color-semantic-error-bg: var(--color-primitive-red-50);
+
+  --color-semantic-warning: var(--color-primitive-orange-500);
+  --color-semantic-warning-light: var(--color-primitive-orange-400);
+  --color-semantic-warning-lighter: var(--color-primitive-orange-100);
+  --color-semantic-warning-dark: var(--color-primitive-orange-600);
+  --color-semantic-warning-bg: var(--color-primitive-orange-50);
+
+  --color-semantic-success: var(--color-primitive-green-500);
+  --color-semantic-success-light: var(--color-primitive-green-400);
+  --color-semantic-success-lighter: var(--color-primitive-green-100);
+  --color-semantic-success-dark: var(--color-primitive-green-600);
+  --color-semantic-success-bg: var(--color-primitive-green-50);
+
+  --color-semantic-info: var(--color-primitive-blue-500);
+  --color-semantic-info-light: var(--color-primitive-blue-400);
+  --color-semantic-info-lighter: var(--color-primitive-blue-100);
+  --color-semantic-info-dark: var(--color-primitive-blue-600);
+  --color-semantic-info-bg: var(--color-primitive-blue-50);
+
+  --color-semantic-alert: var(--color-semantic-warning);
+  --color-semantic-alert-light: var(--color-semantic-warning-light);
+  --color-semantic-alert-bg: var(--color-semantic-warning-bg);
+
+  /* ========================================
+     BACKGROUND COLORS
+     ======================================== */
+  --color-app: var(--color-primitive-neutral-50);
+  --color-surface: var(--color-primitive-neutral-0);
+  --color-elevated: var(--color-primitive-neutral-0);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-subtle: var(--color-primitive-neutral-100);
+  --color-hover: var(--color-primitive-neutral-100);
+  --color-active: var(--color-primitive-neutral-200);
+  --color-disabled: var(--color-primitive-neutral-100);
+  --color-highlight: var(--color-primitive-amber-200);
+
+  /* ========================================
+     TEXT COLORS
+     ======================================== */
+  --color-text-primary: var(--color-primitive-neutral-900);
+  --color-text-secondary: var(--color-primitive-neutral-600);
+  --color-text-tertiary: var(--color-primitive-neutral-500);
+  --color-text-disabled: var(--color-primitive-neutral-400);
+  --color-text-placeholder: var(--color-primitive-neutral-400);
+  --color-text-inverse: var(--color-primitive-neutral-0);
+  --color-text-on-primary: var(--color-primitive-neutral-0);
+  --color-text-on-secondary: var(--color-primitive-neutral-0);
+  --color-text-on-dark: var(--color-primitive-neutral-0);
+  --color-text-link: var(--color-brand-primary);
+  --color-text-link-hover: var(--color-brand-primary-hover);
+
+  /* ========================================
+     BORDER COLORS
+     ======================================== */
+  --color-border-default: var(--color-primitive-neutral-200);
+  --color-border-strong: var(--color-primitive-neutral-300);
+  --color-border-subtle: var(--color-primitive-neutral-100);
+  --color-border-hover: var(--color-primitive-neutral-300);
+  --color-border-focus: var(--color-brand-primary);
+  --color-border-disabled: var(--color-primitive-neutral-200);
+  --color-border-error: var(--color-semantic-error);
+  --color-border-success: var(--color-semantic-success);
+
+  /* ========================================
+     ACTION COLORS
+     ======================================== */
+  --color-action-primary: var(--color-brand-primary);
+  --color-action-primary-hover: var(--color-brand-primary-hover);
+  --color-action-primary-active: var(--color-brand-primary-dark);
+  --color-action-primary-disabled: var(--color-primitive-neutral-300);
+
+  --color-action-secondary: var(--color-brand-secondary);
+  --color-action-secondary-hover: var(--color-brand-secondary-hover);
+  --color-action-secondary-active: var(--color-brand-secondary-dark);
+
+  --color-action-destructive: var(--color-semantic-error);
+  --color-action-destructive-hover: var(--color-semantic-error-dark);
+
+  /* ========================================
+     SELECT TOKENS
+     ======================================== */
+  --color-select-surface: var(--color-surface);
+  --color-select-item-highlight: var(--color-hover);
+
+  /* ========================================
+     SHADOW COLORS
+     ======================================== */
+  --color-shadow-sm: rgba(0, 0, 0, 0.05);
+  --color-shadow-md: rgba(0, 0, 0, 0.1);
+  --color-shadow-lg: rgba(0, 0, 0, 0.2);
+  --color-shadow-xl: rgba(0, 0, 0, 0.3);
+
+  /* ========================================
+     SPACING (Custom scale)
+     ======================================== */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+  --spacing-5xl: 8rem;
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* ========================================
+     FONT FAMILY
+     ======================================== */
+  --font-sans:
+    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    'Fira Code', 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+
+  /* ========================================
+     TRANSITION DURATIONS
+     ======================================== */
+  --transition-duration-fast: 150ms;
+  --transition-duration-base: 200ms;
+  --transition-duration-slow: 300ms;
+  --transition-duration-slower: 500ms;
+
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.8s ease-out;
+  --animate-fade-out: fade-out 0.6s ease-out;
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fade-in-down: fade-in-down 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-in-left: slide-in-left 0.6s ease-out;
+  --animate-slide-in-right: slide-in-right 0.6s ease-out;
+  --animate-scale-in: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-scale-out: scale-out 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 3s linear infinite;
+
+  /* ========================================
+     KEYFRAMES
+     ======================================== */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* ========================================
+   SPLASH SCREEN ANIMATIONS
+   Keyframes and utilities for the splash screen
+   ======================================== */
+@keyframes logo-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fade-in-delayed {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-logo-entrance {
+  animation: logo-entrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1.2s ease-out forwards;
+}
+
+/* ========================================
+   DARK MODE OVERRIDES (Class-based)
+   Applied when .dark class is present on a parent element
+   This complements the @media (prefers-color-scheme: dark) in @theme
+   ======================================== */
+.dark {
+  /* Background colors */
+  --color-app: var(--color-primitive-neutral-950);
+  --color-surface: var(--color-primitive-neutral-900);
+  --color-elevated: var(--color-primitive-neutral-800);
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-subtle: var(--color-primitive-neutral-800);
+  --color-hover: var(--color-primitive-neutral-800);
+  --color-active: var(--color-primitive-neutral-700);
+  --color-disabled: var(--color-primitive-neutral-800);
+  --color-highlight: rgba(120, 53, 15, 0.6);
+
+  /* Text colors */
+  --color-text-primary: var(--color-primitive-neutral-50);
+  --color-text-secondary: var(--color-primitive-neutral-400);
+  --color-text-tertiary: var(--color-primitive-neutral-500);
+  --color-text-disabled: var(--color-primitive-neutral-600);
+  --color-text-placeholder: var(--color-primitive-neutral-600);
+
+  /* Border colors */
+  --color-border-default: var(--color-primitive-neutral-700);
+  --color-border-strong: var(--color-primitive-neutral-600);
+  --color-border-subtle: var(--color-primitive-neutral-800);
+  --color-border-hover: var(--color-primitive-neutral-600);
+
+  /* Brand colors - slightly adjusted for dark mode */
+  --color-brand-primary: var(--color-primitive-purple-500);
+  --color-brand-primary-hover: var(--color-primitive-purple-400);
+  --color-brand-secondary: var(--color-primitive-teal-400);
+  --color-brand-secondary-hover: var(--color-primitive-teal-300);
+
+  /* Semantic colors - backgrounds adjusted */
+  --color-semantic-error-bg: rgba(239, 68, 68, 0.1);
+  --color-semantic-warning-bg: rgba(249, 115, 22, 0.1);
+  --color-semantic-success-bg: rgba(34, 197, 94, 0.1);
+  --color-semantic-info-bg: rgba(59, 130, 246, 0.1);
+
+  /* Shadow colors - more pronounced in dark mode */
+  --color-shadow-sm: rgba(0, 0, 0, 0.2);
+  --color-shadow-md: rgba(0, 0, 0, 0.3);
+  --color-shadow-lg: rgba(0, 0, 0, 0.4);
+  --color-shadow-xl: rgba(0, 0, 0, 0.5);
+}
