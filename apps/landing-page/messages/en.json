@@ -487,6 +487,28 @@
         "serviceCoordination": "service coordination",
         "maintenanceSoftware": "maintenance software"
       }
+    },
+    "footer": {
+      "tagline": "Everything that keeps your locations running, finally under control.",
+      "product": {
+        "title": "Product",
+        "solution": "Solution",
+        "features": "Features",
+        "sectors": "Sectors",
+        "signIn": "Sign In"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "contact": "Contact",
+        "faq": "FAQ"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "copyright": "All rights reserved."
     }
   }
 }

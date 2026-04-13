@@ -777,24 +777,53 @@ function DeviceRow({
   name,
   description,
   illustrationSide,
+  imageSrc,
+  imageWidth = '55%',
+  textPaddingLeft = 'px-6 sm:px-8 md:px-10',
+  illustrationPadding = 'p-4 sm:p-6',
 }: {
   name: string;
   description: string;
   illustrationSide: 'left' | 'right';
+  imageSrc: string;
+  imageWidth?: string;
+  textPaddingLeft?: string;
+  illustrationPadding?: string;
 }) {
   const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const { ref: illustrationRef, offset } = useParallax(40);
 
   const illustrationEl = (
-    <div className="flex items-center justify-center p-4 sm:p-6">
+    <div className={`flex items-center justify-center ${illustrationPadding}`}>
       <div
         ref={illustrationRef}
-        style={{ transform: `translateY(-${offset}px)` }}
-        className="w-full transition-transform duration-75 ease-out"
+        style={{
+          width: imageWidth,
+          transform: `translateY(-${offset}px)`,
+          transition: 'transform 75ms ease-out',
+          position: 'relative',
+        }}
       >
-        <div className="w-full h-48 sm:h-64 rounded-2xl border-2 border-[#a78bfa]/20 bg-[#a78bfa]/5 flex items-center justify-center">
-          <p className="text-white/20 text-sm">Illustration à ajouter</p>
-        </div>
+        {/* Glow behind image */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: '70%',
+            height: '70%',
+            background:
+              'radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.25) 0%, transparent 70%)',
+            top: '15%',
+            left: '15%',
+            filter: 'blur(24px)',
+          }}
+        />
+        <Image
+          src={imageSrc}
+          alt={name}
+          width={500}
+          height={360}
+          className="relative z-10 w-full h-auto object-contain drop-shadow-[0_0_32px_rgba(124,58,237,0.3)]"
+        />
       </div>
     </div>
   );
@@ -803,7 +832,7 @@ function DeviceRow({
     <div
       ref={textRef}
       className={cn(
-        'flex flex-col justify-center px-6 sm:px-8 md:px-10 py-6 transition-all duration-700 ease-out',
+        `flex flex-col justify-center ${textPaddingLeft} py-6 transition-all duration-700 ease-out`,
         isVisible
           ? 'opacity-100 translate-x-0'
           : `opacity-0 ${illustrationSide === 'left' ? 'translate-x-12' : '-translate-x-12'}`
@@ -867,9 +896,26 @@ function MultiDeviceSection({
   content: ReturnType<typeof getLandingPageContent>;
 }) {
   const devices = [
-    { ...content.multiDevice.devices[0], illustrationSide: 'left' as const }, // MOBILE & TABLETTE
-    { ...content.multiDevice.devices[1], illustrationSide: 'right' as const }, // LAPTOP & DESKTOP
-    { ...content.multiDevice.devices[2], illustrationSide: 'left' as const }, // CAISSE & BORNE
+    {
+      ...content.multiDevice.devices[0],
+      illustrationSide: 'left' as const,
+      imageSrc: '/device-mobile.webp',
+      imageWidth: '14%',
+    },
+    {
+      ...content.multiDevice.devices[1],
+      illustrationSide: 'right' as const,
+      imageSrc: '/device-desktop.webp',
+      imageWidth: '38%',
+      textPaddingLeft: 'pl-32 sm:pl-48 md:pl-64 pr-4',
+      illustrationPadding: 'px-4 sm:px-6 pt-16 sm:pt-24 pb-4',
+    },
+    {
+      ...content.multiDevice.devices[2],
+      illustrationSide: 'left' as const,
+      imageSrc: '/device-kiosk.webp',
+      imageWidth: '45%',
+    },
   ];
 
   return (
@@ -921,6 +967,10 @@ function MultiDeviceSection({
           name={device.name}
           description={device.description}
           illustrationSide={device.illustrationSide}
+          imageSrc={device.imageSrc}
+          imageWidth={device.imageWidth}
+          textPaddingLeft={device.textPaddingLeft}
+          illustrationPadding={device.illustrationPadding}
         />
       ))}
     </section>

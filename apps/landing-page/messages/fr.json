@@ -371,7 +371,7 @@
     "cta": {
       "title": "POURQUOI CHOISIR STAAMINA ?",
       "titleLine": "PRÊT À SIMPLIFIER VOS OPÉRATIONS ?",
-      "description": "Transformez vos incidents en données, et vos données en performance opérationnelle.",
+      "description": "Découvrez comment Staamina fonctionne.",
       "buttonText": "Nous Contacter"
     },
     "contact": {
@@ -496,6 +496,28 @@
         "serviceCoordination": "coordination de services",
         "maintenanceSoftware": "logiciel de maintenance"
       }
+    },
+    "footer": {
+      "tagline": "Tout ce qui fait fonctionner vos points de vente, enfin sous contrôle.",
+      "product": {
+        "title": "Produit",
+        "solution": "Solution",
+        "features": "Fonctionnalités",
+        "sectors": "Secteurs",
+        "signIn": "Se connecter"
+      },
+      "company": {
+        "title": "Entreprise",
+        "about": "À propos",
+        "contact": "Contact",
+        "faq": "FAQ"
+      },
+      "legal": {
+        "title": "Légal",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation"
+      },
+      "copyright": "Tous droits réservés."
     }
   }
 }
