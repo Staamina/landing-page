@@ -2,14 +2,6 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { LinkButton } from '@staamina/ui/link-button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@staamina/ui/card';
 import {
   LandingCarousel,
   type LandingCarouselHandle,
@@ -19,7 +11,6 @@ import '@staamina/ui/landing-carousel/landing-carousel.css';
 import { cn } from '@staamina/ui/utils';
 import {
   Activity,
-  ArrowRight,
   BedDouble,
   CheckCircle2,
   Database,
@@ -33,9 +24,7 @@ import {
   ShoppingBag,
   Smartphone,
   Sparkles,
-  Store,
   Building2,
-  Wrench,
   Tablet,
   Utensils,
   X,
