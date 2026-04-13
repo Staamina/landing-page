@@ -518,6 +518,24 @@
         "terms": "Conditions d'utilisation"
       },
       "copyright": "Tous droits réservés."
+    },
+    "incidentPath": {
+      "straight": {
+        "step1": "Déclaration",
+        "step2": "Routage auto",
+        "step3": "Intervention",
+        "step4": "Résolution"
+      },
+      "zigzag": {
+        "step1": "Incident constaté",
+        "step2": "Qui appeler ?",
+        "step3": "Appel prestataire",
+        "step4": "Non disponible",
+        "step5": "Retransmission",
+        "step6": "En attente",
+        "step7": "Nouveau devis",
+        "step8": "Résolution"
+      }
     }
   }
 }

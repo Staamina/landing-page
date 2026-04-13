@@ -152,7 +152,6 @@ This monorepo uses a modern TypeScript-based stack with Turborepo for monorepo m
 | Linting       | ESLint     | 8.56.0  | Code quality and consistency     |
 | Formatting    | Prettier   | 3.2.5   | Code formatting                  |
 | Type Checking | TypeScript | 5.3.3   | Static type checking             |
-| Git Hooks     | Husky      | -       | Pre-commit hooks (if configured) |
 
 ## Summary
 

@@ -509,6 +509,24 @@
         "terms": "Terms of Service"
       },
       "copyright": "All rights reserved."
+    },
+    "incidentPath": {
+      "straight": {
+        "step1": "Report",
+        "step2": "Auto-routing",
+        "step3": "Intervention",
+        "step4": "Resolved"
+      },
+      "zigzag": {
+        "step1": "Incident noticed",
+        "step2": "Who to call?",
+        "step3": "Calling provider",
+        "step4": "Not available",
+        "step5": "Re-explaining",
+        "step6": "Still waiting",
+        "step7": "New estimate",
+        "step8": "Resolved"
+      }
     }
   }
 }

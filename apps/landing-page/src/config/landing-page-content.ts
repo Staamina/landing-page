@@ -114,6 +114,10 @@ export interface LandingPageContent {
     zones: { label: string; badges: string[] };
     equipements: { label: string; badges: string[] };
   };
+  incidentPath: {
+    straight: { steps: string[] };
+    zigzag: { steps: string[] };
+  };
   seo: {
     title: string;
     description: string;
@@ -417,6 +421,28 @@ export const getLandingPageContent = (
           t('landing.storeLayer.equipements.badges.1'),
           t('landing.storeLayer.equipements.badges.2'),
           t('landing.storeLayer.equipements.badges.3'),
+        ],
+      },
+    },
+    incidentPath: {
+      straight: {
+        steps: [
+          t('landing.incidentPath.straight.step1'),
+          t('landing.incidentPath.straight.step2'),
+          t('landing.incidentPath.straight.step3'),
+          t('landing.incidentPath.straight.step4'),
+        ],
+      },
+      zigzag: {
+        steps: [
+          t('landing.incidentPath.zigzag.step1'),
+          t('landing.incidentPath.zigzag.step2'),
+          t('landing.incidentPath.zigzag.step3'),
+          t('landing.incidentPath.zigzag.step4'),
+          t('landing.incidentPath.zigzag.step5'),
+          t('landing.incidentPath.zigzag.step6'),
+          t('landing.incidentPath.zigzag.step7'),
+          t('landing.incidentPath.zigzag.step8'),
         ],
       },
     },

@@ -53,6 +53,7 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 import { AnimatedTitle } from './animated-title';
 import { DarkVeil } from './dark-veil';
+import { IncidentPath } from './incident-path';
 import { StarBorderLink } from './star-border';
 import './star-border.css';
 
@@ -300,7 +301,7 @@ function ProblemStatementSection({
               }}
             />
             <Image
-              src="/store-isometric.png"
+              src="/store-isometric.webp"
               alt="Point de vente isométrique"
               width={1000}
               height={850}
@@ -432,6 +433,7 @@ function FeatureRow({
   items,
   accentColor,
   illustrationSide,
+  illustration,
 }: {
   label: string;
   sectionTitle?: React.ReactNode;
@@ -440,27 +442,30 @@ function FeatureRow({
   items: { text: string; type: 'positive' | 'negative' }[];
   accentColor: 'red' | 'brand';
   illustrationSide: 'left' | 'right';
+  illustration?: React.ReactNode;
 }) {
   const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const { ref: illustrationRef, offset } = useParallax(40);
 
   const illustrationEl = (
-    <div className="flex items-center justify-center p-8 sm:p-12">
+    <div className="flex items-center justify-center p-4 sm:p-8">
       <div
         ref={illustrationRef}
         style={{ transform: `translateY(-${offset}px)` }}
         className="w-full transition-transform duration-75 ease-out"
       >
-        <div
-          className={cn(
-            'w-full h-72 sm:h-96 rounded-2xl border-2 flex items-center justify-center',
-            accentColor === 'red'
-              ? 'border-red-500/20 bg-red-950/10'
-              : 'border-brand-primary/20 bg-brand-primary/5'
-          )}
-        >
-          <p className="text-text/30 text-sm">Illustration à ajouter</p>
-        </div>
+        {illustration ?? (
+          <div
+            className={cn(
+              'w-full h-72 sm:h-96 rounded-2xl border-2 flex items-center justify-center',
+              accentColor === 'red'
+                ? 'border-red-500/20 bg-red-950/10'
+                : 'border-brand-primary/20 bg-brand-primary/5'
+            )}
+          >
+            <p className="text-text/30 text-sm">Illustration à ajouter</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -603,6 +608,12 @@ function BeforeAfterSection({
           }))}
           accentColor="red"
           illustrationSide="left"
+          illustration={
+            <IncidentPath
+              variant="zigzag"
+              steps={content.incidentPath.zigzag.steps}
+            />
+          }
         />
         <FeatureRow
           sectionTitle={
@@ -629,6 +640,12 @@ function BeforeAfterSection({
           }))}
           accentColor="brand"
           illustrationSide="right"
+          illustration={
+            <IncidentPath
+              variant="straight"
+              steps={content.incidentPath.straight.steps}
+            />
+          }
         />
       </div>
     </section>
@@ -873,17 +890,12 @@ function DeviceRow({
     <div className="border-b border-white/5">
       <div className="overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          {illustrationSide === 'left' ? (
-            <>
-              {illustrationEl}
-              {textEl}
-            </>
-          ) : (
-            <>
-              {textEl}
-              {illustrationEl}
-            </>
-          )}
+          <div className={illustrationSide === 'right' ? 'order-first md:order-last' : ''}>
+            {illustrationEl}
+          </div>
+          <div className={illustrationSide === 'right' ? 'order-last md:order-first' : ''}>
+            {textEl}
+          </div>
         </div>
       </div>
     </div>
@@ -969,8 +981,8 @@ function MultiDeviceSection({
           illustrationSide={device.illustrationSide}
           imageSrc={device.imageSrc}
           imageWidth={device.imageWidth}
-          textPaddingLeft={device.textPaddingLeft}
-          illustrationPadding={device.illustrationPadding}
+          textPaddingLeft={'textPaddingLeft' in device ? device.textPaddingLeft : undefined}
+          illustrationPadding={'illustrationPadding' in device ? device.illustrationPadding : undefined}
         />
       ))}
     </section>
