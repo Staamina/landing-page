@@ -9,6 +9,14 @@
   "common": {
     "language": "Langue",
     "signIn": "Se connecter",
+    "nav": {
+      "problem": "Problématique",
+      "solution": "Solution",
+      "features": "Fonctionnalités",
+      "sectors": "Secteurs",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
     "signOut": "Se déconnecter",
     "loading": "Chargement...",
     "cancel": "Annuler",
@@ -201,7 +209,7 @@
             "insurance": "Agence d'assurance",
             "realEstate": "Agence immobilière",
             "travel": "Agence de voyage",
-            "services": "Agence de services (intérim, emploi, formation)"
+            "services": "Agence de services"
           }
         },
         "health": {
@@ -249,12 +257,12 @@
       "after": {
         "label": "AVEC STAAMINA",
         "tagline": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
-        "highlight": "Moins de démarches. Plus de maîtrise.",
+        "highlight": "Un incident, une action.",
         "items": [
           "Interface unique et intuitive",
           "Processus fluides et automatisés",
           "Pilotage précis de vos opérations",
-          "Un incident, une action"
+          "Moins de démarches. Plus de maîtrise."
         ]
       }
     },
@@ -393,6 +401,36 @@
         "success": "Merci ! Votre message a été envoyé avec succès. Nous vous répondrons bientôt.",
         "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
       }
+    },
+    "faq": {
+      "title": "VOUS AVEZ DES QUESTIONS ?",
+      "subtitle": "NOUS AVONS LES RÉPONSES.",
+      "items": [
+        {
+          "question": "Staamina est-il adapté à ma taille d'entreprise ?",
+          "answer": "Staamina s'adapte à tous les réseaux, qu'il s'agisse de 5 ou 500 points de vente. La plateforme est conçue pour évoluer avec votre organisation, sans coût ou complexité supplémentaire."
+        },
+        {
+          "question": "Combien de temps faut-il pour déployer Staamina ?",
+          "answer": "Le déploiement est rapide. Un réseau standard est opérationnel en moins de 2 semaines. Nos équipes vous accompagnent à chaque étape : configuration, formation et mise en production."
+        },
+        {
+          "question": "Faut-il installer une application sur chaque équipement ?",
+          "answer": "Non. Staamina fonctionne entièrement depuis le navigateur web ou via WhatsApp, sans installation requise sur les postes ou équipements existants. Une application mobile PWA est également disponible pour les techniciens terrain."
+        },
+        {
+          "question": "Comment Staamina s'intègre-t-il avec nos outils existants ?",
+          "answer": "Staamina propose des connecteurs natifs pour les principales suites RH, ERP et CMMS. Une API ouverte permet d'intégrer n'importe quel outil métier de votre écosystème."
+        },
+        {
+          "question": "Nos données sont-elles sécurisées ?",
+          "answer": "Oui. Les données sont hébergées en Europe, isolées par client (architecture multi-tenant stricte), et conformes au RGPD. Aucune donnée n'est partagée entre les tenants."
+        },
+        {
+          "question": "Est-ce que Staamina fonctionne sans connexion internet ?",
+          "answer": "L'application mobile pour techniciens est conçue en mode PWA avec support hors-ligne. Les actions réalisées sans connexion sont synchronisées automatiquement dès le retour du réseau."
+        }
+      ]
     },
     "seo": {
       "title": "Staamina - Logiciel de Gestion de la Maintenance des Équipements",

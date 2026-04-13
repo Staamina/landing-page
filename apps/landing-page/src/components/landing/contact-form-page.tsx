@@ -160,8 +160,18 @@ export function ContactFormPage() {
   };
 
   return (
-    <div className="min-h-screen bg-app text-default py-8 sm:py-12 md:py-16 px-2 sm:px-4 md:px-6">
-      <div className="mx-auto max-w-4xl">
+    <div
+      style={{ width: '100%' }}
+      className="min-h-screen bg-app text-default py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8"
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '56rem',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
         <Button
           onClick={() => router.push('/')}
           intent="tertiary"
@@ -172,19 +182,35 @@ export function ContactFormPage() {
           {t('common.back')}
         </Button>
 
-        <Card className="border border-gray-800 bg-surface">
+        <Card
+          style={{ width: '100%', display: 'block' }}
+          className="border border-gray-800 bg-surface"
+        >
           <CardHeader className="p-3 sm:p-6 md:p-8">
-            <CardTitle className="text-2xl sm:text-3xl font-bold text-default">
+            <CardTitle
+              style={{ display: 'block', width: '100%' }}
+              className="text-2xl sm:text-3xl font-bold text-default"
+            >
               {t('landing.contact.form.title')}
             </CardTitle>
-            <CardDescription className="text-gray-400 text-base sm:text-lg mt-2">
+            <CardDescription
+              style={{ display: 'block', width: '100%' }}
+              className="text-gray-400 text-base sm:text-lg mt-2"
+            >
               {t('landing.contact.form.description')}
             </CardDescription>
           </CardHeader>
           <CardContent className="p-3 sm:p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-default mb-4 sm:mb-6">
+            <form
+              onSubmit={handleSubmit}
+              style={{ width: '100%' }}
+              className="space-y-6 sm:space-y-8"
+            >
+              <div style={{ width: '100%' }}>
+                <h3
+                  style={{ display: 'block', width: '100%' }}
+                  className="text-lg sm:text-xl font-semibold text-default mb-4 sm:mb-6"
+                >
                   {t('landing.contact.form.sections.aboutYou')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -324,8 +350,11 @@ export function ContactFormPage() {
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-default mb-4 sm:mb-6">
+              <div style={{ width: '100%' }}>
+                <h3
+                  style={{ display: 'block', width: '100%' }}
+                  className="text-lg sm:text-xl font-semibold text-default mb-4 sm:mb-6"
+                >
                   {t('landing.contact.form.sections.aboutCompany')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

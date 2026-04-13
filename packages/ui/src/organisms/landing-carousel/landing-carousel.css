@@ -9,17 +9,17 @@
   --item2-z-index: 10;
   --item2-opacity: 1;
 
-  --item3-transform: translate(50%, 10%) scale(0.8);
-  --item3-filter: blur(10px);
+  --item3-transform: translate(50%, -5%) scale(0.8);
+  --item3-filter: blur(10px) brightness(0.5);
   --item3-z-index: 9;
-  --item3-opacity: 1;
+  --item3-opacity: 0.5;
 
-  --item4-transform: translate(90%, 20%) scale(0.5);
-  --item4-filter: blur(20px);
+  --item4-transform: translate(90%, -10%) scale(0.5);
+  --item4-filter: blur(20px) brightness(0.3);
   --item4-z-index: 8;
-  --item4-opacity: 1;
+  --item4-opacity: 0.25;
 
-  --item5-transform: translate(120%, 30%) scale(0.3);
+  --item5-transform: translate(120%, -15%) scale(0.3);
   --item5-filter: blur(40px);
   --item5-z-index: 7;
   --item5-opacity: 0;
@@ -30,12 +30,31 @@
   --slider-width: 1140px;
 }
 
+/* Wrapper */
+.landing-carousel__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Footer slot */
+.landing-carousel__footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+  margin-top: calc(-1 * var(--slider-height) * 0.28);
+  overflow: hidden;
+}
+
 /* Base Slider Container */
 .landing-carousel {
   position: relative;
   height: var(--slider-height);
   overflow: hidden;
   margin-top: -50px;
+  font-family: var(--font-roboto), sans-serif;
 }
 
 /* List Container */
@@ -72,6 +91,18 @@
   transform: translateY(-50%);
   object-fit: contain;
   margin-left: 120px;
+  filter: none;
+}
+
+/* Purple glow on item 2 (active) image only */
+.landing-carousel__item:nth-child(2) .landing-carousel__image {
+  filter: drop-shadow(0 0 32px rgba(167, 139, 250, 0.8))
+    drop-shadow(0 0 12px rgba(139, 92, 246, 0.6));
+}
+
+/* Image size variant */
+.landing-carousel__image--sm {
+  width: 60%;
 }
 
 /* Intro Section */
@@ -97,9 +128,11 @@
 }
 
 .landing-carousel__topic {
-  font-size: clamp(2em, 6vw, 4em);
+  font-size: clamp(1.6em, 4vw, 2.8em);
   font-weight: 500;
   margin-bottom: 0.5em;
+  line-height: 1;
+  color: #a78bfa;
 }
 
 .landing-carousel__description {
@@ -154,9 +187,9 @@
 }
 
 .landing-carousel__specifications {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
   margin-bottom: 1.5em;
 }
 
@@ -167,12 +200,21 @@
 }
 
 .landing-carousel__spec-label {
-  font-size: 0.875em;
-  color: var(--color-primitive-neutral-500, #737373);
+  font-size: 1.25em;
+  font-weight: 400;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ffffff;
   margin: 0;
 }
 
+.landing-carousel__spec-label::before {
+  content: '•';
+  margin-right: 0.4em;
+  color: #ffffff;
+}
+
 .landing-carousel__spec-value {
+  display: none;
   font-size: 1em;
   font-weight: 600;
   margin: 0;
@@ -204,7 +246,7 @@
 /* Controls */
 .landing-carousel__controls {
   position: absolute;
-  bottom: 20%;
+  bottom: 28%;
   left: 0;
   right: 0;
   width: 100%;
@@ -214,7 +256,7 @@
   align-items: center;
   pointer-events: none;
   z-index: 100;
-  padding: 0 20px;
+  padding: 0 280px;
 }
 
 .landing-carousel__control {
@@ -320,7 +362,6 @@
   bottom: -80px;
   left: 50%;
   margin-left: -60px;
-  pointer-events: auto;
   text-transform: uppercase;
   font-size: 0.875rem;
   display: flex;
@@ -430,9 +471,6 @@
   .landing-carousel__title,
 .landing-carousel__item:nth-child(2)
   .landing-carousel__intro
-  .landing-carousel__topic,
-.landing-carousel__item:nth-child(2)
-  .landing-carousel__intro
   .landing-carousel__description,
 .landing-carousel__item:nth-child(2)
   .landing-carousel__intro
@@ -444,7 +482,7 @@
 .landing-carousel__item:nth-child(2)
   .landing-carousel__intro
   .landing-carousel__topic {
-  animation-delay: 0.9s;
+  opacity: 1;
 }
 
 .landing-carousel__item:nth-child(2)
@@ -573,8 +611,8 @@
   :root {
     --slider-height: 600px;
     --slider-width: 900px;
-    --item3-transform: translate(40%, 10%) scale(0.8);
-    --item4-transform: translate(80%, 20%) scale(0.5);
+    --item3-transform: translate(40%, -5%) scale(0.8);
+    --item4-transform: translate(80%, -10%) scale(0.5);
   }
 
   .landing-carousel__item {
@@ -589,6 +627,10 @@
   .landing-carousel__intro,
   .landing-carousel__detail {
     width: 350px;
+  }
+
+  .landing-carousel__controls {
+    padding: 0 60px;
   }
 }
 
@@ -623,8 +665,8 @@
   }
 
   .landing-carousel__specifications {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75em;
+    flex-direction: column;
+    gap: 0.5em;
   }
 
   .landing-carousel__controls {
@@ -671,8 +713,8 @@
   :root {
     --slider-height: 600px;
     --item2-transform: translate(0, 0) scale(0.85);
-    --item3-transform: translate(0, 50%) scale(0.6);
-    --item4-transform: translate(0, 80%) scale(0.4);
+    --item3-transform: translate(0, 20%) scale(0.6);
+    --item4-transform: translate(0, 35%) scale(0.4);
   }
 
   .landing-carousel__list {
@@ -690,9 +732,15 @@
     position: relative;
     width: 90%;
     max-width: 350px;
+    max-height: 200px;
+    object-fit: contain;
     right: auto;
-    top: 20%;
+    top: 10%;
     margin: 0 auto;
+  }
+
+  .landing-carousel__footer {
+    margin-top: calc(-1 * var(--slider-height) * 0.15);
   }
 
   .landing-carousel__intro,
@@ -723,7 +771,7 @@
   }
 
   .landing-carousel__specifications {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0.5em;
   }
 
@@ -784,6 +832,15 @@
 
   .landing-carousel__topic {
     font-size: 1.5em;
+  }
+
+  .landing-carousel__footer {
+    margin-top: calc(-1 * var(--slider-height) * 0.1);
+  }
+
+  .landing-carousel__action-button {
+    padding: 0.5em 1em;
+    font-size: 0.875em;
   }
 
   .landing-carousel__control--prev,

@@ -47,10 +47,14 @@
       "js-yaml": ">=4.1.1",
       "esbuild": ">=0.25.0",
       "tmp": ">=0.2.4"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "eslint --fix",
     "*.{ts,tsx,js,jsx,json,md,mdx,css,scss,yaml,yml}": "prettier --write"
   }
 }

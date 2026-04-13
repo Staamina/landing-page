@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 interface AnimatedTitleProps {
   messages: string[];
   className?: string;
+  align?: 'left' | 'center';
 }
 
 type Phase = 'idle' | 'exiting' | 'resetting' | 'entering';
@@ -11,6 +12,7 @@ type Phase = 'idle' | 'exiting' | 'resetting' | 'entering';
 export function AnimatedTitle({
   messages,
   className = '',
+  align = 'center',
 }: AnimatedTitleProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>('idle');
@@ -72,11 +74,6 @@ export function AnimatedTitle({
       aria-live="polite"
       aria-label={messages[currentIndex]}
     >
-      {/*
-       * All words occupy the same grid cell (row-start-1 col-start-1).
-       * The browser sizes the cell to the widest rendered word — no character
-       * count heuristics needed, accented letters (Ô, Î, É…) are measured correctly.
-       */}
       {messages.map((msg, i) => (
         <span
           key={i}
@@ -86,9 +83,8 @@ export function AnimatedTitle({
           {msg}
         </span>
       ))}
-      {/* Animated word — absolutely positioned over the grid */}
       <span
-        className={`absolute inset-0 flex items-center justify-center whitespace-nowrap ${className}`}
+        className={`absolute inset-0 flex items-center ${align === 'left' ? 'justify-start' : 'justify-center'} whitespace-nowrap ${className}`}
         style={getWordStyle()}
       >
         {messages[currentIndex]}

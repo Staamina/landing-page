@@ -25,6 +25,7 @@
     "next": "catalog:nextjs",
     "next-intl": "catalog:nextjs",
     "next-themes": "catalog:nextjs",
+    "ogl": "^1.0.11",
     "react": "catalog:core-runtime",
     "react-dom": "catalog:core-runtime",
     "react-hook-form": "catalog:forms-validation",

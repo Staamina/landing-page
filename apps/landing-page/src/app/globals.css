@@ -11,6 +11,8 @@
 @layer base {
   * {
     @apply border-border-default;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   body {
@@ -19,6 +21,16 @@
 
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+}
+
+@keyframes gradient-sweep {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }
 

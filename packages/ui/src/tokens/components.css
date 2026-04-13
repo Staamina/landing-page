@@ -34,8 +34,7 @@
   --button-primary-border: transparent;
   --button-primary-shadow: 0 1px 2px 0 var(--color-shadow-sm);
   --button-primary-shadow-hover: 0 4px 6px -1px var(--color-shadow-md);
-  --button-primary-border-radius: 0.25rem;
-  /* 4px */
+  --button-primary-border-radius: 9999px;
 
   /* Button Secondary */
   --button-secondary-bg: var(--color-action-secondary);

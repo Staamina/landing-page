@@ -9,6 +9,14 @@
   "common": {
     "language": "Language",
     "signIn": "Sign In",
+    "nav": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "features": "Features",
+      "sectors": "Sectors",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
     "signOut": "Sign Out",
     "loading": "Loading...",
     "cancel": "Cancel",
@@ -393,6 +401,36 @@
         "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
         "error": "An error occurred while sending your message. Please try again later."
       }
+    },
+    "faq": {
+      "title": "GOT QUESTIONS?",
+      "subtitle": "WE HAVE THE ANSWERS.",
+      "items": [
+        {
+          "question": "Is Staamina suited to my company size?",
+          "answer": "Staamina adapts to all networks, whether you have 5 or 500 locations. The platform is designed to scale with your organisation, without added cost or complexity."
+        },
+        {
+          "question": "How long does it take to deploy Staamina?",
+          "answer": "Deployment is fast. A standard network is up and running in under 2 weeks. Our teams guide you through every step: configuration, training, and go-live."
+        },
+        {
+          "question": "Do I need to install an application on each device?",
+          "answer": "No. Staamina runs entirely from a web browser or via WhatsApp, with no installation required on existing workstations or devices. A mobile PWA is also available for field technicians."
+        },
+        {
+          "question": "How does Staamina integrate with our existing tools?",
+          "answer": "Staamina offers native connectors for major HR, ERP, and CMMS suites. An open API allows integration with any business tool in your ecosystem."
+        },
+        {
+          "question": "Is our data secure?",
+          "answer": "Yes. Data is hosted in Europe, isolated per client (strict multi-tenant architecture), and GDPR compliant. No data is shared between tenants."
+        },
+        {
+          "question": "Does Staamina work without an internet connection?",
+          "answer": "The mobile app for technicians is built as a PWA with offline support. Actions taken without a connection are automatically synced when the network is restored."
+        }
+      ]
     },
     "seo": {
       "title": "Staamina - Equipment Maintenance Management Software",

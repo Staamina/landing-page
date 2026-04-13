@@ -17,6 +17,7 @@ export interface SliderItem {
   id: number | string;
   image: string;
   alt: string;
+  imageClassName?: string;
   intro: {
     title: string;
     topic: string;
@@ -42,6 +43,7 @@ export interface LandingCarouselProps {
   showDetailView?: boolean;
   className?: string;
   onActiveItemChange?: (item: SliderItem) => void;
+  footer?: React.ReactNode;
 }
 
 export const LandingCarousel = React.forwardRef<
@@ -56,6 +58,7 @@ export const LandingCarousel = React.forwardRef<
       showDetailView = false,
       className = '',
       onActiveItemChange,
+      footer,
     },
     ref
   ) => {
@@ -118,7 +121,7 @@ export const LandingCarousel = React.forwardRef<
 
       unAcceptClick.current = window.setTimeout(() => {
         setIsClickable(true);
-      }, 2000);
+      }, 600);
     }, []);
 
     const handleNext = useCallback(() => {
@@ -161,109 +164,75 @@ export const LandingCarousel = React.forwardRef<
     }, []);
 
     return (
-      <div
-        className={`landing-carousel${isNext ? ' next' : ''}${isPrevious ? ' previous' : ''} ${className}`}
-        role="region"
-        aria-label="Product carousel"
-      >
-        <div className="landing-carousel__list">
-          {items.map((item, index) => (
-            <div
-              className="landing-carousel__item"
-              key={item.id}
-              aria-hidden={index !== 1}
+      <div className="landing-carousel__wrapper">
+        <div
+          className={`landing-carousel${isNext ? ' next' : ''}${isPrevious ? ' previous' : ''} ${className}`}
+          role="region"
+          aria-label="Product carousel"
+        >
+          <div className="landing-carousel__list">
+            {items.map((item, index) => (
+              <div
+                className="landing-carousel__item"
+                key={item.id}
+                aria-hidden={index !== 1}
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className={`landing-carousel__image${item.imageClassName ? ` ${item.imageClassName}` : ''}`}
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                />
+                <div className="landing-carousel__intro">
+                  <div className="landing-carousel__topic">
+                    {item.intro.topic}
+                  </div>
+                  <div className="landing-carousel__specifications">
+                    {item.detail.specifications.map((spec, j) => (
+                      <div key={j} className="landing-carousel__spec">
+                        <p className="landing-carousel__spec-label">
+                          {spec.label}
+                        </p>
+                        <p className="landing-carousel__spec-value">
+                          {spec.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="landing-carousel__controls">
+            <button
+              className="landing-carousel__control landing-carousel__control--prev"
+              onClick={handlePrevious}
+              disabled={!isClickable}
+              aria-label="Previous slide"
+              type="button"
             >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="landing-carousel__image"
-                loading={index < 3 ? 'eager' : 'lazy'}
-              />
-              <div
-                className={`landing-carousel__intro${showDetail ? ' hidden' : ''}`}
-              >
-                <div className="landing-carousel__title">
-                  {item.intro.title}
-                </div>
-                <div className="landing-carousel__topic">
-                  {item.intro.topic}
-                </div>
-                <div className="landing-carousel__description">
-                  {item.intro.description}
-                </div>
-                <button
-                  className="landing-carousel__cta"
-                  onClick={() => handleSeeMore()}
-                  aria-label={`View details for ${item.intro.topic}`}
-                >
-                  {item.intro.ctaLabel}
-                </button>
-              </div>
-              <div
-                className={`landing-carousel__detail${showDetail ? ' visible' : ''}`}
-              >
-                <div className="landing-carousel__detail-title">
-                  {item.detail.title}
-                </div>
-                <div className="landing-carousel__detail-description">
-                  {item.detail.description}
-                </div>
-                <div className="landing-carousel__specifications">
-                  {item.detail.specifications.map((spec, j) => (
-                    <div key={j} className="landing-carousel__spec">
-                      <p className="landing-carousel__spec-label">
-                        {spec.label}
-                      </p>
-                      <p className="landing-carousel__spec-value">
-                        {spec.value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className="landing-carousel__actions">
-                  {item.detail.actions.map((action, k) => (
-                    <button
-                      key={k}
-                      className="landing-carousel__action-button"
-                      onClick={action.onClick}
-                      type="button"
-                    >
-                      {action.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+              <ChevronLeft size={20} className={'text-text'} />
+            </button>
+            <button
+              className={`landing-carousel__control landing-carousel__control--back${showDetail ? ' visible' : ''}`}
+              onClick={handleBackToIntro}
+              aria-label="Back to overview"
+              type="button"
+            >
+              Back &#8599;
+            </button>
+            <button
+              className="landing-carousel__control landing-carousel__control--next"
+              onClick={handleNext}
+              disabled={!isClickable}
+              aria-label="Next slide"
+              type="button"
+            >
+              <ChevronRight size={20} className={'text-text'} />
+            </button>
+          </div>
         </div>
-        <div className="landing-carousel__controls">
-          <button
-            className="landing-carousel__control landing-carousel__control--prev"
-            onClick={handlePrevious}
-            disabled={!isClickable}
-            aria-label="Previous slide"
-            type="button"
-          >
-            <ChevronLeft size={20} className={'text-text'} />
-          </button>
-          <button
-            className={`landing-carousel__control landing-carousel__control--back${showDetail ? ' visible' : ''}`}
-            onClick={handleBackToIntro}
-            aria-label="Back to overview"
-            type="button"
-          >
-            Back &#8599;
-          </button>
-          <button
-            className="landing-carousel__control landing-carousel__control--next"
-            onClick={handleNext}
-            disabled={!isClickable}
-            aria-label="Next slide"
-            type="button"
-          >
-            <ChevronRight size={20} className={'text-text'} />
-          </button>
-        </div>
+        {footer && <div className="landing-carousel__footer">{footer}</div>}
       </div>
     );
   }

@@ -69,6 +69,11 @@ export interface LandingPageContent {
     description: string;
     benefits: string[];
   };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { question: string; answer: string }[];
+  };
   cta: {
     title: string;
     description: string;
@@ -265,6 +270,36 @@ export const getLandingPageContent = (
         t('landing.forServiceProviders.benefits.efficientIntervention'),
       ],
     },
+    faq: {
+      title: t('landing.faq.title'),
+      subtitle: t('landing.faq.subtitle'),
+      items: [
+        {
+          question: t('landing.faq.items.0.question'),
+          answer: t('landing.faq.items.0.answer'),
+        },
+        {
+          question: t('landing.faq.items.1.question'),
+          answer: t('landing.faq.items.1.answer'),
+        },
+        {
+          question: t('landing.faq.items.2.question'),
+          answer: t('landing.faq.items.2.answer'),
+        },
+        {
+          question: t('landing.faq.items.3.question'),
+          answer: t('landing.faq.items.3.answer'),
+        },
+        {
+          question: t('landing.faq.items.4.question'),
+          answer: t('landing.faq.items.4.answer'),
+        },
+        {
+          question: t('landing.faq.items.5.question'),
+          answer: t('landing.faq.items.5.answer'),
+        },
+      ],
+    },
     cta: {
       title: t('landing.cta.title'),
       description: t('landing.cta.description'),
@@ -294,6 +329,7 @@ export const getCarouselItems = (t: (key: string) => string): SliderItem[] => {
       id: 6,
       key: 'hospitality',
       image: '/image6.png',
+      imageClassName: 'landing-carousel__image--sm',
       specifications: [
         'hotel',
         'hotelResidence',
@@ -366,6 +402,10 @@ export const getCarouselItems = (t: (key: string) => string): SliderItem[] => {
     id: sector.id,
     image: sector.image,
     alt: t(`landing.carousel.sectors.${sector.key}.alt`),
+    imageClassName:
+      'imageClassName' in sector
+        ? (sector as { imageClassName?: string }).imageClassName
+        : undefined,
     intro: {
       title: introTitle,
       topic: t(`landing.carousel.sectors.${sector.key}.topic`),
