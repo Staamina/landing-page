@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import Image from 'next/image';
 import { LinkButton } from '@staamina/ui/link-button';
 import {
@@ -67,6 +68,24 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   tablet: Tablet,
 };
 
+function HighlightedText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return (
+            <span key={i} className="text-[#a78bfa]">
+              {part.slice(2, -2)}
+            </span>
+          );
+        }
+        return <React.Fragment key={i}>{part}</React.Fragment>;
+      })}
+    </>
+  );
+}
+
 export function LandingPage() {
   const t = useTranslations();
   const content = getLandingPageContent((key: string) => t(key));
@@ -79,8 +98,9 @@ export function LandingPage() {
       <BeforeAfterSection content={content} />
       <FeaturesSection content={content} />
       <MultiDeviceSection content={content} />
-      <UseCasesSection />
+      <UseCasesSection content={content} />
       <FranchiseSection content={content} />
+      <WhyChooseSection content={content} />
       <FAQSection content={content} />
       <CTASection content={content} />
     </div>
@@ -130,7 +150,7 @@ function HeroSection({
               style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
             >
               <span className="text-[#a78bfa]">STAAMINA</span>
-              {' REND LES DYSFONCTIONNEMENTS '}
+              {content.hero.titleMiddle}
               <AnimatedTitle
                 messages={content.hero.titleVariants}
                 className="inline font-bold text-[#a78bfa]"
@@ -143,10 +163,8 @@ function HeroSection({
             className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full leading-tight mt-12 sm:mt-16 text-center"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
-            LA SOLUTION DE <span className="text-[#a78bfa]">MAINTENANCE</span>{' '}
-            POUR <span className="text-[#a78bfa]">PILOTER INTELLIGEMMENT</span>{' '}
-            LES INCIDENTS DE VOS{' '}
-            <span className="text-[#a78bfa]">POINTS DE VENTE.</span>
+            <HighlightedText text={content.hero.subtitleLine1} />{' '}
+            <HighlightedText text={content.hero.subtitleLine2} />
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-16">
@@ -160,12 +178,61 @@ function HeroSection({
   );
 }
 
+type StoreLayer = 'domaines' | 'zones' | 'equipements';
+
 function ProblemStatementSection({
   content,
 }: {
   content: ReturnType<typeof getLandingPageContent>;
 }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const [activeLayer, setActiveLayer] = useState<StoreLayer | null>(null);
+
+  const storeLayerConfig: Record<
+    StoreLayer,
+    {
+      label: string;
+      color: string;
+      badges: { x: string; y: string; text: string }[];
+    }
+  > = {
+    domaines: {
+      label: content.storeLayer.domaines.label,
+      color: '#ede9fe',
+      badges: [
+        { x: '18%', y: '28%', text: content.storeLayer.domaines.badges[0] },
+        { x: '55%', y: '18%', text: content.storeLayer.domaines.badges[1] },
+        { x: '72%', y: '42%', text: content.storeLayer.domaines.badges[2] },
+        { x: '30%', y: '60%', text: content.storeLayer.domaines.badges[3] },
+      ],
+    },
+    zones: {
+      label: content.storeLayer.zones.label,
+      color: '#a78bfa',
+      badges: [
+        { x: '15%', y: '50%', text: content.storeLayer.zones.badges[0] },
+        { x: '42%', y: '30%', text: content.storeLayer.zones.badges[1] },
+        { x: '65%', y: '55%', text: content.storeLayer.zones.badges[2] },
+        { x: '50%', y: '65%', text: content.storeLayer.zones.badges[3] },
+      ],
+    },
+    equipements: {
+      label: content.storeLayer.equipements.label,
+      color: '#8b5cf6',
+      badges: [
+        { x: '20%', y: '42%', text: content.storeLayer.equipements.badges[0] },
+        { x: '48%', y: '22%', text: content.storeLayer.equipements.badges[1] },
+        { x: '70%', y: '38%', text: content.storeLayer.equipements.badges[2] },
+        { x: '35%', y: '68%', text: content.storeLayer.equipements.badges[3] },
+      ],
+    },
+  };
+
+  const handleToggle = (layer: StoreLayer) => {
+    setActiveLayer((prev) => (prev === layer ? null : layer));
+  };
+
+  const activeCfg = activeLayer ? storeLayerConfig[activeLayer] : null;
 
   return (
     <section
@@ -185,36 +252,128 @@ function ProblemStatementSection({
       >
         <div className="w-full md:w-[40%] px-8 sm:px-16 py-16 shrink-0">
           <p
-            className="font-bold text-white leading-snug text-left"
+            className="font-bold text-white text-left"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
               fontSize: 'clamp(1.1rem, 2.8vw, 3.5rem)',
+              lineHeight: '1.1',
             }}
           >
             <span className="block">
-              UN <span className="text-[#a78bfa]">POINT DE VENTE</span> EST{' '}
-              <span className="text-[#a78bfa]">COMPLEXE</span>.
+              <HighlightedText text={content.problemStatement.line1} />
             </span>
             <span className="block">
-              À L&apos;ÉCHELLE D&apos;UN{' '}
-              <span className="text-[#a78bfa]">RÉSEAU</span>, LA{' '}
-              <span className="text-[#a78bfa]">COMPLEXITÉ</span> DEVIENT{' '}
-              <span className="text-[#a78bfa]">EXPONENTIELLE</span>.
+              <HighlightedText text={content.problemStatement.line2} />
             </span>
             <span className="block">
-              VOS <span className="text-[#a78bfa]">OPÉRATIONS</span> NE
-              DEVRAIENT PAS L&apos;ÊTRE.
+              <HighlightedText text={content.problemStatement.line3} />
             </span>
           </p>
         </div>
-        <div className="w-full md:w-[60%] flex items-center justify-center">
-          <Image
-            src="/store-isometric.png"
-            alt="Point de vente isométrique"
-            width={1000}
-            height={850}
-            className="w-[80%] h-auto object-contain"
-          />
+
+        <div className="w-full md:w-[60%] flex flex-col items-center gap-6 py-8">
+          {/* Image container */}
+          <div className="relative w-[85%]">
+            {/* Dots background */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle, rgba(167,139,250,0.35) 1px, transparent 1px)',
+                backgroundSize: '24px 24px',
+                maskImage:
+                  'radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%)',
+                WebkitMaskImage:
+                  'radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%)',
+              }}
+            />
+            {/* Glow behind image */}
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                width: '60%',
+                height: '60%',
+                background:
+                  'radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.18) 0%, transparent 70%)',
+                top: '20%',
+                left: '20%',
+              }}
+            />
+            <Image
+              src="/store-isometric.png"
+              alt="Point de vente isométrique"
+              width={1000}
+              height={850}
+              className="w-full h-auto object-contain relative z-10"
+            />
+            {/* Layer badges */}
+            {activeCfg &&
+              activeCfg.badges.map((badge, i) => (
+                <div
+                  key={i}
+                  className="absolute z-20 pointer-events-none"
+                  style={{
+                    left: badge.x,
+                    top: badge.y,
+                    transform: 'translate(-50%, -50%)',
+                    opacity: activeLayer ? 1 : 0,
+                    transition: `opacity 300ms ease ${i * 60}ms, transform 300ms ease ${i * 60}ms`,
+                  }}
+                >
+                  <div
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap shadow-lg"
+                    style={{
+                      background: 'rgba(10,0,20,0.75)',
+                      border: `1px solid ${activeCfg.color}`,
+                      color: activeCfg.color,
+                      backdropFilter: 'blur(8px)',
+                      WebkitBackdropFilter: 'blur(8px)',
+                      boxShadow: `0 0 16px ${activeCfg.color}55`,
+                    }}
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      style={{ background: activeCfg.color }}
+                    />
+                    {badge.text}
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* Toggle buttons */}
+          <div className="flex items-center gap-3">
+            {(Object.keys(storeLayerConfig) as StoreLayer[]).map((layer) => {
+              const cfg = storeLayerConfig[layer];
+              const isActive = activeLayer === layer;
+              return (
+                <button
+                  key={layer}
+                  onClick={() => handleToggle(layer)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
+                  style={{
+                    fontFamily: 'var(--font-roboto), sans-serif',
+                    background: isActive
+                      ? `${cfg.color}22`
+                      : 'rgba(255,255,255,0.05)',
+                    border: `1px solid ${isActive ? cfg.color : 'rgba(255,255,255,0.15)'}`,
+                    color: isActive ? cfg.color : 'rgba(255,255,255,0.5)',
+                    boxShadow: isActive ? `0 0 16px ${cfg.color}33` : 'none',
+                  }}
+                >
+                  <span
+                    className="w-2 h-2 rounded-full flex-shrink-0 transition-all duration-200"
+                    style={{
+                      background: isActive
+                        ? cfg.color
+                        : 'rgba(255,255,255,0.3)',
+                    }}
+                  />
+                  {cfg.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
@@ -414,12 +573,11 @@ function BeforeAfterSection({
       id="solution"
       className="relative w-full"
       style={{
-        backgroundImage:
-          'radial-gradient(circle, rgba(167, 139, 250, 0.45) 1px, transparent 1px), linear-gradient(135deg, #000000 0%, #0d0014 40%, #1a0030 70%, #0d0014 100%)',
-        backgroundSize: '28px 28px, 100% 100%',
+        background:
+          'radial-gradient(ellipse 60% 50% at 5% 30%, rgba(109,40,217,0.22) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 95% 70%, rgba(79,70,229,0.18) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 50% 50%, rgba(124,58,237,0.06) 0%, transparent 60%), #000000',
       }}
     >
-      <div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
         <FeatureRow
           sectionTitle={
             <div className="space-y-2">
@@ -427,15 +585,13 @@ function BeforeAfterSection({
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                STAAMINA <span className="text-[#a78bfa]">STRUCTURE</span> ET{' '}
-                <span className="text-[#a78bfa]">SIMPLIFIE</span> LES OPÉRATIONS
+                <HighlightedText text={content.beforeAfter.row1line1} />
               </p>
               <p
                 className="text-2xl sm:text-3xl md:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                LA RÉSOLUTION D&apos;UN INCIDENT NE DEVRAIT PAS ÊTRE UN PARCOURS
-                D&apos;OBSTACLES.
+                {content.beforeAfter.row1line2}
               </p>
             </div>
           }
@@ -455,15 +611,13 @@ function BeforeAfterSection({
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                DE LA <span className="text-[#a78bfa]">DÉCLARATION</span>{' '}
-                D&apos;UN INCIDENT JUSQU&apos;À SA{' '}
-                <span className="text-[#a78bfa]">RÉSOLUTION</span>
+                <HighlightedText text={content.beforeAfter.row2line1} />
               </p>
               <p
                 className="text-2xl sm:text-3xl md:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                UN POINT D&apos;ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.
+                {content.beforeAfter.row2line2}
               </p>
             </div>
           }
@@ -600,23 +754,12 @@ function FeaturesSection({
             }}
           >
             <span className="block">
-              DES <span className="text-[#a78bfa]">FONCTIONNALITÉS</span> AU
-              SERVICE
+              <HighlightedText text={content.features.titleLine1} />
             </span>
             <span className="block">
-              DE LA <span className="text-[#a78bfa]">PERFORMANCE</span>{' '}
-              COLLECTIVE
+              <HighlightedText text={content.features.titleLine2} />
             </span>
           </h2>
-          <p
-            className="mt-4 text-white/50 font-normal"
-            style={{
-              fontFamily: 'Helvetica, Arial, sans-serif',
-              fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
-            }}
-          >
-            {content.features.subtitle}
-          </p>
         </div>
 
         {/* Grid */}
@@ -746,12 +889,10 @@ function MultiDeviceSection({
           }}
         >
           <span className="block">
-            <span className="text-[#a78bfa]">PENSÉE</span> POUR CHAQUE{' '}
-            <span className="text-[#a78bfa]">UTILISATEUR</span>
+            <HighlightedText text={content.multiDevice.titleLine1} />
           </span>
           <span className="block">
-            <span className="text-[#a78bfa]">OPTIMISÉE</span> POUR CHAQUE{' '}
-            <span className="text-[#a78bfa]">ENVIRONNEMENT</span>
+            <HighlightedText text={content.multiDevice.titleLine2} />
           </span>
         </h2>
         <div
@@ -766,10 +907,10 @@ function MultiDeviceSection({
           }}
         >
           <span style={{ display: 'block', width: '100%' }}>
-            CONÇU POUR TOUS LES USAGES OPÉRATIONNELS,
+            {content.multiDevice.ctaLine1}
           </span>
           <span style={{ display: 'block', width: '100%' }}>
-            STAAMINA S&apos;ADAPTE NATIVEMENT AUX ENVIRONNEMENTS EXISTANTS.
+            {content.multiDevice.ctaLine2}
           </span>
         </div>
       </div>
@@ -786,7 +927,11 @@ function MultiDeviceSection({
   );
 }
 
-function UseCasesSection() {
+function UseCasesSection({
+  content,
+}: {
+  content: ReturnType<typeof getLandingPageContent>;
+}) {
   const t = useTranslations();
   const carouselItems = getCarouselItems((key: string) => t(key));
   const carouselRef = useRef<LandingCarouselHandle>(null);
@@ -819,14 +964,10 @@ function UseCasesSection() {
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             <span className="block">
-              <span className="text-[#a78bfa]">STAAMINA</span> EST PENSÉE POUR
-              INTÉGRER TOUTES LES{' '}
-              <span className="text-[#a78bfa]">SPÉCIFICITÉS MÉTIERS</span>,
+              <HighlightedText text={content.carousel.subtitleLine1} />
             </span>
             <span className="block">
-              QUEL QUE SOIT{' '}
-              <span className="text-[#a78bfa]">LE SECTEUR D&apos;ACTIVITÉ</span>
-              .
+              <HighlightedText text={content.carousel.subtitleLine2} />
             </span>
           </p>
         </div>
@@ -907,10 +1048,9 @@ function FranchiseSection({
               fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
             }}
           >
-            <span className="block">UNE SOLUTION POUR ACCOMPAGNER</span>
+            <span className="block">{content.franchise.titleLine1}</span>
             <span className="block">
-              VOS <span className="text-[#a78bfa]">SUCCURSALES</span> COMME VOS{' '}
-              <span className="text-[#a78bfa]">FRANCHISES</span>
+              <HighlightedText text={content.franchise.titleLine2} />
             </span>
           </h2>
         </div>
@@ -973,6 +1113,168 @@ function FranchiseSection({
   );
 }
 
+function WhyChooseSection({
+  content,
+}: {
+  content: ReturnType<typeof getLandingPageContent>;
+}) {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
+  return (
+    <section
+      className="relative w-full"
+      style={{
+        background:
+          'radial-gradient(ellipse at 50% 100%, rgba(124,58,237,0.18) 0%, transparent 60%), #000000',
+      }}
+    >
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        {/* Header */}
+        <div
+          ref={ref}
+          className={cn(
+            'text-center mb-14 transition-all duration-700',
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          )}
+        >
+          <h2
+            className="font-bold text-white leading-tight"
+            style={{
+              fontFamily: 'var(--font-roboto), sans-serif',
+              fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
+            }}
+          >
+            <span className="block">
+              <HighlightedText text={content.whyChoose.titleHighlight} />
+            </span>
+          </h2>
+          <p
+            className="mt-4 text-white font-normal"
+            style={{
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)',
+            }}
+          >
+            {content.whyChoose.subtitle}
+          </p>
+        </div>
+
+        {/* Stats grid — 3 top + 2 bottom centered */}
+        <div className="flex flex-col gap-4 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
+            {content.whyChoose.stats.slice(0, 3).map((stat, index) => (
+              <StatCard key={index} stat={stat} index={index} />
+            ))}
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '2rem',
+              maxWidth: '48rem',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%',
+            }}
+          >
+            {content.whyChoose.stats.slice(3).map((stat, index) => (
+              <StatCard key={index + 3} stat={stat} index={index + 3} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function useCountUp({
+  target,
+  duration = 1800,
+  isActive,
+}: {
+  target: number;
+  duration?: number;
+  isActive: boolean;
+}) {
+  const [count, setCount] = useState(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [isActive, target, duration]);
+
+  return count;
+}
+
+function StatCard({
+  stat,
+  index,
+}: {
+  stat: { value: string; label: string };
+  index: number;
+}) {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
+
+  // Parse numeric value and suffix (e.g. "155%" → 155, "%")
+  const match = stat.value.match(/^(\d+)(.*)$/);
+  const target = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : '';
+
+  const count = useCountUp({ target, duration: 1800, isActive: isVisible });
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        'flex flex-col items-center text-center gap-3 p-7 transition-all duration-700',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      )}
+      style={{
+        transitionDelay: `${index * 80}ms`,
+      }}
+    >
+      <span
+        className="text-6xl sm:text-8xl font-normal leading-none"
+        style={{
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          background:
+            'linear-gradient(90deg, #a78bfa, #7c3aed, #c4b5fd, #7c3aed, #a78bfa)',
+          backgroundSize: '200% auto',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          animation: 'gradient-sweep 3s linear infinite',
+        }}
+      >
+        {isVisible ? `${count}${suffix}` : `0${suffix}`}
+      </span>
+      <p
+        className="text-base sm:text-lg font-bold text-white leading-snug"
+        style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
+      >
+        {stat.label}
+      </p>
+    </div>
+  );
+}
+
 function FAQSection({
   content,
 }: {
@@ -1001,7 +1303,7 @@ function FAQSection({
               fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
             }}
           >
-            VOUS AVEZ DES <span className="text-[#a78bfa]">QUESTIONS</span> ?
+            <HighlightedText text={content.faq.titleLine1} />
           </h2>
           <p
             className="font-bold text-white leading-tight"
@@ -1010,7 +1312,7 @@ function FAQSection({
               fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
             }}
           >
-            NOUS AVONS LES <span className="text-[#a78bfa]">RÉPONSES.</span>
+            <HighlightedText text={content.faq.titleLine2} />
           </p>
         </div>
 
@@ -1113,20 +1415,63 @@ function CTASection({
       id="contact"
       ref={ref}
       className={cn(
-        'py-12 sm:py-16 md:py-24 px-4 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-tertiary relative overflow-hidden',
+        'relative overflow-hidden py-24 sm:py-32 px-4',
         isVisible ? 'animate-scale-in opacity-100' : 'opacity-0'
       )}
+      style={{
+        background:
+          'linear-gradient(135deg, #4c1d95 0%, #6d28d9 25%, #7c3aed 50%, #a855f7 75%, #c084fc 100%)',
+      }}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.2),transparent_70%)]" />
-      <div className="container relative mx-auto text-center">
-        <div className="space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-on-primary px-2 wrap-break-word">
-            {content.cta.title}
+      {/* Grain texture overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E\")",
+          backgroundSize: '200px 200px',
+          opacity: 0.4,
+        }}
+      />
+      {/* Glow spots */}
+      <div
+        className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)',
+          transform: 'translateY(-50%)',
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(0,0,0,0.15) 0%, transparent 70%)',
+          transform: 'translateY(50%)',
+        }}
+      />
+
+      <div className="container relative z-10 mx-auto text-center">
+        <div className="flex flex-col items-center gap-2">
+          <h2
+            className="font-bold text-white leading-tight px-2"
+            style={{
+              fontFamily: 'var(--font-roboto), sans-serif',
+              fontSize: 'clamp(1.5rem, 4vw, 4rem)',
+            }}
+          >
+            {content.cta.titleLine}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-on-primary/90 mx-auto px-2 wrap-break-word max-w-[48rem]">
+          <p
+            className="text-white/90 mx-auto px-2 max-w-[48rem] font-normal"
+            style={{
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontSize: 'clamp(1.2rem, 2.2vw, 1.8rem)',
+            }}
+          >
             {content.cta.description}
           </p>
-          <StarBorderLink href="/contact" color="#a78bfa" speed="5s">
+          <StarBorderLink href="/contact" color="#ffffff" speed="4s">
             {content.cta.buttonText}
           </StarBorderLink>
         </div>

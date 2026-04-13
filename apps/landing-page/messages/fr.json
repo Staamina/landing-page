@@ -84,6 +84,7 @@
     "hero": {
       "title": "STAAMINA REND LES DYSFONCTIONNEMENTS PILOTABLES.",
       "titleStaticPrefix": "STAAMINA REND LES DYSFONCTIONNEMENTS",
+      "titleMiddle": " REND LES DYSFONCTIONNEMENTS ",
       "titleVariants": {
         "pilotables": "PILOTABLES.",
         "anticipables": "ANTICIPABLES.",
@@ -96,12 +97,16 @@
         "identifiables": "IDENTIFIABLES."
       },
       "subtitle": "LA SOLUTION DE MAINTENANCE POUR PILOTER INTELLIGEMMENT LES INCIDENTS DE VOS POINTS DE VENTE.",
+      "subtitleLine1": "LA SOLUTION DE **MAINTENANCE** POUR **PILOTER INTELLIGEMMENT**",
+      "subtitleLine2": "LES INCIDENTS DE VOS **POINTS DE VENTE**.",
       "description": "LES PANNES COÛTENT CHER. LE MANQUE DE VISIBILITÉ ENCORE PLUS.",
       "ctaPrimary": "Nous Contacter",
       "ctaSecondary": "En savoir plus"
     },
     "features": {
       "title": "DES FONCTIONNALITÉS AU SERVICE DE LA PERFORMANCE COLLECTIVE",
+      "titleLine1": "DES **FONCTIONNALITÉS** AU SERVICE",
+      "titleLine2": "DE LA **PERFORMANCE** COLLECTIVE",
       "subtitle": "Chaque fonctionnalité aligne vos équipes et accélère l'exécution.",
       "items": {
         "aiDeclaration": {
@@ -150,6 +155,8 @@
     },
     "carousel": {
       "introTitle": "NOS SECTEURS D'ACTIVITÉ",
+      "subtitleLine1": "**STAAMINA** EST PENSÉE POUR INTÉGRER TOUTES LES **SPÉCIFICITÉS MÉTIERS**,",
+      "subtitleLine2": "QUEL QUE SOIT **LE SECTEUR D'ACTIVITÉ**.",
       "detailDescription": "UNE PLATEFORME UNIQUE POUR PILOTER LA MAINTENANCE DES INFRASTRUCTURES, QUEL QUE SOIT LE SECTEUR D'ACTIVITÉ.",
       "ctaLabel": "Découvrir",
       "backButton": "Retour",
@@ -240,10 +247,17 @@
       }
     },
     "problemStatement": {
-      "text": "UN POINT DE VENTE EST COMPLEXE. À L'ÉCHELLE D'UN RÉSEAU, LA COMPLEXITÉ DEVIENT EXPONENTIELLE. VOS OPÉRATIONS NE DEVRAIENT PAS L'ÊTRE."
+      "text": "UN POINT DE VENTE EST COMPLEXE. À L'ÉCHELLE D'UN RÉSEAU, LA COMPLEXITÉ DEVIENT EXPONENTIELLE. VOS OPÉRATIONS NE DEVRAIENT PAS L'ÊTRE.",
+      "line1": "LA GESTION D'UN **POINT DE VENTE** EST **COMPLEXE**.",
+      "line2": "À L'ÉCHELLE D'UN **RÉSEAU**, LA **COMPLEXITÉ** DEVIENT **EXPONENTIELLE**.",
+      "line3": "VOS **OPÉRATIONS** NE DEVRAIENT PAS L'ÊTRE."
     },
     "beforeAfter": {
       "title": "STAAMINA STRUCTURE ET SIMPLIFIE LES OPÉRATIONS DE LA DÉCLARATION D'UN INCIDENT JUSQU'À SA RÉSOLUTION.",
+      "row1line1": "STAAMINA **STRUCTURE** ET **SIMPLIFIE** LES OPÉRATIONS",
+      "row1line2": "LA RÉSOLUTION D'UN INCIDENT NE DEVRAIT PAS ÊTRE UN PARCOURS D'OBSTACLES.",
+      "row2line1": "DE LA **DÉCLARATION** D'UN INCIDENT JUSQU'À SA **RÉSOLUTION**",
+      "row2line2": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
       "before": {
         "label": "SANS STAAMINA",
         "tagline": "Un incident, un enchaînement de démarches.",
@@ -268,7 +282,11 @@
     },
     "multiDevice": {
       "title": "PENSÉE POUR CHAQUE UTILISATEUR",
+      "titleLine1": "**PENSÉE** POUR CHAQUE **UTILISATEUR**",
+      "titleLine2": "**OPTIMISÉE** POUR CHAQUE **ENVIRONNEMENT**",
       "subtitle": "OPTIMISÉE POUR CHAQUE ENVIRONNEMENT",
+      "ctaLine1": "CONÇU POUR TOUS LES USAGES OPÉRATIONNELS,",
+      "ctaLine2": "STAAMINA S'ADAPTE NATIVEMENT AUX ENVIRONNEMENTS EXISTANTS.",
       "cta": "Conçu pour tous les usages opérationnels, Staamina s'adapte nativement aux environnements existants.",
       "devices": {
         "mobile": {
@@ -287,6 +305,8 @@
     },
     "franchise": {
       "title": "UNE SOLUTION POUR ACCOMPAGNER VOS SUCCURSALES COMME VOS FRANCHISES",
+      "titleLine1": "UNE SOLUTION POUR ACCOMPAGNER",
+      "titleLine2": "VOS **SUCCURSALES** COMME VOS **FRANCHISES**",
       "franchisees": {
         "title": "Assistez avec efficacité vos franchisés",
         "description": "Suivez l'ensemble de vos franchisés simplement. Apportez le bon support, au bon moment. Garantissez un niveau de qualité uniforme."
@@ -298,7 +318,24 @@
     },
     "whyChoose": {
       "title": "POURQUOI CHOISIR STAAMINA ?",
-      "subtitle": "Transformez vos incidents en données, et vos données en performance opérationnelle."
+      "titleHighlight": "POURQUOI CHOISIR **STAAMINA** ?",
+      "subtitle": "Transformez vos incidents en données, et vos données en performance opérationnelle.",
+      "stats": [
+        { "value": "155%", "label": "D'AMÉLIORATION DE LA FIABILITÉ DU PARC" },
+        { "value": "80%", "label": "DE RÉDUCTION DES TÂCHES MANUELLES" },
+        {
+          "value": "90%",
+          "label": "D'AMÉLIORATION DES DÉLAIS DE PRISE EN CHARGE"
+        },
+        {
+          "value": "80%",
+          "label": "D'AMÉLIORATION DU TEMPS MOYEN DE RÉSOLUTION"
+        },
+        {
+          "value": "85%",
+          "label": "DE RÉDUCTION DU TEMPS DE DÉTECTION DES INCIDENTS"
+        }
+      ]
     },
     "forSiteOperators": {
       "title": "Pour les Opérateurs et Gestionnaires de Sites",
@@ -333,6 +370,7 @@
     },
     "cta": {
       "title": "POURQUOI CHOISIR STAAMINA ?",
+      "titleLine": "PRÊT À SIMPLIFIER VOS OPÉRATIONS ?",
       "description": "Transformez vos incidents en données, et vos données en performance opérationnelle.",
       "buttonText": "Nous Contacter"
     },
@@ -404,6 +442,8 @@
     },
     "faq": {
       "title": "VOUS AVEZ DES QUESTIONS ?",
+      "titleLine1": "VOUS AVEZ DES **QUESTIONS** ?",
+      "titleLine2": "NOUS AVONS LES **RÉPONSES**.",
       "subtitle": "NOUS AVONS LES RÉPONSES.",
       "items": [
         {
@@ -431,6 +471,20 @@
           "answer": "L'application mobile pour techniciens est conçue en mode PWA avec support hors-ligne. Les actions réalisées sans connexion sont synchronisées automatiquement dès le retour du réseau."
         }
       ]
+    },
+    "storeLayer": {
+      "domaines": {
+        "label": "Domaines",
+        "badges": ["Façade", "Enseigne", "Réserve", "Surface de vente"]
+      },
+      "zones": {
+        "label": "Zones",
+        "badges": ["Zone A", "Zone B", "Zone C", "Zone D"]
+      },
+      "equipements": {
+        "label": "Équipements",
+        "badges": ["Caisse", "Climatisation", "Alarme", "Éclairage"]
+      }
     },
     "seo": {
       "title": "Staamina - Logiciel de Gestion de la Maintenance des Équipements",

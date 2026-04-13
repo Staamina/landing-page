@@ -84,73 +84,80 @@
     "hero": {
       "title": "STAAMINA MAKES MALFUNCTIONS MANAGEABLE.",
       "titleStaticPrefix": "STAAMINA MAKES MALFUNCTIONS",
+      "titleMiddle": " MAKES MALFUNCTIONS ",
       "titleVariants": {
         "pilotables": "MANAGEABLE.",
-        "anticipables": "ANTICIPATABLE.",
-        "controlables": "CONTROLLABLE.",
-        "maitrisables": "MASTERABLE.",
-        "exploitables": "EXPLOITABLE.",
+        "anticipables": "PREDICTABLE.",
+        "controlables": "CONTROLLED.",
+        "maitrisables": "GOVERNABLE.",
+        "exploitables": "ACTIONABLE.",
         "mesurables": "MEASURABLE.",
         "tracables": "TRACEABLE.",
         "detectables": "DETECTABLE.",
         "identifiables": "IDENTIFIABLE."
       },
-      "subtitle": "THE MAINTENANCE SOLUTION TO INTELLIGENTLY MANAGE INCIDENTS ACROSS YOUR STORES.",
-      "description": "BREAKDOWNS ARE COSTLY. LACK OF VISIBILITY IS EVEN MORE SO.",
+      "subtitle": "THE MAINTENANCE SOLUTION TO INTELLIGENTLY MANAGE INCIDENTS ACROSS YOUR LOCATIONS.",
+      "subtitleLine1": "THE **MAINTENANCE** SOLUTION TO **INTELLIGENTLY MANAGE**",
+      "subtitleLine2": "INCIDENTS ACROSS YOUR **LOCATIONS**.",
+      "description": "BREAKDOWNS ARE COSTLY. LACK OF VISIBILITY COSTS EVEN MORE.",
       "ctaPrimary": "Get in Touch",
       "ctaSecondary": "Learn More"
     },
     "features": {
-      "title": "FEATURES IN SERVICE OF COLLECTIVE PERFORMANCE",
+      "title": "FEATURES BUILT FOR COLLECTIVE PERFORMANCE",
+      "titleLine1": "**FEATURES** BUILT FOR",
+      "titleLine2": "**COLLECTIVE PERFORMANCE**",
       "subtitle": "Every feature aligns your teams and accelerates execution.",
       "items": {
         "aiDeclaration": {
-          "title": "AI-Assisted Incident Declaration",
-          "description": "Simply describe the problem — Staamina structures the information and triggers the right process.",
+          "title": "AI-Assisted Incident Reporting",
+          "description": "Simply describe the problem — Staamina structures the information and triggers the right process automatically.",
           "tag1": "Fast reporting",
           "tag2": "Error reduction",
           "tag3": "Reliable information"
         },
         "intelligentRouting": {
           "title": "Intelligent & Automatic Routing",
-          "description": "Automatic routing of incidents to the right responder, via the right channel and the right process.",
-          "tag1": "Immediate routing",
-          "tag2": "No manual transfer",
-          "tag3": "Enhanced processing quality"
+          "description": "Incidents are automatically routed to the right responder, via the right channel, through the right process.",
+          "tag1": "Instant routing",
+          "tag2": "Zero manual handoff",
+          "tag3": "Consistent resolution quality"
         },
         "realTimeData": {
-          "title": "Real-Time Data & Tracking",
-          "description": "All data is continuously updated to manage activity with precision.",
-          "tag1": "Real-time dashboard",
-          "tag2": "Processing time tracking",
-          "tag3": "Recurrence identification"
+          "title": "Real-Time Data & Monitoring",
+          "description": "All data is continuously updated so you can manage operations with precision and confidence.",
+          "tag1": "Live dashboard",
+          "tag2": "Resolution time tracking",
+          "tag3": "Recurrence detection"
         },
         "mapping": {
-          "title": "Environment Mapping",
-          "description": "Visualize all your sites, equipment, and responders in a clear, structured view.",
+          "title": "Full Environment Mapping",
+          "description": "Visualize all your sites, equipment, and service providers in a single clear, structured view.",
           "tag1": "Network-wide visibility",
           "tag2": "Precise incident location",
-          "tag3": "Single reliable reference"
+          "tag3": "Single source of truth"
         },
         "unifiedRepository": {
           "title": "Unified Business Repository",
-          "description": "Every incident is contextualized through a complete, structured business repository.",
-          "tag1": "Referenced equipment",
-          "tag2": "Identified providers",
-          "tag3": "Standardized failure reasons"
+          "description": "Every incident is fully contextualized through a comprehensive, structured business repository.",
+          "tag1": "Catalogued equipment",
+          "tag2": "Qualified providers",
+          "tag3": "Standardized failure types"
         },
         "unifiedCommunication": {
           "title": "Unified Communication & Integration",
-          "description": "All incident-related exchanges, unified and synchronized with your existing tools.",
-          "tag1": "Centralized exchanges",
+          "description": "All incident-related exchanges, centralized and synchronized with your existing tools.",
+          "tag1": "Centralized communication",
           "tag2": "External provider coordination",
-          "tag3": "Interaction traceability"
+          "tag3": "Full interaction traceability"
         }
       }
     },
     "carousel": {
       "introTitle": "OUR BUSINESS SECTORS",
-      "detailDescription": "A UNIQUE PLATFORM TO MANAGE INFRASTRUCTURE MAINTENANCE, REGARDLESS OF BUSINESS SECTOR.",
+      "subtitleLine1": "**STAAMINA** IS BUILT TO HANDLE ALL **BUSINESS SPECIFICITIES**,",
+      "subtitleLine2": "WHATEVER THE **SECTOR**.",
+      "detailDescription": "ONE PLATFORM TO MANAGE INFRASTRUCTURE MAINTENANCE ACROSS ALL YOUR SECTORS.",
       "ctaLabel": "Discover",
       "backButton": "Back",
       "learnMore": "Learn more",
@@ -158,7 +165,7 @@
         "retail": {
           "alt": "Retail",
           "topic": "Retail",
-          "introDescription": "In retail networks, performance relies on always operational infrastructures. Staamina enables centralized management and reliable maintenance of all point-of-sale equipment.",
+          "introDescription": "In retail networks, performance depends on always-operational infrastructure. Staamina centralizes, tracks, and streamlines maintenance across all your point-of-sale equipment.",
           "detailTitle": "Retail",
           "specifications": {
             "cityCenterStore": "City center store",
@@ -173,11 +180,11 @@
         "restaurant": {
           "alt": "Restaurant & Food Service",
           "topic": "Restaurant & Food Service",
-          "introDescription": "In the restaurant industry, any breakdown can impact service and customer experience. Staamina helps teams ensure continuity of critical infrastructures, from dining room to kitchen.",
+          "introDescription": "In the food service industry, any equipment failure can disrupt service and damage the customer experience. Staamina helps teams maintain critical infrastructure continuity — from front of house to kitchen.",
           "detailTitle": "Restaurant & Food Service",
           "specifications": {
             "independentOrChain": "Restaurant (independent or chain)",
-            "fastFood": "Fast-food / quick service",
+            "fastFood": "Fast food / quick service",
             "coffeeShop": "Coffee shop",
             "brasserie": "Brasserie",
             "darkKitchen": "Dark kitchen",
@@ -188,7 +195,7 @@
         "fitness": {
           "alt": "Fitness & Leisure",
           "topic": "Fitness & Leisure",
-          "introDescription": "In retail networks, performance relies on always operational infrastructures. Staamina enables centralized management and reliable maintenance of all point-of-sale equipment.",
+          "introDescription": "In fitness and leisure facilities, equipment availability is directly tied to member satisfaction. Staamina ensures fast incident response and reliable maintenance across all your venues.",
           "detailTitle": "Fitness & Leisure",
           "specifications": {
             "gym": "Gym / fitness center",
@@ -202,7 +209,7 @@
         "agencies": {
           "alt": "Agencies & Services",
           "topic": "Agencies & Services",
-          "introDescription": "In agency networks, infrastructure reliability determines customer service quality. Staamina provides a centralized view of maintenance to efficiently manage all points of sale.",
+          "introDescription": "In service networks, infrastructure reliability is directly tied to customer service quality. Staamina gives you a centralized view of maintenance across all your branches.",
           "detailTitle": "Agencies & Services",
           "specifications": {
             "bank": "Bank branch",
@@ -215,35 +222,42 @@
         "health": {
           "alt": "Health & Proximity",
           "topic": "Health & Proximity",
-          "introDescription": "In health and proximity establishments, every malfunction matters. Staamina secures tracking and maintenance of equipment essential to proper site operation.",
+          "introDescription": "In health and proximity establishments, every malfunction matters. Staamina ensures reliable tracking and maintenance of all equipment critical to proper site operation.",
           "detailTitle": "Health & Proximity",
           "specifications": {
             "pharmacy": "Pharmacy",
             "parapharmacy": "Parapharmacy",
             "medicalCenter": "Medical center",
             "carePractice": "Care practice",
-            "opticAudioprothesist": "Optics center / audioprosthetist"
+            "opticAudioprothesist": "Optics / audiology center"
           }
         },
         "hospitality": {
           "alt": "Hospitality & Reception",
           "topic": "Hospitality & Reception",
-          "introDescription": "In hospitality and reception venues, infrastructure continuity is a key customer satisfaction factor. Staamina centralizes maintenance to ensure sites are always operational.",
+          "introDescription": "In hospitality, infrastructure continuity is a cornerstone of guest satisfaction. Staamina centralizes maintenance operations to keep every site running flawlessly.",
           "detailTitle": "Hospitality & Reception",
           "specifications": {
             "hotel": "Hotel",
             "hotelResidence": "Hotel residence",
-            "receptionHall": "Reception hall / lobby",
+            "receptionHall": "Reception hall / event venue",
             "conventionCenter": "Convention center"
           }
         }
       }
     },
     "problemStatement": {
-      "text": "A STORE IS COMPLEX. ACROSS A NETWORK, COMPLEXITY BECOMES EXPONENTIAL. YOUR OPERATIONS SHOULDN'T BE."
+      "text": "MANAGING A STORE IS COMPLEX. ACROSS A NETWORK, COMPLEXITY BECOMES EXPONENTIAL. YOUR OPERATIONS SHOULDN'T BE.",
+      "line1": "MANAGING A **STORE** IS **COMPLEX**.",
+      "line2": "ACROSS A **NETWORK**, **COMPLEXITY** BECOMES **EXPONENTIAL**.",
+      "line3": "YOUR **OPERATIONS** SHOULDN'T BE."
     },
     "beforeAfter": {
-      "title": "STAAMINA STRUCTURES AND SIMPLIFIES OPERATIONS FROM INCIDENT DECLARATION TO RESOLUTION.",
+      "title": "STAAMINA STRUCTURES AND SIMPLIFIES OPERATIONS — FROM INCIDENT DECLARATION TO RESOLUTION.",
+      "row1line1": "STAAMINA **STRUCTURES** AND **SIMPLIFIES** OPERATIONS",
+      "row1line2": "RESOLVING AN INCIDENT SHOULD NOT BE AN OBSTACLE COURSE.",
+      "row2line1": "FROM **INCIDENT DECLARATION** TO ITS **RESOLUTION**",
+      "row2line2": "ONE SINGLE ENTRY POINT FOR ALL YOUR INCIDENTS.",
       "before": {
         "label": "WITHOUT STAAMINA",
         "tagline": "One incident, a chain of steps.",
@@ -257,48 +271,62 @@
       "after": {
         "label": "WITH STAAMINA",
         "tagline": "ONE SINGLE ENTRY POINT FOR ALL YOUR INCIDENTS.",
-        "highlight": "Less steps. More control.",
+        "highlight": "One incident. One action.",
         "items": [
           "Single, intuitive interface",
           "Fluid, automated processes",
-          "Precise operational management",
-          "One incident, one action"
+          "Precise operational control",
+          "Less friction. More mastery."
         ]
       }
     },
     "multiDevice": {
       "title": "DESIGNED FOR EVERY USER",
+      "titleLine1": "**DESIGNED** FOR EVERY **USER**",
+      "titleLine2": "**OPTIMIZED** FOR EVERY **ENVIRONMENT**",
       "subtitle": "OPTIMIZED FOR EVERY ENVIRONMENT",
-      "cta": "Built for all operational use cases, Staamina natively adapts to existing environments.",
+      "ctaLine1": "BUILT FOR ALL OPERATIONAL USE CASES,",
+      "ctaLine2": "STAAMINA NATIVELY ADAPTS TO YOUR EXISTING ENVIRONMENTS.",
+      "cta": "BUILT FOR ALL OPERATIONAL USE CASES, STAAMINA NATIVELY ADAPTS TO YOUR EXISTING ENVIRONMENTS.",
       "devices": {
         "mobile": {
           "name": "MOBILE & TABLET",
-          "description": "An interface designed for the field. For all operational profiles: store, region, audit, technical. Act in real time, on-site, and within reach."
+          "description": "An interface built for the field. For every operational profile — store, region, audit, technical. Act in real time, on-site, and at your fingertips."
         },
         "desktop": {
           "name": "LAPTOP & DESKTOP",
-          "description": "A complete interface for central management. Global visibility, real-time monitoring, performance analysis. Manage your providers, validate, and arbitrate with full control."
+          "description": "A powerful interface for central oversight. Full visibility, real-time tracking, and performance analysis. Manage providers, validate decisions, and stay in control."
         },
         "kiosk": {
           "name": "POS & KIOSK",
-          "description": "An interface accessible to the entire site team. A simplified experience integrated into your environment. Report and track your requests without friction."
+          "description": "An interface accessible to the whole site team. A streamlined experience that fits seamlessly into your environment. Report and track requests without friction."
         }
       }
     },
     "franchise": {
       "title": "A SOLUTION TO SUPPORT BOTH YOUR BRANCHES AND FRANCHISES",
+      "titleLine1": "A SOLUTION TO SUPPORT",
+      "titleLine2": "BOTH YOUR **BRANCHES** AND **FRANCHISES**",
       "franchisees": {
         "title": "Efficiently support your franchisees",
-        "description": "Track all your franchisees simply. Provide the right support at the right time. Guarantee a uniform level of quality."
+        "description": "Track all your franchisees with ease. Deliver the right support at the right time. Ensure a consistent level of quality across the board."
       },
       "branches": {
-        "title": "Ensure support for your branches",
-        "description": "Centralize all incidents and field reports. Optimize your team's operations. Master your visibility and efficiency."
+        "title": "Ensure full support for your branches",
+        "description": "Centralize all incidents and field reports. Optimize your team's operations. Maintain full visibility and operational efficiency."
       }
     },
     "whyChoose": {
       "title": "WHY CHOOSE STAAMINA?",
-      "subtitle": "Turn your incidents into data, and your data into operational performance."
+      "titleHighlight": "WHY CHOOSE **STAAMINA**?",
+      "subtitle": "Turn your incidents into data, and your data into operational performance.",
+      "stats": [
+        { "value": "155%", "label": "IMPROVEMENT IN FLEET RELIABILITY" },
+        { "value": "80%", "label": "REDUCTION IN MANUAL TASKS" },
+        { "value": "90%", "label": "IMPROVEMENT IN RESPONSE TIME" },
+        { "value": "80%", "label": "IMPROVEMENT IN MEAN RESOLUTION TIME" },
+        { "value": "85%", "label": "REDUCTION IN INCIDENT DETECTION TIME" }
+      ]
     },
     "forSiteOperators": {
       "title": "For Site Operators & Managers",
@@ -311,20 +339,20 @@
     },
     "forGroupManagers": {
       "title": "For Group Managers",
-      "description": "Monitor all site issues in real-time from a centralized dashboard. Coordinate efficiently with third-party services and ensure nothing falls through the cracks.",
+      "description": "Monitor all site issues in real-time from a centralized dashboard. Coordinate efficiently with service providers and ensure nothing slips through the cracks.",
       "benefits": {
         "realTimeMonitoring": "Real-time monitoring of all site issues",
         "centralizedView": "Centralized dashboard for complete visibility",
-        "efficientCoordination": "Efficient coordination with third-party services"
+        "efficientCoordination": "Efficient coordination with service providers"
       }
     },
     "forServiceProviders": {
       "title": "For Third-Party Service Providers",
-      "description": "Receive all service requests with complete information about equipment details and contact information. Perform interventions efficiently with all the context you need.",
+      "description": "Receive service requests with all the context you need — equipment details, location, and contacts. Intervene efficiently, every time.",
       "benefits": {
         "completeInformation": "Complete equipment and contact information",
         "directContact": "Direct communication with site operators",
-        "efficientIntervention": "Efficient interventions with all necessary details"
+        "efficientIntervention": "Efficient interventions with full context"
       }
     },
     "model360": {
@@ -332,40 +360,41 @@
       "subtitle": "Drag to rotate and explore our equipment models in 360 degrees"
     },
     "cta": {
-      "title": "WHY CHOOSE STAAMINA?",
-      "description": "Turn your incidents into data, and your data into operational performance.",
+      "title": "READY TO SIMPLIFY YOUR OPERATIONS?",
+      "titleLine": "READY TO SIMPLIFY YOUR OPERATIONS?",
+      "description": "Discover how Staamina works.",
       "buttonText": "Get in Touch"
     },
     "contact": {
       "form": {
         "title": "Get in Touch",
-        "description": "To provide you with a personalized demo, we just need a few details to better understand your needs:",
+        "description": "To give you a personalized demo, we just need a few details to better understand your needs:",
         "sections": {
           "aboutYou": "Tell us about yourself...",
           "aboutCompany": "... and about your company!"
         },
         "fields": {
           "firstName": "First name",
-          "lastName": "Name",
+          "lastName": "Last name",
           "email": "Email",
           "phone": "Phone number",
           "jobTitle": "Job title",
           "companyWebsite": "Company website",
-          "companyType": "Your company type",
-          "annualRevenue": "Your annual revenue",
+          "companyType": "Company type",
+          "annualRevenue": "Annual revenue",
           "industry": "Industry",
           "message": "Message"
         },
         "placeholders": {
           "firstName": "First name",
-          "lastName": "Name",
-          "email": "Email",
+          "lastName": "Last name",
+          "email": "Email address",
           "phone": "Phone number",
-          "jobTitle": "Job title",
-          "companyWebsite": "Company website",
+          "jobTitle": "Your job title",
+          "companyWebsite": "https://yourcompany.com",
           "companyType": "Select company type",
           "annualRevenue": "Select annual revenue",
-          "industry": "Select industry",
+          "industry": "Select your industry",
           "message": "Tell us more about your needs..."
         },
         "options": {
@@ -376,10 +405,10 @@
             "other": "Other"
           },
           "annualRevenue": {
-            "0-100k": "0 - 100k",
-            "100k-500k": "100k - 500k",
-            "500k-1m": "500k - 1M",
-            "1m-5m": "1M - 5M",
+            "0-100k": "0 – 100K",
+            "100k-500k": "100K – 500K",
+            "500k-1m": "500K – 1M",
+            "1m-5m": "1M – 5M",
             "5m+": "5M+"
           },
           "industry": {
@@ -398,43 +427,59 @@
         },
         "submit": "Send Message",
         "submitting": "Sending...",
-        "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
-        "error": "An error occurred while sending your message. Please try again later."
+        "success": "Thank you! Your message has been sent. We'll get back to you shortly.",
+        "error": "Something went wrong. Please try again later."
       }
     },
     "faq": {
       "title": "GOT QUESTIONS?",
+      "titleLine1": "GOT **QUESTIONS**?",
+      "titleLine2": "WE HAVE THE **ANSWERS**.",
       "subtitle": "WE HAVE THE ANSWERS.",
       "items": [
         {
           "question": "Is Staamina suited to my company size?",
-          "answer": "Staamina adapts to all networks, whether you have 5 or 500 locations. The platform is designed to scale with your organisation, without added cost or complexity."
+          "answer": "Staamina adapts to all network sizes — whether you have 5 or 500 locations. The platform is designed to scale with your organisation, with no added cost or complexity."
         },
         {
-          "question": "How long does it take to deploy Staamina?",
-          "answer": "Deployment is fast. A standard network is up and running in under 2 weeks. Our teams guide you through every step: configuration, training, and go-live."
+          "question": "How quickly can Staamina be deployed?",
+          "answer": "Deployment is fast. A standard network is up and running in under 2 weeks. Our team guides you through every step: configuration, training, and go-live."
         },
         {
-          "question": "Do I need to install an application on each device?",
-          "answer": "No. Staamina runs entirely from a web browser or via WhatsApp, with no installation required on existing workstations or devices. A mobile PWA is also available for field technicians."
+          "question": "Do I need to install software on each device?",
+          "answer": "No. Staamina runs entirely in a web browser or via WhatsApp — no installation required on existing workstations or devices. A mobile PWA is available for field technicians."
         },
         {
           "question": "How does Staamina integrate with our existing tools?",
-          "answer": "Staamina offers native connectors for major HR, ERP, and CMMS suites. An open API allows integration with any business tool in your ecosystem."
+          "answer": "Staamina offers native connectors for major HR, ERP, and CMMS platforms. An open API enables integration with any tool in your ecosystem."
         },
         {
           "question": "Is our data secure?",
-          "answer": "Yes. Data is hosted in Europe, isolated per client (strict multi-tenant architecture), and GDPR compliant. No data is shared between tenants."
+          "answer": "Yes. Data is hosted in Europe, strictly isolated per client (multi-tenant architecture), and fully GDPR compliant. No data is ever shared between tenants."
         },
         {
-          "question": "Does Staamina work without an internet connection?",
-          "answer": "The mobile app for technicians is built as a PWA with offline support. Actions taken without a connection are automatically synced when the network is restored."
+          "question": "Does Staamina work offline?",
+          "answer": "The technician mobile app is built as a PWA with full offline support. Any actions taken without a connection are automatically synced once the network is restored."
         }
       ]
     },
+    "storeLayer": {
+      "domaines": {
+        "label": "Domains",
+        "badges": ["Facade", "Signage", "Stock Room", "Sales Floor"]
+      },
+      "zones": {
+        "label": "Zones",
+        "badges": ["Zone A", "Zone B", "Zone C", "Zone D"]
+      },
+      "equipements": {
+        "label": "Equipment",
+        "badges": ["POS Terminal", "Air Conditioning", "Alarm", "Lighting"]
+      }
+    },
     "seo": {
-      "title": "Staamina - Equipment Maintenance Management Software",
-      "description": "Streamline equipment maintenance for sites. Real-time monitoring, efficient coordination, and complete information for service providers. Simplify your maintenance procedures today.",
+      "title": "Staamina — Intelligent Maintenance Management for Retail Networks",
+      "description": "Staamina centralizes, automates, and streamlines maintenance operations across your locations. Real-time monitoring, smart routing, and complete traceability — built for multi-site networks.",
       "keywords": {
         "equipmentMaintenance": "equipment maintenance",
         "siteManagement": "site management",

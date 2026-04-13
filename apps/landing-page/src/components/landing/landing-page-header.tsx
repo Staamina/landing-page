@@ -43,7 +43,7 @@ export function LandingPageHeader() {
             alt="Staamina Logo"
             width={256}
             height={36}
-            className="h-7 sm:h-9 w-auto max-w-30 sm:max-w-[256px] object-contain"
+            className="h-9 sm:h-11 w-auto max-w-30 sm:max-w-[256px] object-contain"
           />
         </Link>
 

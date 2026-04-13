@@ -11,17 +11,27 @@ export interface LandingPageContent {
   hero: {
     title: string;
     titleStaticPrefix: string;
+    titleMiddle: string;
     titleVariants: string[];
     subtitle: string;
+    subtitleLine1: string;
+    subtitleLine2: string;
     description: string;
     ctaPrimary: string;
     ctaSecondary: string;
   };
   problemStatement: {
     text: string;
+    line1: string;
+    line2: string;
+    line3: string;
   };
   beforeAfter: {
     title: string;
+    row1line1: string;
+    row1line2: string;
+    row2line1: string;
+    row2line2: string;
     before: {
       label: string;
       tagline: string;
@@ -36,12 +46,22 @@ export interface LandingPageContent {
   };
   features: {
     title: string;
+    titleLine1: string;
+    titleLine2: string;
     subtitle: string;
     items: FeatureItem[];
   };
+  carousel: {
+    subtitleLine1: string;
+    subtitleLine2: string;
+  };
   multiDevice: {
     title: string;
+    titleLine1: string;
+    titleLine2: string;
     subtitle: string;
+    ctaLine1: string;
+    ctaLine2: string;
     cta: string;
     devices: Array<{
       name: string;
@@ -51,8 +71,15 @@ export interface LandingPageContent {
   };
   franchise: {
     title: string;
+    titleLine1: string;
+    titleLine2: string;
     franchisees: { title: string; description: string };
     branches: { title: string; description: string };
+  };
+  whyChoose: {
+    titleHighlight: string;
+    subtitle: string;
+    stats: Array<{ value: string; label: string }>;
   };
   forSiteOperators: {
     title: string;
@@ -71,13 +98,21 @@ export interface LandingPageContent {
   };
   faq: {
     title: string;
+    titleLine1: string;
+    titleLine2: string;
     subtitle: string;
     items: { question: string; answer: string }[];
   };
   cta: {
     title: string;
+    titleLine: string;
     description: string;
     buttonText: string;
+  };
+  storeLayer: {
+    domaines: { label: string; badges: string[] };
+    zones: { label: string; badges: string[] };
+    equipements: { label: string; badges: string[] };
   };
   seo: {
     title: string;
@@ -105,17 +140,27 @@ export const getLandingPageContent = (
     hero: {
       title: t('landing.hero.title'),
       titleStaticPrefix: t('landing.hero.titleStaticPrefix'),
+      titleMiddle: t('landing.hero.titleMiddle'),
       titleVariants: titleVariants.map((key) => t(key)),
       subtitle: t('landing.hero.subtitle'),
+      subtitleLine1: t('landing.hero.subtitleLine1'),
+      subtitleLine2: t('landing.hero.subtitleLine2'),
       description: t('landing.hero.description'),
       ctaPrimary: t('landing.hero.ctaPrimary'),
       ctaSecondary: t('landing.hero.ctaSecondary'),
     },
     problemStatement: {
       text: t('landing.problemStatement.text'),
+      line1: t('landing.problemStatement.line1'),
+      line2: t('landing.problemStatement.line2'),
+      line3: t('landing.problemStatement.line3'),
     },
     beforeAfter: {
       title: t('landing.beforeAfter.title'),
+      row1line1: t('landing.beforeAfter.row1line1'),
+      row1line2: t('landing.beforeAfter.row1line2'),
+      row2line1: t('landing.beforeAfter.row2line1'),
+      row2line2: t('landing.beforeAfter.row2line2'),
       before: {
         label: t('landing.beforeAfter.before.label'),
         tagline: t('landing.beforeAfter.before.tagline'),
@@ -140,6 +185,8 @@ export const getLandingPageContent = (
     },
     features: {
       title: t('landing.features.title'),
+      titleLine1: t('landing.features.titleLine1'),
+      titleLine2: t('landing.features.titleLine2'),
       subtitle: t('landing.features.subtitle'),
       items: [
         {
@@ -210,9 +257,17 @@ export const getLandingPageContent = (
         },
       ],
     },
+    carousel: {
+      subtitleLine1: t('landing.carousel.subtitleLine1'),
+      subtitleLine2: t('landing.carousel.subtitleLine2'),
+    },
     multiDevice: {
       title: t('landing.multiDevice.title'),
+      titleLine1: t('landing.multiDevice.titleLine1'),
+      titleLine2: t('landing.multiDevice.titleLine2'),
       subtitle: t('landing.multiDevice.subtitle'),
+      ctaLine1: t('landing.multiDevice.ctaLine1'),
+      ctaLine2: t('landing.multiDevice.ctaLine2'),
       cta: t('landing.multiDevice.cta'),
       devices: [
         {
@@ -234,6 +289,8 @@ export const getLandingPageContent = (
     },
     franchise: {
       title: t('landing.franchise.title'),
+      titleLine1: t('landing.franchise.titleLine1'),
+      titleLine2: t('landing.franchise.titleLine2'),
       franchisees: {
         title: t('landing.franchise.franchisees.title'),
         description: t('landing.franchise.franchisees.description'),
@@ -242,6 +299,32 @@ export const getLandingPageContent = (
         title: t('landing.franchise.branches.title'),
         description: t('landing.franchise.branches.description'),
       },
+    },
+    whyChoose: {
+      titleHighlight: t('landing.whyChoose.titleHighlight'),
+      subtitle: t('landing.whyChoose.subtitle'),
+      stats: [
+        {
+          value: t('landing.whyChoose.stats.0.value'),
+          label: t('landing.whyChoose.stats.0.label'),
+        },
+        {
+          value: t('landing.whyChoose.stats.1.value'),
+          label: t('landing.whyChoose.stats.1.label'),
+        },
+        {
+          value: t('landing.whyChoose.stats.2.value'),
+          label: t('landing.whyChoose.stats.2.label'),
+        },
+        {
+          value: t('landing.whyChoose.stats.3.value'),
+          label: t('landing.whyChoose.stats.3.label'),
+        },
+        {
+          value: t('landing.whyChoose.stats.4.value'),
+          label: t('landing.whyChoose.stats.4.label'),
+        },
+      ],
     },
     forSiteOperators: {
       title: t('landing.forSiteOperators.title'),
@@ -272,6 +355,8 @@ export const getLandingPageContent = (
     },
     faq: {
       title: t('landing.faq.title'),
+      titleLine1: t('landing.faq.titleLine1'),
+      titleLine2: t('landing.faq.titleLine2'),
       subtitle: t('landing.faq.subtitle'),
       items: [
         {
@@ -302,8 +387,38 @@ export const getLandingPageContent = (
     },
     cta: {
       title: t('landing.cta.title'),
+      titleLine: t('landing.cta.titleLine'),
       description: t('landing.cta.description'),
       buttonText: t('landing.cta.buttonText'),
+    },
+    storeLayer: {
+      domaines: {
+        label: t('landing.storeLayer.domaines.label'),
+        badges: [
+          t('landing.storeLayer.domaines.badges.0'),
+          t('landing.storeLayer.domaines.badges.1'),
+          t('landing.storeLayer.domaines.badges.2'),
+          t('landing.storeLayer.domaines.badges.3'),
+        ],
+      },
+      zones: {
+        label: t('landing.storeLayer.zones.label'),
+        badges: [
+          t('landing.storeLayer.zones.badges.0'),
+          t('landing.storeLayer.zones.badges.1'),
+          t('landing.storeLayer.zones.badges.2'),
+          t('landing.storeLayer.zones.badges.3'),
+        ],
+      },
+      equipements: {
+        label: t('landing.storeLayer.equipements.label'),
+        badges: [
+          t('landing.storeLayer.equipements.badges.0'),
+          t('landing.storeLayer.equipements.badges.1'),
+          t('landing.storeLayer.equipements.badges.2'),
+          t('landing.storeLayer.equipements.badges.3'),
+        ],
+      },
     },
     seo: {
       title: t('landing.seo.title'),
