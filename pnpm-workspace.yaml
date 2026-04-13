@@ -83,7 +83,6 @@ catalogs:
     eslint-plugin-react-refresh: ^0.4.5
     prettier: ^3.2.5
   monorepo-tools:
-    husky: ^9.1.7
     lint-staged: ^15.2.0
     turbo: ^2.0.0
   nextjs:
