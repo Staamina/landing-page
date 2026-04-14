@@ -253,10 +253,10 @@
       "line3": "VOS **OPÉRATIONS** NE DEVRAIENT PAS L'ÊTRE."
     },
     "beforeAfter": {
-      "title": "STAAMINA STRUCTURE ET SIMPLIFIE LES OPÉRATIONS DE LA DÉCLARATION D'UN INCIDENT JUSQU'À SA RÉSOLUTION.",
+      "title": "STAAMINA STRUCTURE ET SIMPLIFIE LES OPÉRATIONS DE LA DÉCLARATION JUSQU'À LA RÉSOLUTION.",
       "row1line1": "STAAMINA **STRUCTURE** ET **SIMPLIFIE** LES OPÉRATIONS",
       "row1line2": "LA RÉSOLUTION D'UN INCIDENT NE DEVRAIT PAS ÊTRE UN PARCOURS D'OBSTACLES.",
-      "row2line1": "DE LA **DÉCLARATION** D'UN INCIDENT JUSQU'À SA **RÉSOLUTION**",
+      "row2line1": "DE LA **DÉCLARATION** JUSQU'À LA **RÉSOLUTION**",
       "row2line2": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
       "before": {
         "label": "SANS STAAMINA",
@@ -521,20 +521,24 @@
     },
     "incidentPath": {
       "straight": {
-        "step1": "Déclaration",
-        "step2": "Routage auto",
-        "step3": "Intervention",
-        "step4": "Résolution"
+        "step1": "Incident détecté",
+        "step2": "Déclaration Staamina",
+        "step3": "Qualification & Routage",
+        "step4": "Intervention",
+        "step5": "Suivi temps réel"
       },
       "zigzag": {
         "step1": "Incident constaté",
-        "step2": "Qui appeler ?",
-        "step3": "Appel prestataire",
-        "step4": "Non disponible",
-        "step5": "Retransmission",
-        "step6": "En attente",
-        "step7": "Nouveau devis",
-        "step8": "Résolution"
+        "step2": "Identifier l'équipement",
+        "step3": "Trouver le prestataire",
+        "step4": "Comprendre la procédure",
+        "step5": "Envoyer la demande",
+        "step6": "Relancer",
+        "step7": "Requalification",
+        "step8": "En attente",
+        "step9": "Escalade équipe",
+        "step10": "Suivi manuel",
+        "step11": "Planifier"
       }
     }
   }

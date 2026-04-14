@@ -512,20 +512,24 @@
     },
     "incidentPath": {
       "straight": {
-        "step1": "Report",
-        "step2": "Auto-routing",
-        "step3": "Intervention",
-        "step4": "Resolved"
+        "step1": "Incident detected",
+        "step2": "Report in Staamina",
+        "step3": "Qualification & Routing",
+        "step4": "Intervention",
+        "step5": "Real-time tracking"
       },
       "zigzag": {
-        "step1": "Incident noticed",
-        "step2": "Who to call?",
-        "step3": "Calling provider",
-        "step4": "Not available",
-        "step5": "Re-explaining",
-        "step6": "Still waiting",
-        "step7": "New estimate",
-        "step8": "Resolved"
+        "step1": "Incident detected",
+        "step2": "Identify equipment",
+        "step3": "Find provider",
+        "step4": "Understand procedure",
+        "step5": "Send request",
+        "step6": "Follow up",
+        "step7": "Requalification",
+        "step8": "On hold",
+        "step9": "Escalate to team",
+        "step10": "Manual tracking",
+        "step11": "Schedule"
       }
     }
   }

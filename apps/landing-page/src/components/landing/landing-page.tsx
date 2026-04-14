@@ -105,7 +105,7 @@ function HeroSection({
   const { ref, isVisible } = useMountAnimation(0);
 
   return (
-    <section className="relative overflow-hidden pt-20 sm:pt-32 pb-20 sm:pb-40 px-4 bg-app">
+    <section className="relative overflow-hidden min-h-svh flex flex-col items-center justify-center px-4 py-20 bg-app">
       <DarkVeil speed={3} scanlineFrequency={0.5} />
       <div
         className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-secondary/5"
@@ -122,21 +122,21 @@ function HeroSection({
       <div
         ref={ref}
         className={cn(
-          'container relative z-20 mx-auto max-w-6xl',
+          'container relative z-20 mx-auto max-w-6xl w-full',
           isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
         )}
       >
         <div className="text-center space-y-4 sm:space-y-6">
           <div className="space-y-1">
             <p
-              className="text-base sm:text-lg md:text-xl font-bold tracking-wide text-text/80 mx-auto leading-relaxed px-2 uppercase"
+              className="text-[0.6rem] sm:text-base md:text-lg font-bold tracking-wide text-text/80 mx-auto leading-relaxed px-2 uppercase"
               style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
             >
               {content.hero.description}
             </p>
 
             <h1
-              className="text-base sm:text-lg md:text-xl font-bold leading-tight text-default px-2"
+              className="text-[0.6rem] sm:text-base md:text-lg font-bold leading-tight text-default px-2"
               style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
             >
               <span className="text-[#a78bfa]">STAAMINA</span>
@@ -150,14 +150,14 @@ function HeroSection({
           </div>
 
           <p
-            className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold w-full leading-tight mt-12 sm:mt-16 text-center"
+            className="text-[1rem] sm:text-2xl md:text-4xl lg:text-5xl font-bold w-full leading-tight mt-4 sm:mt-10 text-center"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             <HighlightedText text={content.hero.subtitleLine1} />{' '}
             <HighlightedText text={content.hero.subtitleLine2} />
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 sm:pt-12">
             <StarBorderLink href="/contact" color="#a78bfa" speed="5s">
               {content.hero.ctaPrimary}
             </StarBorderLink>
@@ -227,7 +227,7 @@ function ProblemStatementSection({
   return (
     <section
       id="probleme"
-      className="relative bg-black overflow-hidden min-h-screen flex items-center"
+      className="relative bg-black overflow-hidden py-16 sm:py-20 flex items-center"
     >
       <div
         className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/80 to-transparent"
@@ -240,7 +240,7 @@ function ProblemStatementSection({
           isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
         )}
       >
-        <div className="w-full md:w-[40%] px-8 sm:px-16 py-16 shrink-0">
+        <div className="w-full md:w-[40%] px-5 sm:px-8 md:px-12 py-8 sm:py-12 shrink-0">
           <p
             className="font-bold text-white text-left"
             style={{
@@ -463,7 +463,7 @@ function FeatureRow({
     <div
       ref={textRef}
       className={cn(
-        'flex flex-col justify-center px-8 sm:px-12 md:px-16 py-12 transition-all duration-700 ease-out',
+        'flex flex-col justify-center px-5 sm:px-8 md:px-12 py-8 sm:py-10 transition-all duration-700 ease-out',
         isVisible
           ? 'opacity-100 translate-x-0'
           : `opacity-0 ${illustrationSide === 'left' ? 'translate-x-12' : '-translate-x-12'}`
@@ -471,7 +471,7 @@ function FeatureRow({
     >
       {label && (
         <span
-          className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide uppercase mb-4 inline-block"
+          className="text-base sm:text-xl md:text-2xl font-bold tracking-wide uppercase mb-3 inline-block"
           style={{
             fontFamily: 'var(--font-roboto), sans-serif',
             background:
@@ -488,7 +488,7 @@ function FeatureRow({
       )}
       {tagline && (
         <h3
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-default mb-6 leading-tight"
+          className="text-base sm:text-xl md:text-2xl font-bold text-default mb-4 leading-tight"
           style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
         >
           {tagline}
@@ -496,7 +496,7 @@ function FeatureRow({
       )}
       {highlight && (
         <p
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6"
+          className="text-base sm:text-xl md:text-2xl font-bold text-white mb-4"
           style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
         >
           {highlight}
@@ -527,11 +527,11 @@ function FeatureRow({
   );
 
   return (
-    <div className="border-b border-white/5 min-h-screen">
+    <div className="border-b border-white/5 py-12 sm:py-16">
       {sectionTitle && (
         <div className="w-full px-8 sm:px-12 py-6">
           <h3
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-default text-center"
+            className="text-lg sm:text-xl md:text-2xl font-bold text-default text-center"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             {sectionTitle}
@@ -539,18 +539,15 @@ function FeatureRow({
         </div>
       )}
       <div className="overflow-hidden">
-        <div className="min-h-[60vh] grid grid-cols-1 md:grid-cols-2 items-center">
-          {illustrationSide === 'left' ? (
-            <>
-              {illustrationEl}
-              {textEl}
-            </>
-          ) : (
-            <>
-              {textEl}
-              {illustrationEl}
-            </>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+          {/* Text always first on mobile (order-1), illustration second (order-2).
+              On desktop, swap positions when illustrationSide === 'left'. */}
+          <div className={illustrationSide === 'left' ? 'order-2 md:order-1' : 'order-2 md:order-2'}>
+            {illustrationEl}
+          </div>
+          <div className={illustrationSide === 'left' ? 'order-1 md:order-2' : 'order-1 md:order-1'}>
+            {textEl}
+          </div>
         </div>
       </div>
     </div>
@@ -576,13 +573,13 @@ function BeforeAfterSection({
           sectionTitle={
             <div className="space-y-2">
               <p
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-default leading-tight"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 <HighlightedText text={content.beforeAfter.row1line1} />
               </p>
               <p
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-default leading-tight"
+                className="text-lg sm:text-xl md:text-2xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 {content.beforeAfter.row1line2}
@@ -597,24 +594,18 @@ function BeforeAfterSection({
           }))}
           accentColor="red"
           illustrationSide="left"
-          illustration={
-            <IncidentPath
-              variant="zigzag"
-              steps={content.incidentPath.zigzag.steps}
-            />
-          }
         />
         <FeatureRow
           sectionTitle={
             <div className="space-y-2">
               <p
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-default leading-tight"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 <HighlightedText text={content.beforeAfter.row2line1} />
               </p>
               <p
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-default leading-tight"
+                className="text-lg sm:text-xl md:text-2xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 {content.beforeAfter.row2line2}
@@ -629,12 +620,6 @@ function BeforeAfterSection({
           }))}
           accentColor="brand"
           illustrationSide="right"
-          illustration={
-            <IncidentPath
-              variant="straight"
-              steps={content.incidentPath.straight.steps}
-            />
-          }
         />
       </div>
     </section>
@@ -667,7 +652,7 @@ function FeatureCard({
     <div
       ref={ref}
       className={cn(
-        'group relative h-full p-7 rounded-2xl border border-white/10 transition-all duration-700',
+        'group relative h-full p-5 sm:p-7 rounded-2xl border border-white/10 transition-all duration-700',
         'hover:border-[#a78bfa]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.12)]',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
@@ -756,7 +741,7 @@ function FeaturesSection({
             className="font-bold text-white leading-tight"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
-              fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
+              fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)',
             }}
           >
             <span className="block">
@@ -784,15 +769,15 @@ function DeviceRow({
   description,
   illustrationSide,
   imageSrc,
-  imageWidth = '55%',
-  textPaddingLeft = 'px-6 sm:px-8 md:px-10',
+  imageWidthClass = 'w-[55%]',
+  textPaddingLeft = 'px-5 sm:px-8 md:px-10',
   illustrationPadding = 'p-4 sm:p-6',
 }: {
   name: string;
   description: string;
   illustrationSide: 'left' | 'right';
   imageSrc: string;
-  imageWidth?: string;
+  imageWidthClass?: string;
   textPaddingLeft?: string;
   illustrationPadding?: string;
 }) {
@@ -803,8 +788,8 @@ function DeviceRow({
     <div className={`flex items-center justify-center ${illustrationPadding}`}>
       <div
         ref={illustrationRef}
+        className={imageWidthClass}
         style={{
-          width: imageWidth,
           transform: `translateY(-${offset}px)`,
           transition: 'transform 75ms ease-out',
           position: 'relative',
@@ -834,56 +819,84 @@ function DeviceRow({
     </div>
   );
 
-  const textEl = (
-    <div
-      ref={textRef}
-      className={cn(
-        `flex flex-col justify-center ${textPaddingLeft} py-6 transition-all duration-700 ease-out`,
-        isVisible
-          ? 'opacity-100 translate-x-0'
-          : `opacity-0 ${illustrationSide === 'left' ? 'translate-x-12' : '-translate-x-12'}`
-      )}
+  const titleEl = (
+    <span
+      className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-wide uppercase inline-block"
+      style={{
+        fontFamily: 'var(--font-roboto), sans-serif',
+        background: 'linear-gradient(90deg, #a78bfa, #7c3aed, #c4b5fd, #7c3aed, #a78bfa)',
+        backgroundSize: '200% auto',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        animation: 'gradient-sweep 3s linear infinite',
+      }}
     >
-      <span
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase mb-3 inline-block"
-        style={{
-          fontFamily: 'var(--font-roboto), sans-serif',
-          background:
-            'linear-gradient(90deg, #a78bfa, #7c3aed, #c4b5fd, #7c3aed, #a78bfa)',
-          backgroundSize: '200% auto',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          animation: 'gradient-sweep 3s linear infinite',
-        }}
-      >
-        {name}
-      </span>
-      <div className="flex flex-col gap-2">
-        {description.split('. ').map((sentence, i, arr) => (
-          <p
-            key={i}
-            className="text-xl sm:text-2xl text-white leading-relaxed font-normal"
-            style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
-          >
-            {sentence.endsWith('.')
-              ? sentence
-              : `${sentence}${i < arr.length - 1 ? '.' : ''}`}
-          </p>
-        ))}
-      </div>
+      {name}
+    </span>
+  );
+
+  const descriptionEl = (
+    <div className="flex flex-col gap-0.5">
+      {description.split('. ').map((sentence, i, arr) => (
+        <p
+          key={i}
+          className="text-base sm:text-lg md:text-xl text-white leading-snug font-normal"
+          style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
+        >
+          {sentence.endsWith('.') ? sentence : `${sentence}${i < arr.length - 1 ? '.' : ''}`}
+        </p>
+      ))}
     </div>
   );
 
   return (
     <div className="border-b border-white/5">
       <div className="overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+        {/* Mobile layout: titre → image → description */}
+        <div className="flex flex-col md:hidden px-5 py-6">
+          <div ref={textRef} className={cn(
+            'transition-all duration-700 ease-out mb-4',
+            isVisible ? 'opacity-100' : 'opacity-0'
+          )}>
+            {titleEl}
+          </div>
+          {/* Mobile image — no parallax, constrained */}
+          <div className="flex items-center justify-center py-4 overflow-hidden">
+            <div className={`${imageWidthClass} relative`}>
+              <Image
+                src={imageSrc}
+                alt={name}
+                width={500}
+                height={360}
+                className="w-full h-auto object-contain drop-shadow-[0_0_32px_rgba(124,58,237,0.3)]"
+              />
+            </div>
+          </div>
+          <div className={cn(
+            'transition-all duration-700 ease-out mt-2',
+            isVisible ? 'opacity-100' : 'opacity-0'
+          )}>
+            {descriptionEl}
+          </div>
+        </div>
+
+        {/* Desktop layout: two columns */}
+        <div className="hidden md:grid md:grid-cols-2 items-center">
           <div className={illustrationSide === 'right' ? 'order-first md:order-last' : ''}>
             {illustrationEl}
           </div>
-          <div className={illustrationSide === 'right' ? 'order-last md:order-first' : ''}>
-            {textEl}
+          <div
+            ref={textRef}
+            className={cn(
+              `flex flex-col justify-center ${textPaddingLeft} py-6 transition-all duration-700 ease-out`,
+              isVisible
+                ? 'opacity-100 translate-x-0'
+                : `opacity-0 ${illustrationSide === 'left' ? 'translate-x-12' : '-translate-x-12'}`
+            )}
+          >
+            <div className="mb-3">{titleEl}</div>
+            {descriptionEl}
           </div>
         </div>
       </div>
@@ -900,22 +913,24 @@ function MultiDeviceSection({
     {
       ...content.multiDevice.devices[0],
       illustrationSide: 'left' as const,
-      imageSrc: '/device-mobile.webp',
-      imageWidth: '14%',
+      imageSrc: '/device-mobile.svg',
+      imageWidthClass: 'w-[45%] sm:w-[35%] md:w-[17%]',
+      illustrationPadding: 'p-4 sm:p-6 md:pt-16',
     },
     {
       ...content.multiDevice.devices[1],
       illustrationSide: 'right' as const,
-      imageSrc: '/device-desktop.webp',
-      imageWidth: '38%',
-      textPaddingLeft: 'pl-32 sm:pl-48 md:pl-64 pr-4',
-      illustrationPadding: 'px-4 sm:px-6 pt-16 sm:pt-24 pb-4',
+      imageSrc: '/device-desktop.svg',
+      imageWidthClass: 'w-[85%] sm:w-[75%] md:w-[55%]',
+      textPaddingLeft: 'px-5 sm:px-8 md:pl-16 md:pr-4 lg:pl-28',
+      illustrationPadding: 'px-4 sm:px-6 pt-8 sm:pt-12 md:pt-16 pb-4',
     },
     {
       ...content.multiDevice.devices[2],
       illustrationSide: 'left' as const,
-      imageSrc: '/device-kiosk.webp',
-      imageWidth: '45%',
+      imageSrc: '/device-kiosk.svg',
+      imageWidthClass: 'w-[65%] sm:w-[55%] md:w-[50%]',
+      illustrationPadding: 'p-4 sm:p-6 md:pt-16',
     },
   ];
 
@@ -932,7 +947,7 @@ function MultiDeviceSection({
           className="font-bold text-white leading-tight"
           style={{
             fontFamily: 'var(--font-roboto), sans-serif',
-            fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
+            fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)',
           }}
         >
           <span className="block">
@@ -945,7 +960,7 @@ function MultiDeviceSection({
         <div
           style={{
             fontFamily: 'var(--font-roboto), sans-serif',
-            fontSize: 'clamp(1rem, 2.2vw, 1.5rem)',
+            fontSize: 'clamp(0.95rem, 2.2vw, 1.5rem)',
             marginTop: '1rem',
             textAlign: 'center',
             width: '100%',
@@ -969,7 +984,7 @@ function MultiDeviceSection({
           description={device.description}
           illustrationSide={device.illustrationSide}
           imageSrc={device.imageSrc}
-          imageWidth={device.imageWidth}
+          imageWidthClass={'imageWidthClass' in device ? device.imageWidthClass : undefined}
           textPaddingLeft={'textPaddingLeft' in device ? device.textPaddingLeft : undefined}
           illustrationPadding={'illustrationPadding' in device ? device.illustrationPadding : undefined}
         />
@@ -1003,15 +1018,15 @@ function UseCasesSection({
           isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
         )}
       >
-        <div className="text-left space-y-3 mb-2 px-4">
+        <div className="text-left space-y-3 mb-2 px-4 sm:px-6">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-default"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             {t('landing.carousel.introTitle')}
           </h2>
           <p
-            className="text-lg sm:text-xl md:text-2xl text-text w-full"
+            className="text-base sm:text-lg md:text-xl text-text w-full"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             <span className="block">
@@ -1096,7 +1111,7 @@ function FranchiseSection({
             className="font-bold text-white leading-tight"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
-              fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
+              fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)',
             }}
           >
             <span className="block">{content.franchise.titleLine1}</span>
@@ -1119,7 +1134,7 @@ function FranchiseSection({
               <div
                 key={index}
                 className={cn(
-                  'flex flex-col gap-6 p-8 sm:p-10 md:p-12 h-full',
+                  'flex flex-col gap-5 p-5 sm:p-8 md:p-10 h-full',
                   index === 0 ? 'md:border-r border-white/10' : ''
                 )}
                 style={{ background: 'rgba(167,139,250,0.03)' }}
@@ -1128,7 +1143,7 @@ function FranchiseSection({
                   <Icon className="h-7 w-7 text-white" />
                 </div>
                 <span
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide uppercase leading-tight min-h-[4rem]"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide uppercase leading-tight"
                   style={{
                     fontFamily: 'var(--font-roboto), sans-serif',
                     background:
@@ -1146,7 +1161,7 @@ function FranchiseSection({
                   {block.description.split('. ').map((sentence, i, arr) => (
                     <p
                       key={i}
-                      className="text-lg sm:text-xl text-white leading-relaxed font-normal"
+                      className="text-base sm:text-lg text-white leading-relaxed font-normal"
                       style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
                     >
                       {sentence.endsWith('.')
@@ -1181,18 +1196,12 @@ function WhyChooseSection({
     >
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         {/* Header */}
-        <div
-          ref={ref}
-          className={cn(
-            'text-center mb-14 transition-all duration-700',
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          )}
-        >
+        <div className="text-center mb-14">
           <h2
             className="font-bold text-white leading-tight"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
-              fontSize: 'clamp(1.2rem, 2.8vw, 2.8rem)',
+              fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)',
             }}
           >
             <span className="block">
@@ -1210,28 +1219,13 @@ function WhyChooseSection({
           </p>
         </div>
 
-        {/* Stats grid — 3 top + 2 bottom centered */}
-        <div className="flex flex-col gap-4 sm:gap-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
-            {content.whyChoose.stats.slice(0, 3).map((stat, index) => (
-              <StatCard key={index} stat={stat} index={index} />
-            ))}
-          </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '2rem',
-              maxWidth: '48rem',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              width: '100%',
-            }}
-          >
-            {content.whyChoose.stats.slice(3).map((stat, index) => (
-              <StatCard key={index + 3} stat={stat} index={index + 3} />
-            ))}
-          </div>
+        {/* Stats grid */}
+        <div ref={ref} className="flex flex-wrap justify-center gap-6">
+          {content.whyChoose.stats.map((stat, index) => (
+            <div key={index} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+              <StatCard stat={stat} index={index} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -1293,16 +1287,10 @@ function StatCard({
   return (
     <div
       ref={ref}
-      className={cn(
-        'flex flex-col items-center text-center gap-3 p-7 transition-all duration-700',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      )}
-      style={{
-        transitionDelay: `${index * 80}ms`,
-      }}
+      className="flex flex-col items-center text-center gap-3 p-5 sm:p-7"
     >
       <span
-        className="text-6xl sm:text-8xl font-normal leading-none"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-none"
         style={{
           fontFamily: 'Helvetica, Arial, sans-serif',
           background:
@@ -1337,7 +1325,7 @@ function FAQSection({
   return (
     <section
       id="faq"
-      className="py-16 sm:py-20 md:py-28 px-6 sm:px-12 md:px-20 bg-black"
+      className="py-12 sm:py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-black"
     >
       <div
         ref={ref}
@@ -1420,7 +1408,7 @@ function FAQSection({
                       fontFamily: 'var(--font-roboto), sans-serif',
                     }}
                     className={cn(
-                      'text-lg sm:text-xl font-semibold transition-colors',
+                      'text-base sm:text-lg font-semibold transition-colors',
                       isOpen ? 'text-[#a78bfa]' : 'text-white'
                     )}
                   >
@@ -1440,7 +1428,7 @@ function FAQSection({
                       textAlign: 'left',
                       fontFamily: 'var(--font-roboto), sans-serif',
                     }}
-                    className="px-6 pb-5 text-lg sm:text-xl text-text/70 leading-relaxed"
+                    className="px-4 sm:px-6 pb-5 text-sm sm:text-base md:text-lg text-text/70 leading-relaxed"
                   >
                     {item.answer}
                   </p>
@@ -1466,7 +1454,7 @@ function CTASection({
       id="contact"
       ref={ref}
       className={cn(
-        'relative overflow-hidden py-24 sm:py-32 px-4',
+        'relative overflow-hidden py-16 sm:py-24 md:py-32 px-4',
         isVisible ? 'animate-scale-in opacity-100' : 'opacity-0'
       )}
       style={{
@@ -1517,7 +1505,7 @@ function CTASection({
             className="text-white/90 mx-auto px-2 max-w-[48rem] font-normal"
             style={{
               fontFamily: 'Helvetica, Arial, sans-serif',
-              fontSize: 'clamp(1.2rem, 2.2vw, 1.8rem)',
+              fontSize: 'clamp(1rem, 2.5vw, 1.8rem)',
             }}
           >
             {content.cta.description}

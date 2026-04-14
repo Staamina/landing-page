@@ -431,6 +431,7 @@ export const getLandingPageContent = (
           t('landing.incidentPath.straight.step2'),
           t('landing.incidentPath.straight.step3'),
           t('landing.incidentPath.straight.step4'),
+          t('landing.incidentPath.straight.step5'),
         ],
       },
       zigzag: {
@@ -443,6 +444,9 @@ export const getLandingPageContent = (
           t('landing.incidentPath.zigzag.step6'),
           t('landing.incidentPath.zigzag.step7'),
           t('landing.incidentPath.zigzag.step8'),
+          t('landing.incidentPath.zigzag.step9'),
+          t('landing.incidentPath.zigzag.step10'),
+          t('landing.incidentPath.zigzag.step11'),
         ],
       },
     },
