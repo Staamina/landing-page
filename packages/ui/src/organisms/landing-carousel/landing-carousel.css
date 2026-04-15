@@ -466,6 +466,19 @@
   }
 }
 
+@keyframes showContentMobile {
+  from {
+    transform: translateX(-30px);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 .landing-carousel__item:nth-child(2)
   .landing-carousel__intro
   .landing-carousel__title,
@@ -710,48 +723,60 @@
 
 /* Mobile phones */
 @media (max-width: 480px) {
+  .landing-carousel__specifications,
+  .landing-carousel__topic {
+    display: none;
+  }
+
   :root {
-    --slider-height: 600px;
-    --item2-transform: translate(0, 0) scale(0.85);
-    --item3-transform: translate(0, 20%) scale(0.6);
-    --item4-transform: translate(0, 35%) scale(0.4);
+    --slider-height: 320px;
+    --item1-transform: translateX(-90%) scale(0.75);
+    --item2-transform: translateX(0%) scale(1);
+    --item3-transform: translateX(90%) scale(0.75);
+    --item4-transform: translateX(150%) scale(0.5);
+    --item5-transform: translateX(200%) scale(0.3);
+  }
+
+  .landing-carousel {
+    margin-top: 0;
   }
 
   .landing-carousel__list {
-    max-width: 95%;
+    max-width: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .landing-carousel__item {
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .landing-carousel__image {
     position: relative;
-    width: 90%;
-    max-width: 350px;
-    max-height: 200px;
+    width: 100%;
+    max-height: 260px;
     object-fit: contain;
     right: auto;
-    top: 10%;
+    top: auto;
     margin: 0 auto;
+    transform: none;
   }
 
   .landing-carousel__footer {
-    margin-top: calc(-1 * var(--slider-height) * 0.15);
+    margin-top: 16px;
   }
 
   .landing-carousel__intro,
   .landing-carousel__detail {
-    position: relative;
-    width: 90%;
-    max-width: 100%;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin-top: 2em;
+    display: none;
+  }
+
+  .landing-carousel__control--prev,
+  .landing-carousel__control--next {
+    display: none;
   }
 
   .landing-carousel__item:nth-child(2) .landing-carousel__intro {

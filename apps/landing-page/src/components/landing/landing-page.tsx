@@ -240,12 +240,12 @@ function ProblemStatementSection({
           isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
         )}
       >
-        <div className="w-full md:w-[40%] px-5 sm:px-8 md:px-12 py-8 sm:py-12 shrink-0">
+        <div className="w-full md:w-[40%] px-5 sm:px-8 md:px-12 py-8 sm:py-12 md:pt-20 shrink-0">
           <p
             className="font-bold text-white text-left"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
-              fontSize: 'clamp(1.1rem, 2.8vw, 3.5rem)',
+              fontSize: 'clamp(0.9rem, 2.2vw, 2.4rem)',
               lineHeight: '1.1',
             }}
           >
@@ -255,7 +255,7 @@ function ProblemStatementSection({
             <span className="block">
               <HighlightedText text={content.problemStatement.line2} />
             </span>
-            <span className="block">
+            <span className="block mt-4 md:mt-8">
               <HighlightedText text={content.problemStatement.line3} />
             </span>
           </p>
@@ -311,9 +311,9 @@ function ProblemStatementSection({
                   }}
                 >
                   <div
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap shadow-lg"
+                    className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold whitespace-nowrap shadow-lg"
                     style={{
-                      background: 'rgba(10,0,20,0.75)',
+                      background: 'rgba(10,0,20,0.35)',
                       border: `1px solid ${activeCfg.color}`,
                       color: activeCfg.color,
                       backdropFilter: 'blur(8px)',
@@ -332,34 +332,52 @@ function ProblemStatementSection({
           </div>
 
           {/* Toggle buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-5">
             {(Object.keys(storeLayerConfig) as StoreLayer[]).map((layer) => {
               const cfg = storeLayerConfig[layer];
               const isActive = activeLayer === layer;
               return (
                 <button
                   key={layer}
+                  type="button"
                   onClick={() => handleToggle(layer)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
-                  style={{
-                    fontFamily: 'var(--font-roboto), sans-serif',
-                    background: isActive
-                      ? `${cfg.color}22`
-                      : 'rgba(255,255,255,0.05)',
-                    border: `1px solid ${isActive ? cfg.color : 'rgba(255,255,255,0.15)'}`,
-                    color: isActive ? cfg.color : 'rgba(255,255,255,0.5)',
-                    boxShadow: isActive ? `0 0 16px ${cfg.color}33` : 'none',
-                  }}
+                  aria-pressed={isActive}
+                  className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-transform duration-150"
                 >
-                  <span
-                    className="w-2 h-2 rounded-full flex-shrink-0 transition-all duration-200"
+                  {/* iOS-style toggle */}
+                  <div
+                    className="relative flex-shrink-0 rounded-full transition-all duration-300"
                     style={{
+                      width: '52px',
+                      height: '30px',
                       background: isActive
-                        ? cfg.color
-                        : 'rgba(255,255,255,0.3)',
+                        ? `linear-gradient(135deg, #c4b5fd, ${cfg.color})`
+                        : 'rgba(255,255,255,0.15)',
+                      boxShadow: isActive
+                        ? `0 0 14px ${cfg.color}66`
+                        : 'inset 0 0 0 1.5px rgba(255,255,255,0.2)',
                     }}
-                  />
-                  {cfg.label}
+                  >
+                    <div
+                      className="absolute top-[3px] w-6 h-6 rounded-full bg-white transition-all duration-300"
+                      style={{
+                        left: isActive ? '23px' : '3px',
+                        boxShadow: isActive
+                          ? `0 2px 8px ${cfg.color}88`
+                          : '0 1px 4px rgba(0,0,0,0.35)',
+                      }}
+                    />
+                  </div>
+                  {/* Label */}
+                  <span
+                    className="text-sm font-semibold transition-colors duration-200"
+                    style={{
+                      fontFamily: 'var(--font-roboto), sans-serif',
+                      color: isActive ? cfg.color : 'rgba(255,255,255,0.5)',
+                    }}
+                  >
+                    {cfg.label}
+                  </span>
                 </button>
               );
             })}
@@ -423,6 +441,7 @@ function FeatureRow({
   accentColor,
   illustrationSide,
   illustration,
+  textClassName,
 }: {
   label: string;
   sectionTitle?: React.ReactNode;
@@ -432,8 +451,9 @@ function FeatureRow({
   accentColor: 'red' | 'brand';
   illustrationSide: 'left' | 'right';
   illustration?: React.ReactNode;
+  textClassName?: string;
 }) {
-  const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.05 });
   const { ref: illustrationRef, offset } = useParallax(40);
 
   const illustrationEl = (
@@ -464,6 +484,7 @@ function FeatureRow({
       ref={textRef}
       className={cn(
         'flex flex-col justify-center px-5 sm:px-8 md:px-12 py-8 sm:py-10 transition-all duration-700 ease-out',
+        textClassName,
         isVisible
           ? 'opacity-100 translate-x-0'
           : `opacity-0 ${illustrationSide === 'left' ? 'translate-x-12' : '-translate-x-12'}`
@@ -471,7 +492,7 @@ function FeatureRow({
     >
       {label && (
         <span
-          className="text-base sm:text-xl md:text-2xl font-bold tracking-wide uppercase mb-3 inline-block"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase mb-3 inline-block"
           style={{
             fontFamily: 'var(--font-roboto), sans-serif',
             background:
@@ -554,6 +575,68 @@ function FeatureRow({
   );
 }
 
+function IllustrationWithBadges({
+  imageSrc,
+  imageAlt,
+  accentColor,
+  badges,
+  containerClassName,
+}: {
+  imageSrc: string;
+  imageAlt: string;
+  accentColor: string;
+  badges: { x: string; y: string; mobileX?: string; mobileY?: string; text: string }[];
+  containerClassName?: string;
+}) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center p-4 sm:p-8">
+      <div className={cn('relative w-[85%] sm:w-[55%]', containerClassName)}>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={600}
+          height={600}
+          className="w-full h-auto object-contain relative z-10"
+        />
+        {badges.map((badge, i) => (
+          <div
+            key={i}
+            className="absolute z-20 pointer-events-none"
+            style={{
+              left: isMobile && badge.mobileX ? badge.mobileX : badge.x,
+              top: isMobile && badge.mobileY ? badge.mobileY : badge.y,
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            <div
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[8px] sm:text-xs font-bold whitespace-nowrap shadow-lg"
+              style={{
+                background: 'rgba(10,0,20,0.75)',
+                border: `1px solid ${accentColor}`,
+                color: accentColor,
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                boxShadow: `0 0 16px ${accentColor}55`,
+              }}
+            >
+              {badge.text}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function BeforeAfterSection({
   content,
 }: {
@@ -594,6 +677,26 @@ function BeforeAfterSection({
           }))}
           accentColor="red"
           illustrationSide="left"
+          illustration={
+            <IllustrationWithBadges
+              imageSrc="/Complexity.svg"
+              imageAlt="Sans Staamina - Complexité"
+              accentColor="#7c3aed"
+              badges={[
+                { x: '15%', y: '93%', text: 'Incident détecté' },
+                { x: '70%', y: '84%', mobileX: '60%', text: 'Identifier l\'équipement' },
+                { x: '35%', y: '75%', text: 'Chercher le prestataire responsable' },
+                { x: '80%', y: '66%', mobileX: '65%', text: 'Comprendre la procédure' },
+                { x: '10%', y: '57%', text: 'Envoyer une demande' },
+                { x: '60%', y: '48%', mobileX: '55%', text: 'Requalification avec le prestataire' },
+                { x: '25%', y: '39%', text: 'Relancer' },
+                { x: '75%', y: '30%', mobileX: '62%', text: 'Escalade aux équipes centrales' },
+                { x: '40%', y: '21%', text: 'Attendre une réponse' },
+                { x: '15%', y: '12%', text: 'Suivre manuellement' },
+                { x: '65%', y: '3%',  mobileX: '55%', text: 'Planifier l\'intervention' },
+              ]}
+            />
+          }
         />
         <FeatureRow
           sectionTitle={
@@ -620,6 +723,21 @@ function BeforeAfterSection({
           }))}
           accentColor="brand"
           illustrationSide="right"
+          textClassName="md:pl-[200px] md:pr-4"
+          illustration={
+            <IllustrationWithBadges
+              imageSrc="/Simplicity.svg"
+              imageAlt="Avec Staamina - Simplicité"
+              accentColor="#7c3aed"
+              badges={[
+                { x: '18%', y: '90%', text: 'Incident détecté' },
+                { x: '65%', y: '72%', text: 'Déclaration dans Staamina' },
+                { x: '15%', y: '54%', text: 'Qualification et Routage automatique' },
+                { x: '62%', y: '36%', text: 'MAJ et Suivi temps réel' },
+                { x: '110%', y: '16%', mobileX: '70%', text: 'Intervention déclenchée' },
+              ]}
+            />
+          }
         />
       </div>
     </section>
@@ -781,7 +899,7 @@ function DeviceRow({
   textPaddingLeft?: string;
   illustrationPadding?: string;
 }) {
-  const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: textRef, isVisible } = useScrollAnimation({ threshold: 0.05 });
   const { ref: illustrationRef, offset } = useParallax(40);
 
   const illustrationEl = (
@@ -821,7 +939,7 @@ function DeviceRow({
 
   const titleEl = (
     <span
-      className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-wide uppercase inline-block"
+      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase inline-block"
       style={{
         fontFamily: 'var(--font-roboto), sans-serif',
         background: 'linear-gradient(90deg, #a78bfa, #7c3aed, #c4b5fd, #7c3aed, #a78bfa)',
@@ -851,11 +969,11 @@ function DeviceRow({
   );
 
   return (
-    <div className="border-b border-white/5">
+    <div ref={textRef} className="border-b border-white/5">
       <div className="overflow-hidden">
         {/* Mobile layout: titre → image → description */}
         <div className="flex flex-col md:hidden px-5 py-6">
-          <div ref={textRef} className={cn(
+          <div className={cn(
             'transition-all duration-700 ease-out mb-4',
             isVisible ? 'opacity-100' : 'opacity-0'
           )}>
@@ -887,7 +1005,6 @@ function DeviceRow({
             {illustrationEl}
           </div>
           <div
-            ref={textRef}
             className={cn(
               `flex flex-col justify-center ${textPaddingLeft} py-6 transition-all duration-700 ease-out`,
               isVisible
@@ -914,7 +1031,7 @@ function MultiDeviceSection({
       ...content.multiDevice.devices[0],
       illustrationSide: 'left' as const,
       imageSrc: '/device-mobile.svg',
-      imageWidthClass: 'w-[45%] sm:w-[35%] md:w-[17%]',
+      imageWidthClass: 'w-[28%] sm:w-[35%] md:w-[17%]',
       illustrationPadding: 'p-4 sm:p-6 md:pt-16',
     },
     {
@@ -1045,7 +1162,29 @@ function UseCasesSection({
             autoPlay={false}
             onActiveItemChange={(item) => setActiveSectorId(item.id)}
             footer={
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-3">
+                {/* Active sector title — mobile only, above icons */}
+                <div className="sm:hidden w-full text-center">
+                  {carouselItems.map((item) =>
+                    activeSectorId === item.id ? (
+                      <p
+                        key={item.id}
+                        className="text-base font-bold tracking-wide uppercase"
+                        style={{
+                          fontFamily: 'var(--font-roboto), sans-serif',
+                          background:
+                            'linear-gradient(90deg, #a78bfa, #7c3aed, #c4b5fd)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        {item.intro.topic}
+                      </p>
+                    ) : null
+                  )}
+                </div>
+                {/* Icon pills */}
                 <div className="flex flex-nowrap justify-center gap-2 sm:gap-3 mx-auto">
                   {carouselItems.map((item) => {
                     const SectorIcon = sectorIconMap[item.id] ?? ShoppingBag;
