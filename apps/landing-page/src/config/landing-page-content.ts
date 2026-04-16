@@ -12,10 +12,12 @@ export interface LandingPageContent {
     title: string;
     titleStaticPrefix: string;
     titleMiddle: string;
+    titleMobilePrefix: string;
     titleVariants: string[];
     subtitle: string;
     subtitleLine1: string;
     subtitleLine2: string;
+    subtitleMobile: string;
     description: string;
     ctaPrimary: string;
     ctaSecondary: string;
@@ -147,10 +149,12 @@ export const getLandingPageContent = (
       title: t('landing.hero.title'),
       titleStaticPrefix: t('landing.hero.titleStaticPrefix'),
       titleMiddle: t('landing.hero.titleMiddle'),
+      titleMobilePrefix: t('landing.hero.titleMobilePrefix'),
       titleVariants: titleVariants.map((key) => t(key)),
       subtitle: t('landing.hero.subtitle'),
       subtitleLine1: t('landing.hero.subtitleLine1'),
       subtitleLine2: t('landing.hero.subtitleLine2'),
+      subtitleMobile: t('landing.hero.subtitleMobile'),
       description: t('landing.hero.description'),
       ctaPrimary: t('landing.hero.ctaPrimary'),
       ctaSecondary: t('landing.hero.ctaSecondary'),

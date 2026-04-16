@@ -130,18 +130,21 @@ function HeroSection({
         <div className="text-center space-y-4 sm:space-y-6">
           <div className="space-y-1">
             <p
-              className="text-[0.6rem] sm:text-base md:text-lg font-bold tracking-wide text-text/80 mx-auto leading-relaxed px-2 uppercase"
+              className="hidden sm:block text-[0.6rem] sm:text-base md:text-lg font-bold tracking-wide text-text/80 mx-auto leading-relaxed px-2 uppercase"
               style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
             >
               {content.hero.description}
             </p>
 
             <h1
-              className="text-[0.6rem] sm:text-base md:text-lg font-bold leading-tight text-default px-2"
+              className="text-xl sm:text-base md:text-lg font-bold leading-tight text-default px-2"
               style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
             >
-              <span className="text-[#a78bfa]">STAAMINA</span>
-              {content.hero.titleMiddle}
+              <span className="sm:hidden">{content.hero.titleMobilePrefix}</span>
+              <span className="hidden sm:inline">
+                <span className="text-[#a78bfa]">STAAMINA</span>
+                {content.hero.titleMiddle}
+              </span>
               <AnimatedTitle
                 messages={content.hero.titleVariants}
                 className="inline font-bold text-[#a78bfa]"
@@ -151,11 +154,16 @@ function HeroSection({
           </div>
 
           <p
-            className="text-[1rem] sm:text-2xl md:text-4xl lg:text-5xl font-bold w-full leading-tight mt-4 sm:mt-10 text-center"
+            className="text-3xl sm:text-2xl md:text-4xl lg:text-5xl font-bold w-full leading-tight mt-4 sm:mt-10 text-center"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
-            <HighlightedText text={content.hero.subtitleLine1} />{' '}
-            <HighlightedText text={content.hero.subtitleLine2} />
+            <span className="sm:hidden">
+              <HighlightedText text={content.hero.subtitleMobile} />
+            </span>
+            <span className="hidden sm:inline">
+              <HighlightedText text={content.hero.subtitleLine1} />{' '}
+              <HighlightedText text={content.hero.subtitleLine2} />
+            </span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 sm:pt-12">
@@ -1165,8 +1173,11 @@ function UseCasesSection({
       >
         <div className="text-left space-y-3 mb-2 px-4 sm:px-6">
           <h2
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default"
-            style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
+            className="font-bold text-default leading-tight"
+            style={{
+              fontFamily: 'var(--font-roboto), sans-serif',
+              fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)',
+            }}
           >
             {t('landing.carousel.introTitle')}
           </h2>

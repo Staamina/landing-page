@@ -85,6 +85,7 @@
       "title": "STAAMINA MAKES MALFUNCTIONS MANAGEABLE.",
       "titleStaticPrefix": "STAAMINA MAKES MALFUNCTIONS",
       "titleMiddle": " MAKES MALFUNCTIONS ",
+      "titleMobilePrefix": "MAKE YOUR OPERATIONS ",
       "titleVariants": {
         "pilotables": "MANAGEABLE.",
         "anticipables": "PREDICTABLE.",
@@ -99,6 +100,7 @@
       "subtitle": "THE MAINTENANCE SOLUTION TO INTELLIGENTLY MANAGE INCIDENTS ACROSS YOUR LOCATIONS.",
       "subtitleLine1": "THE **MAINTENANCE** SOLUTION TO **INTELLIGENTLY MANAGE**",
       "subtitleLine2": "INCIDENTS ACROSS YOUR **LOCATIONS**.",
+      "subtitleMobile": "THE SOLUTION TO **MANAGE** INTELLIGENTLY **MAINTENANCE** ACROSS YOUR **LOCATIONS**.",
       "description": "BREAKDOWNS ARE COSTLY. LACK OF VISIBILITY COSTS EVEN MORE.",
       "ctaPrimary": "Get in Touch",
       "ctaSecondary": "Learn More"
