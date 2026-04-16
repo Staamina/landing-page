@@ -697,6 +697,7 @@ function BeforeSection({
               imageSrc="/Complexity3.svg"
               imageAlt="Sans Staamina - Complexité"
               accentColor="#7c3aed"
+              containerClassName="sm:w-[60%]"
               badges={[
                 { x: '15%', y: '93%', text: content.beforeAfter.before.badges[0] },
                 { x: '70%', y: '84%', mobileX: '60%', text: content.beforeAfter.before.badges[1] },
