@@ -255,9 +255,9 @@
     "beforeAfter": {
       "title": "STAAMINA STRUCTURES AND SIMPLIFIES OPERATIONS — FROM INCIDENT DECLARATION TO RESOLUTION.",
       "row1line1": "STAAMINA **STRUCTURES** AND **SIMPLIFIES** OPERATIONS",
-      "row1line2": "RESOLVING AN INCIDENT SHOULD NOT BE AN OBSTACLE COURSE.",
+      "row1line2": "**RESOLVING** AN INCIDENT SHOULD NOT BE AN **OBSTACLE COURSE**.",
       "row2line1": "FROM **INCIDENT DECLARATION** TO ITS **RESOLUTION**",
-      "row2line2": "ONE SINGLE ENTRY POINT FOR ALL YOUR INCIDENTS.",
+      "row2line2": "ONE **SINGLE ENTRY POINT** FOR ALL YOUR **INCIDENTS**.",
       "before": {
         "label": "WITHOUT STAAMINA",
         "tagline": "One incident, a chain of steps.",
@@ -266,17 +266,37 @@
           "Time-consuming manual tasks",
           "Operational disorganization",
           "No performance monitoring"
+        ],
+        "badges": [
+          "Incident detected",
+          "Identify the equipment",
+          "Find the responsible provider",
+          "Understand the procedure",
+          "Send a request",
+          "Requalification with the provider",
+          "Follow up",
+          "Escalation to central teams",
+          "Wait for a response",
+          "Track manually",
+          "Schedule the intervention"
         ]
       },
       "after": {
         "label": "WITH STAAMINA",
-        "tagline": "ONE SINGLE ENTRY POINT FOR ALL YOUR INCIDENTS.",
+        "tagline": "ONE **SINGLE ENTRY POINT** FOR ALL YOUR **INCIDENTS**.",
         "highlight": "One incident. One action.",
         "items": [
           "Single, intuitive interface",
           "Fluid, automated processes",
           "Precise operational control",
           "Less friction. More mastery."
+        ],
+        "badges": [
+          "Incident detected",
+          "Declaration in Staamina",
+          "Qualification & Automatic Routing",
+          "Update & Real-time Tracking",
+          "Intervention triggered"
         ]
       }
     },
@@ -460,6 +480,34 @@
         {
           "question": "Does Staamina work offline?",
           "answer": "The technician mobile app is built as a PWA with full offline support. Any actions taken without a connection are automatically synced once the network is restored."
+        },
+        {
+          "question": "What is Staamina?",
+          "answer": "Staamina is a SaaS platform that centralises and manages all your field operations — from maintenance to audits, from incident detection through to resolution."
+        },
+        {
+          "question": "Who can use Staamina?",
+          "answer": "In-store teams, regional managers, head office teams, service providers, and technicians. Every stakeholder involved in your operations."
+        },
+        {
+          "question": "On which devices can I use Staamina?",
+          "answer": "Desktop, tablet, kiosk, POS terminal, mobile — Staamina follows you everywhere."
+        },
+        {
+          "question": "What types of operations can be managed?",
+          "answer": "Maintenance, deployment, audits, incidents — all your operations in one place."
+        },
+        {
+          "question": "Can we track and centralise exchanges with external parties?",
+          "answer": "Yes, Staamina centralises all exchanges, information, and follow-ups in a single tool, regardless of the communication channel (Email / Portal / Phone / WhatsApp / Support form / Website)."
+        },
+        {
+          "question": "Does Staamina integrate with our existing tools?",
+          "answer": "Yes, via API or connectors, Staamina connects to your ERP, CRM, CMMS, FMS, or any other business software."
+        },
+        {
+          "question": "What are the main benefits of Staamina?",
+          "answer": "Cost reduction, faster response times, full network visibility, and optimised operations."
         }
       ]
     },

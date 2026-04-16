@@ -255,9 +255,9 @@
     "beforeAfter": {
       "title": "STAAMINA STRUCTURE ET SIMPLIFIE LES OPÉRATIONS DE LA DÉCLARATION JUSQU'À LA RÉSOLUTION.",
       "row1line1": "STAAMINA **STRUCTURE** ET **SIMPLIFIE** LES OPÉRATIONS",
-      "row1line2": "LA RÉSOLUTION D'UN INCIDENT NE DEVRAIT PAS ÊTRE UN PARCOURS D'OBSTACLES.",
+      "row1line2": "LA **RÉSOLUTION** D'UN INCIDENT NE DEVRAIT PAS ÊTRE UN **PARCOURS D'OBSTACLES**.",
       "row2line1": "DE LA **DÉCLARATION** JUSQU'À LA **RÉSOLUTION**",
-      "row2line2": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
+      "row2line2": "UN **POINT D'ENTRÉE UNIQUE** POUR TOUS VOS **INCIDENTS**.",
       "before": {
         "label": "SANS STAAMINA",
         "tagline": "Un incident, un enchaînement de démarches.",
@@ -266,17 +266,37 @@
           "Tâches manuelles chronophages",
           "Désorganisation opérationnelle",
           "Non-pilotage de la performance"
+        ],
+        "badges": [
+          "Incident détecté",
+          "Identifier l'équipement",
+          "Chercher le prestataire responsable",
+          "Comprendre la procédure",
+          "Envoyer une demande",
+          "Requalification avec le prestataire",
+          "Relancer",
+          "Escalade aux équipes centrales",
+          "Attendre une réponse",
+          "Suivre manuellement",
+          "Planifier l'intervention"
         ]
       },
       "after": {
         "label": "AVEC STAAMINA",
-        "tagline": "UN POINT D'ENTRÉE UNIQUE POUR TOUS VOS INCIDENTS.",
+        "tagline": "UN **POINT D'ENTRÉE UNIQUE** POUR TOUS VOS **INCIDENTS**.",
         "highlight": "Un incident, une action.",
         "items": [
           "Interface unique et intuitive",
           "Processus fluides et automatisés",
           "Pilotage précis de vos opérations",
           "Moins de démarches. Plus de maîtrise."
+        ],
+        "badges": [
+          "Incident détecté",
+          "Déclaration dans Staamina",
+          "Qualification et Routage automatique",
+          "MAJ et Suivi temps réel",
+          "Intervention déclenchée"
         ]
       }
     },
@@ -447,8 +467,12 @@
       "subtitle": "NOUS AVONS LES RÉPONSES.",
       "items": [
         {
+          "question": "Qu'est-ce que Staamina ?",
+          "answer": "Staamina est une plateforme SaaS qui centralise et pilote toutes vos opérations terrain, de la maintenance aux audits, de la détection de l'incident jusqu'à sa résolution."
+        },
+        {
           "question": "Staamina est-il adapté à ma taille d'entreprise ?",
-          "answer": "Staamina s'adapte à tous les réseaux, qu'il s'agisse de 5 ou 500 points de vente. La plateforme est conçue pour évoluer avec votre organisation, sans coût ou complexité supplémentaire."
+          "answer": "Staamina s'adapte à tous les réseaux, qu'il s'agisse de 3 ou 500 points de vente. La plateforme est conçue pour évoluer avec votre organisation, sans coût ou complexité supplémentaire."
         },
         {
           "question": "Combien de temps faut-il pour déployer Staamina ?",
@@ -469,6 +493,30 @@
         {
           "question": "Est-ce que Staamina fonctionne sans connexion internet ?",
           "answer": "L'application mobile pour techniciens est conçue en mode PWA avec support hors-ligne. Les actions réalisées sans connexion sont synchronisées automatiquement dès le retour du réseau."
+        },
+        {
+          "question": "Qui peut utiliser Staamina ?",
+          "answer": "Équipes en magasin, managers régionaux, équipes siège, prestataires et techniciens. L'ensemble des acteurs intervenants sur vos opérations."
+        },
+        {
+          "question": "Sur quels supports utiliser Staamina ?",
+          "answer": "Ordinateur, tablette, Borne, Caisse, mobile : Staamina vous suit partout."
+        },
+        {
+          "question": "Quels types d'opérations peut-on gérer ?",
+          "answer": "Maintenance, déploiement, audits, incidents : toutes vos opérations sont centralisées."
+        },
+        {
+          "question": "Peut-on suivre et centraliser les échanges avec des acteurs externes ?",
+          "answer": "Oui, Staamina centralise tous les échanges, informations et suivis dans un seul outil, quelque soit le canal de communication (Mail / Portail / Téléphone / Whatsapp / Formulaire support / Site Web)."
+        },
+        {
+          "question": "Staamina s'intègre-t-il à nos outils existants ?",
+          "answer": "Oui, via API ou connecteurs, Staamina se connecte à votre ERP, CRM, GMAO, FMS ou autre logiciel métier."
+        },
+        {
+          "question": "Quels sont les bénéfices principaux de Staamina ?",
+          "answer": "Réduction des coûts, meilleure réactivité, vision globale du réseau et optimisation des opérations."
         }
       ]
     },

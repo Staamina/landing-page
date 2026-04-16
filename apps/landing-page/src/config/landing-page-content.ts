@@ -36,12 +36,14 @@ export interface LandingPageContent {
       label: string;
       tagline: string;
       items: string[];
+      badges: string[];
     };
     after: {
       label: string;
       tagline: string;
       highlight: string;
       items: string[];
+      badges: string[];
     };
   };
   features: {
@@ -174,6 +176,19 @@ export const getLandingPageContent = (
           t('landing.beforeAfter.before.items.2'),
           t('landing.beforeAfter.before.items.3'),
         ],
+        badges: [
+          t('landing.beforeAfter.before.badges.0'),
+          t('landing.beforeAfter.before.badges.1'),
+          t('landing.beforeAfter.before.badges.2'),
+          t('landing.beforeAfter.before.badges.3'),
+          t('landing.beforeAfter.before.badges.4'),
+          t('landing.beforeAfter.before.badges.5'),
+          t('landing.beforeAfter.before.badges.6'),
+          t('landing.beforeAfter.before.badges.7'),
+          t('landing.beforeAfter.before.badges.8'),
+          t('landing.beforeAfter.before.badges.9'),
+          t('landing.beforeAfter.before.badges.10'),
+        ],
       },
       after: {
         label: t('landing.beforeAfter.after.label'),
@@ -184,6 +199,13 @@ export const getLandingPageContent = (
           t('landing.beforeAfter.after.items.1'),
           t('landing.beforeAfter.after.items.2'),
           t('landing.beforeAfter.after.items.3'),
+        ],
+        badges: [
+          t('landing.beforeAfter.after.badges.0'),
+          t('landing.beforeAfter.after.badges.1'),
+          t('landing.beforeAfter.after.badges.2'),
+          t('landing.beforeAfter.after.badges.3'),
+          t('landing.beforeAfter.after.badges.4'),
         ],
       },
     },
@@ -386,6 +408,34 @@ export const getLandingPageContent = (
         {
           question: t('landing.faq.items.5.question'),
           answer: t('landing.faq.items.5.answer'),
+        },
+        {
+          question: t('landing.faq.items.6.question'),
+          answer: t('landing.faq.items.6.answer'),
+        },
+        {
+          question: t('landing.faq.items.7.question'),
+          answer: t('landing.faq.items.7.answer'),
+        },
+        {
+          question: t('landing.faq.items.8.question'),
+          answer: t('landing.faq.items.8.answer'),
+        },
+        {
+          question: t('landing.faq.items.9.question'),
+          answer: t('landing.faq.items.9.answer'),
+        },
+        {
+          question: t('landing.faq.items.10.question'),
+          answer: t('landing.faq.items.10.answer'),
+        },
+        {
+          question: t('landing.faq.items.11.question'),
+          answer: t('landing.faq.items.11.answer'),
+        },
+        {
+          question: t('landing.faq.items.12.question'),
+          answer: t('landing.faq.items.12.answer'),
         },
       ],
     },

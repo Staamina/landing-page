@@ -7,6 +7,7 @@ import {
   type LandingCarouselHandle,
   type SliderItem,
 } from '@staamina/ui/landing-carousel';
+// eslint-disable-next-line import/extensions
 import '@staamina/ui/landing-carousel/landing-carousel.css';
 import { cn } from '@staamina/ui/utils';
 import {
@@ -42,7 +43,6 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 import { AnimatedTitle } from './animated-title';
 import { DarkVeil } from './dark-veil';
-import { IncidentPath } from './incident-path';
 import { StarBorderLink } from './star-border';
 import './star-border.css';
 
@@ -85,7 +85,8 @@ export function LandingPage() {
       <HeroSection content={content} />
       <ProblemStatementSection content={content} />
       <ProblemComplexitySection content={content} />
-      <BeforeAfterSection content={content} />
+      <BeforeSection content={content} />
+      <AfterSection content={content} />
       <FeaturesSection content={content} />
       <MultiDeviceSection content={content} />
       <UseCasesSection content={content} />
@@ -512,7 +513,7 @@ function FeatureRow({
           className="text-base sm:text-xl md:text-2xl font-bold text-default mb-4 leading-tight"
           style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
         >
-          {tagline}
+          <HighlightedText text={tagline} />
         </h3>
       )}
       {highlight && (
@@ -585,7 +586,13 @@ function IllustrationWithBadges({
   imageSrc: string;
   imageAlt: string;
   accentColor: string;
-  badges: { x: string; y: string; mobileX?: string; mobileY?: string; text: string }[];
+  badges: {
+    x: string;
+    y: string;
+    mobileX?: string;
+    mobileY?: string;
+    text: string;
+  }[];
   containerClassName?: string;
 }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -598,8 +605,8 @@ function IllustrationWithBadges({
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-4 sm:p-8">
-      <div className={cn('relative w-[85%] sm:w-[55%]', containerClassName)}>
+    <div className="hidden sm:flex flex-col items-center p-4 sm:p-8">
+      <div className={cn('relative w-[70%] sm:w-[47%]', containerClassName)}>
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -618,7 +625,7 @@ function IllustrationWithBadges({
             }}
           >
             <div
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[8px] sm:text-xs font-bold whitespace-nowrap shadow-lg"
+              className="flex items-center gap-1 px-1.5 py-0.5 sm:gap-1.5 sm:px-2 sm:py-0.5 xl:px-2.5 xl:py-1 rounded-full text-[8px] sm:text-[9px] xl:text-xs font-bold whitespace-nowrap shadow-lg"
               style={{
                 background: 'rgba(10,0,20,0.75)',
                 border: `1px solid ${accentColor}`,
@@ -637,14 +644,14 @@ function IllustrationWithBadges({
   );
 }
 
-function BeforeAfterSection({
+function BeforeSection({
   content,
 }: {
   content: ReturnType<typeof getLandingPageContent>;
 }) {
   return (
     <section
-      id="solution"
+      id="sans-staamina"
       className="relative w-full"
       style={{
         background:
@@ -656,7 +663,7 @@ function BeforeAfterSection({
           sectionTitle={
             <div className="space-y-2">
               <p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
+                className="hidden sm:block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 <HighlightedText text={content.beforeAfter.row1line1} />
@@ -665,7 +672,7 @@ function BeforeAfterSection({
                 className="text-lg sm:text-xl md:text-2xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                {content.beforeAfter.row1line2}
+                <HighlightedText text={content.beforeAfter.row1line2} />
               </p>
             </div>
           }
@@ -679,30 +686,50 @@ function BeforeAfterSection({
           illustrationSide="left"
           illustration={
             <IllustrationWithBadges
-              imageSrc="/Complexity.svg"
+              imageSrc="/Complexity3.svg"
               imageAlt="Sans Staamina - Complexité"
               accentColor="#7c3aed"
               badges={[
-                { x: '15%', y: '93%', text: 'Incident détecté' },
-                { x: '70%', y: '84%', mobileX: '60%', text: 'Identifier l\'équipement' },
-                { x: '35%', y: '75%', text: 'Chercher le prestataire responsable' },
-                { x: '80%', y: '66%', mobileX: '65%', text: 'Comprendre la procédure' },
-                { x: '10%', y: '57%', text: 'Envoyer une demande' },
-                { x: '60%', y: '48%', mobileX: '55%', text: 'Requalification avec le prestataire' },
-                { x: '25%', y: '39%', text: 'Relancer' },
-                { x: '75%', y: '30%', mobileX: '62%', text: 'Escalade aux équipes centrales' },
-                { x: '40%', y: '21%', text: 'Attendre une réponse' },
-                { x: '15%', y: '12%', text: 'Suivre manuellement' },
-                { x: '65%', y: '3%',  mobileX: '55%', text: 'Planifier l\'intervention' },
+                { x: '15%', y: '93%', text: content.beforeAfter.before.badges[0] },
+                { x: '70%', y: '84%', mobileX: '60%', text: content.beforeAfter.before.badges[1] },
+                { x: '35%', y: '75%', text: content.beforeAfter.before.badges[2] },
+                { x: '80%', y: '66%', mobileX: '65%', text: content.beforeAfter.before.badges[3] },
+                { x: '10%', y: '57%', text: content.beforeAfter.before.badges[4] },
+                { x: '60%', y: '48%', mobileX: '55%', text: content.beforeAfter.before.badges[5] },
+                { x: '25%', y: '39%', text: content.beforeAfter.before.badges[6] },
+                { x: '75%', y: '30%', mobileX: '62%', text: content.beforeAfter.before.badges[7] },
+                { x: '40%', y: '21%', text: content.beforeAfter.before.badges[8] },
+                { x: '15%', y: '12%', text: content.beforeAfter.before.badges[9] },
+                { x: '65%', y: '-5%', mobileX: '55%', text: content.beforeAfter.before.badges[10] },
               ]}
             />
           }
         />
+      </div>
+    </section>
+  );
+}
+
+function AfterSection({
+  content,
+}: {
+  content: ReturnType<typeof getLandingPageContent>;
+}) {
+  return (
+    <section
+      id="avec-staamina"
+      className="relative w-full"
+      style={{
+        background:
+          'radial-gradient(ellipse 60% 50% at 95% 30%, rgba(109,40,217,0.22) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 5% 70%, rgba(79,70,229,0.18) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 50% 50%, rgba(124,58,237,0.06) 0%, transparent 60%), #000000',
+      }}
+    >
+      <div style={{ position: 'relative', zIndex: 1 }}>
         <FeatureRow
           sectionTitle={
             <div className="space-y-2">
               <p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
+                className="hidden sm:block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
                 <HighlightedText text={content.beforeAfter.row2line1} />
@@ -711,7 +738,7 @@ function BeforeAfterSection({
                 className="text-lg sm:text-xl md:text-2xl font-bold text-default leading-tight"
                 style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
               >
-                {content.beforeAfter.row2line2}
+                <HighlightedText text={content.beforeAfter.row2line2} />
               </p>
             </div>
           }
@@ -726,15 +753,15 @@ function BeforeAfterSection({
           textClassName="md:pl-[200px] md:pr-4"
           illustration={
             <IllustrationWithBadges
-              imageSrc="/Simplicity.svg"
+              imageSrc="/Simplicity4.svg"
               imageAlt="Avec Staamina - Simplicité"
               accentColor="#7c3aed"
               badges={[
-                { x: '18%', y: '90%', text: 'Incident détecté' },
-                { x: '65%', y: '72%', text: 'Déclaration dans Staamina' },
-                { x: '15%', y: '54%', text: 'Qualification et Routage automatique' },
-                { x: '62%', y: '36%', text: 'MAJ et Suivi temps réel' },
-                { x: '110%', y: '16%', mobileX: '70%', text: 'Intervention déclenchée' },
+                { x: '18%', y: '97%', text: content.beforeAfter.after.badges[0] },
+                { x: '62%', y: '72%', text: content.beforeAfter.after.badges[1] },
+                { x: '5%',  y: '54%', text: content.beforeAfter.after.badges[2] },
+                { x: '35%', y: '36%', text: content.beforeAfter.after.badges[3] },
+                { x: '110%', y: '28%', mobileX: '70%', text: content.beforeAfter.after.badges[4] },
               ]}
             />
           }
@@ -1075,6 +1102,7 @@ function MultiDeviceSection({
           </span>
         </h2>
         <div
+          className="hidden sm:block"
           style={{
             fontFamily: 'var(--font-roboto), sans-serif',
             fontSize: 'clamp(0.95rem, 2.2vw, 1.5rem)',
@@ -1143,7 +1171,7 @@ function UseCasesSection({
             {t('landing.carousel.introTitle')}
           </h2>
           <p
-            className="text-base sm:text-lg md:text-xl text-text w-full"
+            className="hidden sm:block text-base sm:text-lg md:text-xl text-text w-full"
             style={{ fontFamily: 'var(--font-roboto), sans-serif' }}
           >
             <span className="block">
@@ -1323,7 +1351,7 @@ function WhyChooseSection({
 }: {
   content: ReturnType<typeof getLandingPageContent>;
 }) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref } = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <section
@@ -1361,8 +1389,11 @@ function WhyChooseSection({
         {/* Stats grid */}
         <div ref={ref} className="flex flex-wrap justify-center gap-6">
           {content.whyChoose.stats.map((stat, index) => (
-            <div key={index} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-              <StatCard stat={stat} index={index} />
+            <div
+              key={index}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+            >
+              <StatCard stat={stat} />
             </div>
           ))}
         </div>
@@ -1407,13 +1438,7 @@ function useCountUp({
   return count;
 }
 
-function StatCard({
-  stat,
-  index,
-}: {
-  stat: { value: string; label: string };
-  index: number;
-}) {
+function StatCard({ stat }: { stat: { value: string; label: string } }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   // Parse numeric value and suffix (e.g. "155%" → 155, "%")
