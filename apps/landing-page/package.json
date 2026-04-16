@@ -19,7 +19,7 @@
     "@staamina/ui": "workspace:*",
     "@tanstack/react-query": "catalog:state-management",
     "@tanstack/react-table": "catalog:state-management",
-    "@vercel/analytics": "^2.0.1",
+    "@vercel/analytics": "catalog:nextjs",
     "@vercel/speed-insights": "catalog:nextjs",
     "class-variance-authority": "catalog:ui-libraries",
     "clsx": "catalog:ui-libraries",
