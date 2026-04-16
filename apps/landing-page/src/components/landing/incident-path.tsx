@@ -242,7 +242,13 @@ export function IncidentPath({ variant, steps }: IncidentPathProps) {
               }}
             >
               {/* Outer glow ring */}
-              <circle cx={pin.cx} cy={pin.cy} r={PIN_GLOW_R} fill={pinColor} opacity={0.18} />
+              <circle
+                cx={pin.cx}
+                cy={pin.cy}
+                r={PIN_GLOW_R}
+                fill={pinColor}
+                opacity={0.18}
+              />
               {/* Border ring */}
               <circle
                 cx={pin.cx}

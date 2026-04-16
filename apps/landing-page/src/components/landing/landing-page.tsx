@@ -7,6 +7,7 @@ import {
   type LandingCarouselHandle,
   type SliderItem,
 } from '@staamina/ui/landing-carousel';
+// eslint-disable-next-line import/extensions
 import '@staamina/ui/landing-carousel/landing-carousel.css';
 import { cn } from '@staamina/ui/utils';
 import {
@@ -42,7 +43,6 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 import { AnimatedTitle } from './animated-title';
 import { DarkVeil } from './dark-veil';
-import { IncidentPath } from './incident-path';
 import { StarBorderLink } from './star-border';
 import './star-border.css';
 
@@ -585,7 +585,13 @@ function IllustrationWithBadges({
   imageSrc: string;
   imageAlt: string;
   accentColor: string;
-  badges: { x: string; y: string; mobileX?: string; mobileY?: string; text: string }[];
+  badges: {
+    x: string;
+    y: string;
+    mobileX?: string;
+    mobileY?: string;
+    text: string;
+  }[];
   containerClassName?: string;
 }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -1323,7 +1329,7 @@ function WhyChooseSection({
 }: {
   content: ReturnType<typeof getLandingPageContent>;
 }) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref } = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <section
@@ -1361,8 +1367,11 @@ function WhyChooseSection({
         {/* Stats grid */}
         <div ref={ref} className="flex flex-wrap justify-center gap-6">
           {content.whyChoose.stats.map((stat, index) => (
-            <div key={index} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-              <StatCard stat={stat} index={index} />
+            <div
+              key={index}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+            >
+              <StatCard stat={stat} />
             </div>
           ))}
         </div>
@@ -1407,13 +1416,7 @@ function useCountUp({
   return count;
 }
 
-function StatCard({
-  stat,
-  index,
-}: {
-  stat: { value: string; label: string };
-  index: number;
-}) {
+function StatCard({ stat }: { stat: { value: string; label: string } }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   // Parse numeric value and suffix (e.g. "155%" → 155, "%")
