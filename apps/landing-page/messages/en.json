@@ -298,6 +298,7 @@
           "Declaration in Staamina",
           "Qualification & Automatic Routing",
           "Update & Real-time Tracking",
+          "Automatic follow-up",
           "Intervention triggered"
         ]
       }
@@ -516,15 +517,61 @@
     "storeLayer": {
       "domaines": {
         "label": "Domains",
-        "badges": ["Facade", "Signage", "Stock Room", "Sales Floor"]
+        "badges": [
+          "Infrastructure & Building",
+          "Energy & Electricity",
+          "Lighting",
+          "HVAC / Thermal Comfort",
+          "Fire Safety (FSS)",
+          "Security & Safety",
+          "IT & Networks",
+          "Retail & POS Systems",
+          "Digital Signage",
+          "Audio & Sound",
+          "Commercial Refrigeration",
+          "Furniture & POS Display",
+          "Logistics & Backstore",
+          "Home Automation / BMS / IoT",
+          "Sanitary & Water",
+          "Staff & Office Spaces",
+          "Exterior & Parking"
+        ]
       },
       "zones": {
         "label": "Zones",
-        "badges": ["Zone A", "Zone B", "Zone C", "Zone D"]
+        "badges": [
+          "Sales Floor",
+          "Checkout & Front-End",
+          "Entrance / Airlock / Window Display",
+          "Customer Service",
+          "Back-Office",
+          "Stock Room",
+          "Docks & Logistics",
+          "Technical Rooms",
+          "Staff Areas",
+          "Restrooms",
+          "Fitting Rooms"
+        ]
       },
       "equipements": {
         "label": "Equipment",
-        "badges": ["POS Terminal", "Air Conditioning", "Alarm", "Lighting"]
+        "badges": [
+          "LED Screen (digital signage)",
+          "Media player",
+          "Audio system (amp + distribution)",
+          "Speakers",
+          "Interactive kiosks",
+          "Smart lighting (spot, LED, ambient)",
+          "Electronic Shelf Labels (ESL)",
+          "Shelving / merchandising furniture",
+          "POS (screen + drawer + scanner)",
+          "Payment terminal (POS)",
+          "Receipt / label printer",
+          "Barcode scanner",
+          "CCTV cameras",
+          "Anti-theft gates (EAS)",
+          "Alarm system & access control"
+        ]
       }
     },
     "seo": {

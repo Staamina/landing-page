@@ -298,6 +298,7 @@
           "Déclaration dans Staamina",
           "Qualification et Routage automatique",
           "MAJ et Suivi temps réel",
+          "Relance automatique",
           "Intervention déclenchée"
         ]
       }
@@ -525,15 +526,61 @@
     "storeLayer": {
       "domaines": {
         "label": "Domaines",
-        "badges": ["Façade", "Enseigne", "Réserve", "Surface de vente"]
+        "badges": [
+          "Infrastructure & Bâtiment",
+          "Énergie & Électricité",
+          "Éclairage",
+          "CVC / Confort Thermique",
+          "Sécurité Incendie (SSI)",
+          "Sûreté & Sécurité",
+          "IT & Réseaux",
+          "Systèmes Retail & POS",
+          "Digital Signage",
+          "Audio & Sonorisation",
+          "Froid Commercial",
+          "Mobilier & PLV",
+          "Logistique & Backstore",
+          "Domotique / GTB / IoT",
+          "Sanitaires & Eau",
+          "Espaces Personnel & Bureaux",
+          "Extérieurs & Parking"
+        ]
       },
       "zones": {
         "label": "Zones",
-        "badges": ["Zone A", "Zone B", "Zone C", "Zone D"]
+        "badges": [
+          "Surface de vente",
+          "Caisses & Front-End",
+          "Entrée / Sas / Vitrine",
+          "Service Client",
+          "Back-Office",
+          "Réserve",
+          "Quais & Logistique",
+          "Locaux techniques",
+          "Espaces Personnel",
+          "Sanitaires",
+          "Cabines d'essayage"
+        ]
       },
       "equipements": {
         "label": "Équipements",
-        "badges": ["Caisse", "Climatisation", "Alarme", "Éclairage"]
+        "badges": [
+          "Écran LED (affichage dynamique)",
+          "Player / media player",
+          "Système audio (ampli + diffusion)",
+          "Enceintes",
+          "Bornes interactives / kiosques",
+          "Éclairage intelligent (spot, LED, ambiance)",
+          "Étiquettes électroniques (ESL)",
+          "Rayonnage / mobilier merchandising",
+          "Caisse / POS (écran + tiroir + scanner)",
+          "Terminal de paiement (TPE)",
+          "Imprimante ticket / étiquettes",
+          "Scanner code-barres",
+          "Caméras de surveillance (CCTV)",
+          "Portiques antivol (EAS)",
+          "Système d'alarme & contrôle d'accès"
+        ]
       }
     },
     "seo": {

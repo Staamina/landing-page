@@ -11,11 +11,11 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { Link } from '@/i18n/routing';
 
 const navLinks = [
-  { href: '#solution', labelKey: 'nav.solution' },
-  { href: '#fonctionnalites', labelKey: 'nav.features' },
-  { href: '#secteurs', labelKey: 'nav.sectors' },
-  { href: '#faq', labelKey: 'nav.faq' },
-  { href: '#contact', labelKey: 'nav.contact' },
+  { href: '/#avec-staamina', labelKey: 'nav.solution' },
+  { href: '/#fonctionnalites', labelKey: 'nav.features' },
+  { href: '/#secteurs', labelKey: 'nav.sectors' },
+  { href: '/#faq', labelKey: 'nav.faq' },
+  { href: '/#contact', labelKey: 'nav.contact' },
 ];
 
 export function LandingPageHeader() {

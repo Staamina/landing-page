@@ -186,6 +186,7 @@ function ProblemStatementSection({
 }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const [activeLayer, setActiveLayer] = useState<StoreLayer | null>(null);
+  const [revealedBadge, setRevealedBadge] = useState<number | null>(null);
 
   const storeLayerConfig: Record<
     StoreLayer,
@@ -199,36 +200,68 @@ function ProblemStatementSection({
       label: content.storeLayer.domaines.label,
       color: '#ede9fe',
       badges: [
-        { x: '18%', y: '28%', text: content.storeLayer.domaines.badges[0] },
-        { x: '55%', y: '18%', text: content.storeLayer.domaines.badges[1] },
-        { x: '72%', y: '42%', text: content.storeLayer.domaines.badges[2] },
-        { x: '30%', y: '60%', text: content.storeLayer.domaines.badges[3] },
+        { x: '15%', y: '15%', text: content.storeLayer.domaines.badges[0] },
+        { x: '45%', y: '10%', text: content.storeLayer.domaines.badges[1] },
+        { x: '75%', y: '14%', text: content.storeLayer.domaines.badges[2] },
+        { x: '28%', y: '26%', text: content.storeLayer.domaines.badges[3] },
+        { x: '60%', y: '24%', text: content.storeLayer.domaines.badges[4] },
+        { x: '88%', y: '28%', text: content.storeLayer.domaines.badges[5] },
+        { x: '14%', y: '40%', text: content.storeLayer.domaines.badges[6] },
+        { x: '42%', y: '38%', text: content.storeLayer.domaines.badges[7] },
+        { x: '72%', y: '42%', text: content.storeLayer.domaines.badges[8] },
+        { x: '26%', y: '54%', text: content.storeLayer.domaines.badges[9] },
+        { x: '55%', y: '52%', text: content.storeLayer.domaines.badges[10] },
+        { x: '85%', y: '56%', text: content.storeLayer.domaines.badges[11] },
+        { x: '12%', y: '68%', text: content.storeLayer.domaines.badges[12] },
+        { x: '40%', y: '66%', text: content.storeLayer.domaines.badges[13] },
+        { x: '70%', y: '70%', text: content.storeLayer.domaines.badges[14] },
+        { x: '28%', y: '82%', text: content.storeLayer.domaines.badges[15] },
+        { x: '62%', y: '84%', text: content.storeLayer.domaines.badges[16] },
       ],
     },
     zones: {
       label: content.storeLayer.zones.label,
       color: '#a78bfa',
       badges: [
-        { x: '15%', y: '50%', text: content.storeLayer.zones.badges[0] },
-        { x: '42%', y: '30%', text: content.storeLayer.zones.badges[1] },
-        { x: '65%', y: '55%', text: content.storeLayer.zones.badges[2] },
-        { x: '50%', y: '65%', text: content.storeLayer.zones.badges[3] },
+        { x: '18%', y: '22%', text: content.storeLayer.zones.badges[0] },
+        { x: '50%', y: '16%', text: content.storeLayer.zones.badges[1] },
+        { x: '82%', y: '22%', text: content.storeLayer.zones.badges[2] },
+        { x: '28%', y: '40%', text: content.storeLayer.zones.badges[3] },
+        { x: '60%', y: '38%', text: content.storeLayer.zones.badges[4] },
+        { x: '88%', y: '46%', text: content.storeLayer.zones.badges[5] },
+        { x: '15%', y: '58%', text: content.storeLayer.zones.badges[6] },
+        { x: '50%', y: '62%', text: content.storeLayer.zones.badges[7] },
+        { x: '78%', y: '68%', text: content.storeLayer.zones.badges[8] },
+        { x: '38%', y: '82%', text: content.storeLayer.zones.badges[9] },
+        { x: '70%', y: '28%', text: content.storeLayer.zones.badges[10] },
       ],
     },
     equipements: {
       label: content.storeLayer.equipements.label,
       color: '#8b5cf6',
       badges: [
-        { x: '20%', y: '42%', text: content.storeLayer.equipements.badges[0] },
-        { x: '48%', y: '22%', text: content.storeLayer.equipements.badges[1] },
-        { x: '70%', y: '38%', text: content.storeLayer.equipements.badges[2] },
-        { x: '35%', y: '68%', text: content.storeLayer.equipements.badges[3] },
+        { x: '18%', y: '15%', text: content.storeLayer.equipements.badges[0] },
+        { x: '50%', y: '12%', text: content.storeLayer.equipements.badges[1] },
+        { x: '80%', y: '16%', text: content.storeLayer.equipements.badges[2] },
+        { x: '12%', y: '30%', text: content.storeLayer.equipements.badges[3] },
+        { x: '42%', y: '28%', text: content.storeLayer.equipements.badges[4] },
+        { x: '72%', y: '32%', text: content.storeLayer.equipements.badges[5] },
+        { x: '26%', y: '45%', text: content.storeLayer.equipements.badges[6] },
+        { x: '58%', y: '44%', text: content.storeLayer.equipements.badges[7] },
+        { x: '88%', y: '48%', text: content.storeLayer.equipements.badges[8] },
+        { x: '15%', y: '60%', text: content.storeLayer.equipements.badges[9] },
+        { x: '46%', y: '62%', text: content.storeLayer.equipements.badges[10] },
+        { x: '76%', y: '64%', text: content.storeLayer.equipements.badges[11] },
+        { x: '28%', y: '78%', text: content.storeLayer.equipements.badges[12] },
+        { x: '60%', y: '80%', text: content.storeLayer.equipements.badges[13] },
+        { x: '86%', y: '78%', text: content.storeLayer.equipements.badges[14] },
       ],
     },
   };
 
   const handleToggle = (layer: StoreLayer) => {
     setActiveLayer((prev) => (prev === layer ? null : layer));
+    setRevealedBadge(null);
   };
 
   const activeCfg = activeLayer ? storeLayerConfig[activeLayer] : null;
@@ -249,12 +282,12 @@ function ProblemStatementSection({
           isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
         )}
       >
-        <div className="w-full md:w-[40%] px-5 sm:px-8 md:px-12 py-8 sm:py-12 md:pt-20 shrink-0">
+        <div className="w-full md:w-[35%] px-5 sm:px-8 md:px-10 py-8 sm:py-12 md:pt-20 shrink-0">
           <p
             className="font-bold text-white text-left"
             style={{
               fontFamily: 'var(--font-roboto), sans-serif',
-              fontSize: 'clamp(0.9rem, 2.2vw, 2.4rem)',
+              fontSize: 'clamp(0.9rem, 1.9vw, 2rem)',
               lineHeight: '1.1',
             }}
           >
@@ -270,9 +303,9 @@ function ProblemStatementSection({
           </p>
         </div>
 
-        <div className="w-full md:w-[60%] flex flex-col items-center gap-6 py-8">
+        <div className="w-full md:w-[65%] flex flex-col items-center gap-6 py-8">
           {/* Image container */}
-          <div className="relative w-[85%]">
+          <div className="relative w-[95%]">
             {/* Dots background */}
             <div
               className="absolute inset-0 pointer-events-none"
@@ -286,58 +319,77 @@ function ProblemStatementSection({
                   'radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%)',
               }}
             />
-            {/* Glow behind image */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                width: '60%',
-                height: '60%',
-                background:
-                  'radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.18) 0%, transparent 70%)',
-                top: '20%',
-                left: '20%',
-              }}
-            />
             <Image
-              src="/store-isometric.webp"
-              alt="Point de vente isométrique"
-              width={1000}
-              height={850}
+              src="/store-3d-illustration.avif"
+              alt="Illustration 3D du point de vente"
+              width={2400}
+              height={1350}
               className="w-full h-auto object-contain relative z-10"
+              style={{
+                filter:
+                  'drop-shadow(0 0 10px rgba(167, 139, 250, 0.35)) drop-shadow(0 0 4px rgba(139, 92, 246, 0.25))',
+              }}
             />
             {/* Layer badges */}
             {activeCfg &&
-              activeCfg.badges.map((badge, i) => (
-                <div
-                  key={i}
-                  className="absolute z-20 pointer-events-none"
-                  style={{
-                    left: badge.x,
-                    top: badge.y,
-                    transform: 'translate(-50%, -50%)',
-                    opacity: activeLayer ? 1 : 0,
-                    transition: `opacity 300ms ease ${i * 60}ms, transform 300ms ease ${i * 60}ms`,
-                  }}
-                >
+              activeCfg.badges.map((badge, i) => {
+                const isRevealed = revealedBadge === i;
+                const badgeStyle = {
+                  background: 'rgba(10,0,20,0.75)',
+                  border: `1px solid ${activeCfg.color}`,
+                  color: activeCfg.color,
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  boxShadow: `0 2px 8px rgba(0,0,0,0.5), 0 0 16px ${activeCfg.color}55`,
+                };
+                return (
                   <div
-                    className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold whitespace-nowrap shadow-lg"
+                    key={i}
+                    className="absolute z-20"
                     style={{
-                      background: 'rgba(10,0,20,0.35)',
-                      border: `1px solid ${activeCfg.color}`,
-                      color: activeCfg.color,
-                      backdropFilter: 'blur(8px)',
-                      WebkitBackdropFilter: 'blur(8px)',
-                      boxShadow: `0 0 16px ${activeCfg.color}55`,
+                      left: badge.x,
+                      top: badge.y,
+                      transform: 'translate(-50%, -50%)',
+                      opacity: activeLayer ? 1 : 0,
+                      transition: `opacity 300ms ease ${i * 60}ms`,
                     }}
                   >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ background: activeCfg.color }}
-                    />
-                    {badge.text}
+                    {/* Mobile: dot that toggles label on tap */}
+                    <button
+                      type="button"
+                      className="sm:hidden block cursor-pointer"
+                      onClick={() =>
+                        setRevealedBadge(isRevealed ? null : i)
+                      }
+                      aria-label={badge.text}
+                    >
+                      {isRevealed ? (
+                        <div
+                          className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold whitespace-nowrap shadow-lg"
+                          style={badgeStyle}
+                        >
+                          {badge.text}
+                        </div>
+                      ) : (
+                        <div
+                          className="w-3 h-3 rounded-full"
+                          style={{
+                            background: activeCfg.color,
+                            boxShadow: `0 0 10px ${activeCfg.color}, 0 0 4px ${activeCfg.color}`,
+                          }}
+                        />
+                      )}
+                    </button>
+                    {/* Desktop: full badge always */}
+                    <div
+                      className="hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold whitespace-nowrap shadow-lg pointer-events-none"
+                      style={badgeStyle}
+                    >
+                      {badge.text}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
           </div>
 
           {/* Toggle buttons */}
@@ -770,7 +822,8 @@ function AfterSection({
                 { x: '62%', y: '72%', text: content.beforeAfter.after.badges[1] },
                 { x: '5%',  y: '54%', text: content.beforeAfter.after.badges[2] },
                 { x: '35%', y: '36%', text: content.beforeAfter.after.badges[3] },
-                { x: '110%', y: '28%', mobileX: '70%', text: content.beforeAfter.after.badges[4] },
+                { x: '90%', y: '32%', mobileX: '65%', text: content.beforeAfter.after.badges[4] },
+                { x: '110%', y: '10%', mobileX: '70%', text: content.beforeAfter.after.badges[5] },
               ]}
             />
           }

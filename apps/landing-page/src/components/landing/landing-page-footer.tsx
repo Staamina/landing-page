@@ -60,9 +60,9 @@ export function LandingPageFooter() {
             </h4>
             <ul className="flex flex-col gap-3">
               {[
-                { label: t('product.solution'), href: '#solution' },
-                { label: t('product.features'), href: '#fonctionnalites' },
-                { label: t('product.sectors'), href: '#secteurs' },
+                { label: t('product.solution'), href: '/#avec-staamina' },
+                { label: t('product.features'), href: '/#fonctionnalites' },
+                { label: t('product.sectors'), href: '/#secteurs' },
                 { label: t('product.signIn'), href: '/login' },
               ].map((item) => (
                 <li key={item.href}>
